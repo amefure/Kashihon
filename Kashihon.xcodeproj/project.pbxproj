@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0B14444ABBC28A82459BA4EB /* Pods_Kashihon_KashihonUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6A7652E57593BCAE77F27451 /* Pods_Kashihon_KashihonUITests.framework */; };
 		128F7E952A5EDE3F00FDF4CE /* KashihonApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 128F7E942A5EDE3F00FDF4CE /* KashihonApp.swift */; };
 		128F7E972A5EDE3F00FDF4CE /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 128F7E962A5EDE3F00FDF4CE /* ContentView.swift */; };
 		128F7E992A5EDE4000FDF4CE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 128F7E982A5EDE4000FDF4CE /* Assets.xcassets */; };
@@ -14,6 +15,11 @@
 		128F7EA62A5EDE4000FDF4CE /* KashihonTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 128F7EA52A5EDE4000FDF4CE /* KashihonTests.swift */; };
 		128F7EB02A5EDE4000FDF4CE /* KashihonUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 128F7EAF2A5EDE4000FDF4CE /* KashihonUITests.swift */; };
 		128F7EB22A5EDE4000FDF4CE /* KashihonUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 128F7EB12A5EDE4000FDF4CE /* KashihonUITestsLaunchTests.swift */; };
+		128F7EBF2A5EDFEC00FDF4CE /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 128F7EBE2A5EDFEC00FDF4CE /* GoogleService-Info.plist */; };
+		128F7EC12A5EE0DA00FDF4CE /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 128F7EC02A5EE0DA00FDF4CE /* README.md */; };
+		128F7EC42A5EE20A00FDF4CE /* AdMobView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 128F7EC32A5EE20A00FDF4CE /* AdMobView.swift */; };
+		6697F21FE95EB646D2B3582B /* Pods_Kashihon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2DC55E7D4E9E0A2161007E1D /* Pods_Kashihon.framework */; };
+		A1DF187CCE962CF77D35C8D6 /* Pods_KashihonTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A916253B4D4FD70C812DCCD1 /* Pods_KashihonTests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,6 +40,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		039588BC7898CCB8936903F0 /* Pods-KashihonTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KashihonTests.release.xcconfig"; path = "Target Support Files/Pods-KashihonTests/Pods-KashihonTests.release.xcconfig"; sourceTree = "<group>"; };
 		128F7E912A5EDE3F00FDF4CE /* Kashihon.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Kashihon.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		128F7E942A5EDE3F00FDF4CE /* KashihonApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KashihonApp.swift; sourceTree = "<group>"; };
 		128F7E962A5EDE3F00FDF4CE /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -44,6 +51,18 @@
 		128F7EAB2A5EDE4000FDF4CE /* KashihonUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = KashihonUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		128F7EAF2A5EDE4000FDF4CE /* KashihonUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KashihonUITests.swift; sourceTree = "<group>"; };
 		128F7EB12A5EDE4000FDF4CE /* KashihonUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KashihonUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		128F7EBE2A5EDFEC00FDF4CE /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
+		128F7EC02A5EE0DA00FDF4CE /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = SOURCE_ROOT; };
+		128F7EC32A5EE20A00FDF4CE /* AdMobView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdMobView.swift; sourceTree = "<group>"; };
+		128F7EC52A5EE2B900FDF4CE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		2DC55E7D4E9E0A2161007E1D /* Pods_Kashihon.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Kashihon.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		36ADBDD3BE5BB5BFD151F736 /* Pods-Kashihon-KashihonUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Kashihon-KashihonUITests.release.xcconfig"; path = "Target Support Files/Pods-Kashihon-KashihonUITests/Pods-Kashihon-KashihonUITests.release.xcconfig"; sourceTree = "<group>"; };
+		6A7652E57593BCAE77F27451 /* Pods_Kashihon_KashihonUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Kashihon_KashihonUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		73674BC6A78E52A07C7A4E5F /* Pods-Kashihon.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Kashihon.release.xcconfig"; path = "Target Support Files/Pods-Kashihon/Pods-Kashihon.release.xcconfig"; sourceTree = "<group>"; };
+		86C16D2E9182F0DD9CF49134 /* Pods-Kashihon.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Kashihon.debug.xcconfig"; path = "Target Support Files/Pods-Kashihon/Pods-Kashihon.debug.xcconfig"; sourceTree = "<group>"; };
+		9DB9798860088D588640040C /* Pods-KashihonTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KashihonTests.debug.xcconfig"; path = "Target Support Files/Pods-KashihonTests/Pods-KashihonTests.debug.xcconfig"; sourceTree = "<group>"; };
+		A916253B4D4FD70C812DCCD1 /* Pods_KashihonTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KashihonTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E54057A5DD1D1FF67AB3DEDD /* Pods-Kashihon-KashihonUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Kashihon-KashihonUITests.debug.xcconfig"; path = "Target Support Files/Pods-Kashihon-KashihonUITests/Pods-Kashihon-KashihonUITests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,6 +70,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6697F21FE95EB646D2B3582B /* Pods_Kashihon.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -58,6 +78,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A1DF187CCE962CF77D35C8D6 /* Pods_KashihonTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -65,6 +86,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0B14444ABBC28A82459BA4EB /* Pods_Kashihon_KashihonUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -78,6 +100,8 @@
 				128F7EA42A5EDE4000FDF4CE /* KashihonTests */,
 				128F7EAE2A5EDE4000FDF4CE /* KashihonUITests */,
 				128F7E922A5EDE3F00FDF4CE /* Products */,
+				B47DF92F0ED9EE2756C0F0F7 /* Pods */,
+				9841E54E890C87A83647E3B6 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -94,9 +118,13 @@
 		128F7E932A5EDE3F00FDF4CE /* Kashihon */ = {
 			isa = PBXGroup;
 			children = (
+				128F7EC52A5EE2B900FDF4CE /* Info.plist */,
 				128F7E942A5EDE3F00FDF4CE /* KashihonApp.swift */,
 				128F7E962A5EDE3F00FDF4CE /* ContentView.swift */,
+				128F7EC22A5EE1E600FDF4CE /* Views */,
 				128F7E982A5EDE4000FDF4CE /* Assets.xcassets */,
+				128F7EC02A5EE0DA00FDF4CE /* README.md */,
+				128F7EBE2A5EDFEC00FDF4CE /* GoogleService-Info.plist */,
 				128F7E9A2A5EDE4000FDF4CE /* Preview Content */,
 			);
 			path = Kashihon;
@@ -127,6 +155,37 @@
 			path = KashihonUITests;
 			sourceTree = "<group>";
 		};
+		128F7EC22A5EE1E600FDF4CE /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				128F7EC32A5EE20A00FDF4CE /* AdMobView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		9841E54E890C87A83647E3B6 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				2DC55E7D4E9E0A2161007E1D /* Pods_Kashihon.framework */,
+				6A7652E57593BCAE77F27451 /* Pods_Kashihon_KashihonUITests.framework */,
+				A916253B4D4FD70C812DCCD1 /* Pods_KashihonTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		B47DF92F0ED9EE2756C0F0F7 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				86C16D2E9182F0DD9CF49134 /* Pods-Kashihon.debug.xcconfig */,
+				73674BC6A78E52A07C7A4E5F /* Pods-Kashihon.release.xcconfig */,
+				E54057A5DD1D1FF67AB3DEDD /* Pods-Kashihon-KashihonUITests.debug.xcconfig */,
+				36ADBDD3BE5BB5BFD151F736 /* Pods-Kashihon-KashihonUITests.release.xcconfig */,
+				9DB9798860088D588640040C /* Pods-KashihonTests.debug.xcconfig */,
+				039588BC7898CCB8936903F0 /* Pods-KashihonTests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -134,9 +193,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 128F7EB52A5EDE4000FDF4CE /* Build configuration list for PBXNativeTarget "Kashihon" */;
 			buildPhases = (
+				7CF06BAC81E8729C84E727E8 /* [CP] Check Pods Manifest.lock */,
 				128F7E8D2A5EDE3F00FDF4CE /* Sources */,
 				128F7E8E2A5EDE3F00FDF4CE /* Frameworks */,
 				128F7E8F2A5EDE3F00FDF4CE /* Resources */,
+				FC512BBBA2C0A883C6845116 /* [CP] Embed Pods Frameworks */,
+				128F7EC62A5EE30C00FDF4CE /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -151,9 +213,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 128F7EB82A5EDE4000FDF4CE /* Build configuration list for PBXNativeTarget "KashihonTests" */;
 			buildPhases = (
+				19876A749CAF6788E3CD8152 /* [CP] Check Pods Manifest.lock */,
 				128F7E9D2A5EDE4000FDF4CE /* Sources */,
 				128F7E9E2A5EDE4000FDF4CE /* Frameworks */,
 				128F7E9F2A5EDE4000FDF4CE /* Resources */,
+				37E47A98FF258966C4C47161 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -169,9 +233,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 128F7EBB2A5EDE4000FDF4CE /* Build configuration list for PBXNativeTarget "KashihonUITests" */;
 			buildPhases = (
+				1E6A2AED4112D4FC14F83589 /* [CP] Check Pods Manifest.lock */,
 				128F7EA72A5EDE4000FDF4CE /* Sources */,
 				128F7EA82A5EDE4000FDF4CE /* Frameworks */,
 				128F7EA92A5EDE4000FDF4CE /* Resources */,
+				648A9BF18DAAEF57570345C5 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -233,6 +299,8 @@
 			files = (
 				128F7E9C2A5EDE4000FDF4CE /* Preview Assets.xcassets in Resources */,
 				128F7E992A5EDE4000FDF4CE /* Assets.xcassets in Resources */,
+				128F7EC12A5EE0DA00FDF4CE /* README.md in Resources */,
+				128F7EBF2A5EDFEC00FDF4CE /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -252,11 +320,150 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		128F7EC62A5EE30C00FDF4CE /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if [ $CONFIGURATION = \"Debug\" ]; then\n    \"${PODS_ROOT}/SwiftFormat/CommandLineTool/swiftformat\" .\nelse\n    echo \"warning: SwiftFormat not installed, download from https://github.com/nicklockwood/SwiftFormat\"\nfi\n";
+		};
+		19876A749CAF6788E3CD8152 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-KashihonTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		1E6A2AED4112D4FC14F83589 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Kashihon-KashihonUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		37E47A98FF258966C4C47161 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-KashihonTests/Pods-KashihonTests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-KashihonTests/Pods-KashihonTests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-KashihonTests/Pods-KashihonTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		648A9BF18DAAEF57570345C5 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Kashihon-KashihonUITests/Pods-Kashihon-KashihonUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Kashihon-KashihonUITests/Pods-Kashihon-KashihonUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Kashihon-KashihonUITests/Pods-Kashihon-KashihonUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7CF06BAC81E8729C84E727E8 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Kashihon-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FC512BBBA2C0A883C6845116 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Kashihon/Pods-Kashihon-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Kashihon/Pods-Kashihon-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Kashihon/Pods-Kashihon-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		128F7E8D2A5EDE3F00FDF4CE /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				128F7EC42A5EE20A00FDF4CE /* AdMobView.swift in Sources */,
 				128F7E972A5EDE3F00FDF4CE /* ContentView.swift in Sources */,
 				128F7E952A5EDE3F00FDF4CE /* KashihonApp.swift in Sources */,
 			);
@@ -411,6 +618,7 @@
 		};
 		128F7EB62A5EDE4000FDF4CE /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 86C16D2E9182F0DD9CF49134 /* Pods-Kashihon.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -420,6 +628,7 @@
 				DEVELOPMENT_TEAM = CGD79LB65H;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Kashihon/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -440,6 +649,7 @@
 		};
 		128F7EB72A5EDE4000FDF4CE /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 73674BC6A78E52A07C7A4E5F /* Pods-Kashihon.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -449,6 +659,7 @@
 				DEVELOPMENT_TEAM = CGD79LB65H;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Kashihon/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -469,6 +680,7 @@
 		};
 		128F7EB92A5EDE4000FDF4CE /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9DB9798860088D588640040C /* Pods-KashihonTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -489,6 +701,7 @@
 		};
 		128F7EBA2A5EDE4000FDF4CE /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 039588BC7898CCB8936903F0 /* Pods-KashihonTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -509,6 +722,7 @@
 		};
 		128F7EBC2A5EDE4000FDF4CE /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E54057A5DD1D1FF67AB3DEDD /* Pods-Kashihon-KashihonUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -527,6 +741,7 @@
 		};
 		128F7EBD2A5EDE4000FDF4CE /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 36ADBDD3BE5BB5BFD151F736 /* Pods-Kashihon-KashihonUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
