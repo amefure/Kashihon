@@ -11,6 +11,8 @@ target 'Kashihon' do
   pod 'FirebaseAnalytics'
   pod 'Alamofire'
   pod 'SwiftyJSON'
+  pod 'RxSwift'
+  pod 'RxCocoa'
   pod 'SwiftFormat/CLI', :configurations => ['Debug']
 
 
@@ -22,6 +24,8 @@ target 'Kashihon' do
     pod 'FirebaseAnalytics'
     pod 'Alamofire'
     pod 'SwiftyJSON'
+    pod 'RxSwift'
+    pod 'RxCocoa'
     pod 'SwiftFormat/CLI', :configurations => ['Debug']
 
   end
@@ -33,6 +37,8 @@ target 'Kashihon' do
     pod 'FirebaseAnalytics'
     pod 'Alamofire'
     pod 'SwiftyJSON'
+    pod 'RxSwift'
+    pod 'RxCocoa'
     pod 'SwiftFormat/CLI', :configurations => ['Debug']
 
   end

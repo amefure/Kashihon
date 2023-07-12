@@ -83,6 +83,12 @@ PODS:
   - Realm/Headers (10.37.2)
   - RealmSwift (10.37.2):
     - Realm (= 10.37.2)
+  - RxCocoa (6.5.0):
+    - RxRelay (= 6.5.0)
+    - RxSwift (= 6.5.0)
+  - RxRelay (6.5.0):
+    - RxSwift (= 6.5.0)
+  - RxSwift (6.5.0)
   - SwiftFormat/CLI (0.51.12)
   - SwiftyJSON (5.0.1)
 
@@ -91,6 +97,8 @@ DEPENDENCIES:
   - FirebaseAnalytics
   - Google-Mobile-Ads-SDK
   - RealmSwift (= 10.37.2)
+  - RxCocoa
+  - RxSwift
   - SwiftFormat/CLI
   - SwiftyJSON
 
@@ -109,6 +117,9 @@ SPEC REPOS:
     - PromisesObjC
     - Realm
     - RealmSwift
+    - RxCocoa
+    - RxRelay
+    - RxSwift
     - SwiftFormat
     - SwiftyJSON
 
@@ -126,9 +137,12 @@ SPEC CHECKSUMS:
   PromisesObjC: 09985d6d70fbe7878040aa746d78236e6946d2ef
   Realm: 09e17879e909fafc5336864bff22272de9bd11bf
   RealmSwift: adaf8f6fd925b41447089fcfab71b9b7cdc3982d
+  RxCocoa: 94f817b71c07517321eb4f9ad299112ca8af743b
+  RxRelay: 1de1523e604c72b6c68feadedd1af3b1b4d0ecbd
+  RxSwift: 5710a9e6b17f3c3d6e40d6e559b9fa1e813b2ef8
   SwiftFormat: a5bbe21e2794b5a914f548ec651f28f2ab8be099
   SwiftyJSON: 2f33a42c6fbc52764d96f13368585094bfd8aa5e
 
-PODFILE CHECKSUM: d76404f0b7c5e8b4ac1e07e80892b2640c28c9f5
+PODFILE CHECKSUM: 51d2451ff29c3186c13c9dd4a4cdefd884d77c84
 
 COCOAPODS: 1.11.3
