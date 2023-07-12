@@ -1,0 +1,588 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		128F7E952A5EDE3F00FDF4CE /* KashihonApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 128F7E942A5EDE3F00FDF4CE /* KashihonApp.swift */; };
+		128F7E972A5EDE3F00FDF4CE /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 128F7E962A5EDE3F00FDF4CE /* ContentView.swift */; };
+		128F7E992A5EDE4000FDF4CE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 128F7E982A5EDE4000FDF4CE /* Assets.xcassets */; };
+		128F7E9C2A5EDE4000FDF4CE /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 128F7E9B2A5EDE4000FDF4CE /* Preview Assets.xcassets */; };
+		128F7EA62A5EDE4000FDF4CE /* KashihonTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 128F7EA52A5EDE4000FDF4CE /* KashihonTests.swift */; };
+		128F7EB02A5EDE4000FDF4CE /* KashihonUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 128F7EAF2A5EDE4000FDF4CE /* KashihonUITests.swift */; };
+		128F7EB22A5EDE4000FDF4CE /* KashihonUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 128F7EB12A5EDE4000FDF4CE /* KashihonUITestsLaunchTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		128F7EA22A5EDE4000FDF4CE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 128F7E892A5EDE3F00FDF4CE /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 128F7E902A5EDE3F00FDF4CE;
+			remoteInfo = Kashihon;
+		};
+		128F7EAC2A5EDE4000FDF4CE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 128F7E892A5EDE3F00FDF4CE /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 128F7E902A5EDE3F00FDF4CE;
+			remoteInfo = Kashihon;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		128F7E912A5EDE3F00FDF4CE /* Kashihon.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Kashihon.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		128F7E942A5EDE3F00FDF4CE /* KashihonApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KashihonApp.swift; sourceTree = "<group>"; };
+		128F7E962A5EDE3F00FDF4CE /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		128F7E982A5EDE4000FDF4CE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		128F7E9B2A5EDE4000FDF4CE /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		128F7EA12A5EDE4000FDF4CE /* KashihonTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = KashihonTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		128F7EA52A5EDE4000FDF4CE /* KashihonTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KashihonTests.swift; sourceTree = "<group>"; };
+		128F7EAB2A5EDE4000FDF4CE /* KashihonUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = KashihonUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		128F7EAF2A5EDE4000FDF4CE /* KashihonUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KashihonUITests.swift; sourceTree = "<group>"; };
+		128F7EB12A5EDE4000FDF4CE /* KashihonUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KashihonUITestsLaunchTests.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		128F7E8E2A5EDE3F00FDF4CE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		128F7E9E2A5EDE4000FDF4CE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		128F7EA82A5EDE4000FDF4CE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		128F7E882A5EDE3F00FDF4CE = {
+			isa = PBXGroup;
+			children = (
+				128F7E932A5EDE3F00FDF4CE /* Kashihon */,
+				128F7EA42A5EDE4000FDF4CE /* KashihonTests */,
+				128F7EAE2A5EDE4000FDF4CE /* KashihonUITests */,
+				128F7E922A5EDE3F00FDF4CE /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		128F7E922A5EDE3F00FDF4CE /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				128F7E912A5EDE3F00FDF4CE /* Kashihon.app */,
+				128F7EA12A5EDE4000FDF4CE /* KashihonTests.xctest */,
+				128F7EAB2A5EDE4000FDF4CE /* KashihonUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		128F7E932A5EDE3F00FDF4CE /* Kashihon */ = {
+			isa = PBXGroup;
+			children = (
+				128F7E942A5EDE3F00FDF4CE /* KashihonApp.swift */,
+				128F7E962A5EDE3F00FDF4CE /* ContentView.swift */,
+				128F7E982A5EDE4000FDF4CE /* Assets.xcassets */,
+				128F7E9A2A5EDE4000FDF4CE /* Preview Content */,
+			);
+			path = Kashihon;
+			sourceTree = "<group>";
+		};
+		128F7E9A2A5EDE4000FDF4CE /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				128F7E9B2A5EDE4000FDF4CE /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		128F7EA42A5EDE4000FDF4CE /* KashihonTests */ = {
+			isa = PBXGroup;
+			children = (
+				128F7EA52A5EDE4000FDF4CE /* KashihonTests.swift */,
+			);
+			path = KashihonTests;
+			sourceTree = "<group>";
+		};
+		128F7EAE2A5EDE4000FDF4CE /* KashihonUITests */ = {
+			isa = PBXGroup;
+			children = (
+				128F7EAF2A5EDE4000FDF4CE /* KashihonUITests.swift */,
+				128F7EB12A5EDE4000FDF4CE /* KashihonUITestsLaunchTests.swift */,
+			);
+			path = KashihonUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		128F7E902A5EDE3F00FDF4CE /* Kashihon */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 128F7EB52A5EDE4000FDF4CE /* Build configuration list for PBXNativeTarget "Kashihon" */;
+			buildPhases = (
+				128F7E8D2A5EDE3F00FDF4CE /* Sources */,
+				128F7E8E2A5EDE3F00FDF4CE /* Frameworks */,
+				128F7E8F2A5EDE3F00FDF4CE /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Kashihon;
+			productName = Kashihon;
+			productReference = 128F7E912A5EDE3F00FDF4CE /* Kashihon.app */;
+			productType = "com.apple.product-type.application";
+		};
+		128F7EA02A5EDE4000FDF4CE /* KashihonTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 128F7EB82A5EDE4000FDF4CE /* Build configuration list for PBXNativeTarget "KashihonTests" */;
+			buildPhases = (
+				128F7E9D2A5EDE4000FDF4CE /* Sources */,
+				128F7E9E2A5EDE4000FDF4CE /* Frameworks */,
+				128F7E9F2A5EDE4000FDF4CE /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				128F7EA32A5EDE4000FDF4CE /* PBXTargetDependency */,
+			);
+			name = KashihonTests;
+			productName = KashihonTests;
+			productReference = 128F7EA12A5EDE4000FDF4CE /* KashihonTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		128F7EAA2A5EDE4000FDF4CE /* KashihonUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 128F7EBB2A5EDE4000FDF4CE /* Build configuration list for PBXNativeTarget "KashihonUITests" */;
+			buildPhases = (
+				128F7EA72A5EDE4000FDF4CE /* Sources */,
+				128F7EA82A5EDE4000FDF4CE /* Frameworks */,
+				128F7EA92A5EDE4000FDF4CE /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				128F7EAD2A5EDE4000FDF4CE /* PBXTargetDependency */,
+			);
+			name = KashihonUITests;
+			productName = KashihonUITests;
+			productReference = 128F7EAB2A5EDE4000FDF4CE /* KashihonUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		128F7E892A5EDE3F00FDF4CE /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1420;
+				LastUpgradeCheck = 1420;
+				TargetAttributes = {
+					128F7E902A5EDE3F00FDF4CE = {
+						CreatedOnToolsVersion = 14.2;
+					};
+					128F7EA02A5EDE4000FDF4CE = {
+						CreatedOnToolsVersion = 14.2;
+						TestTargetID = 128F7E902A5EDE3F00FDF4CE;
+					};
+					128F7EAA2A5EDE4000FDF4CE = {
+						CreatedOnToolsVersion = 14.2;
+						TestTargetID = 128F7E902A5EDE3F00FDF4CE;
+					};
+				};
+			};
+			buildConfigurationList = 128F7E8C2A5EDE3F00FDF4CE /* Build configuration list for PBXProject "Kashihon" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 128F7E882A5EDE3F00FDF4CE;
+			productRefGroup = 128F7E922A5EDE3F00FDF4CE /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				128F7E902A5EDE3F00FDF4CE /* Kashihon */,
+				128F7EA02A5EDE4000FDF4CE /* KashihonTests */,
+				128F7EAA2A5EDE4000FDF4CE /* KashihonUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		128F7E8F2A5EDE3F00FDF4CE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				128F7E9C2A5EDE4000FDF4CE /* Preview Assets.xcassets in Resources */,
+				128F7E992A5EDE4000FDF4CE /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		128F7E9F2A5EDE4000FDF4CE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		128F7EA92A5EDE4000FDF4CE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		128F7E8D2A5EDE3F00FDF4CE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				128F7E972A5EDE3F00FDF4CE /* ContentView.swift in Sources */,
+				128F7E952A5EDE3F00FDF4CE /* KashihonApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		128F7E9D2A5EDE4000FDF4CE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				128F7EA62A5EDE4000FDF4CE /* KashihonTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		128F7EA72A5EDE4000FDF4CE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				128F7EB22A5EDE4000FDF4CE /* KashihonUITestsLaunchTests.swift in Sources */,
+				128F7EB02A5EDE4000FDF4CE /* KashihonUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		128F7EA32A5EDE4000FDF4CE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 128F7E902A5EDE3F00FDF4CE /* Kashihon */;
+			targetProxy = 128F7EA22A5EDE4000FDF4CE /* PBXContainerItemProxy */;
+		};
+		128F7EAD2A5EDE4000FDF4CE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 128F7E902A5EDE3F00FDF4CE /* Kashihon */;
+			targetProxy = 128F7EAC2A5EDE4000FDF4CE /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		128F7EB32A5EDE4000FDF4CE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		128F7EB42A5EDE4000FDF4CE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		128F7EB62A5EDE4000FDF4CE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Kashihon/Preview Content\"";
+				DEVELOPMENT_TEAM = CGD79LB65H;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ame.Kashihon;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		128F7EB72A5EDE4000FDF4CE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Kashihon/Preview Content\"";
+				DEVELOPMENT_TEAM = CGD79LB65H;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ame.Kashihon;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		128F7EB92A5EDE4000FDF4CE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = CGD79LB65H;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ame.KashihonTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Kashihon.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Kashihon";
+			};
+			name = Debug;
+		};
+		128F7EBA2A5EDE4000FDF4CE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = CGD79LB65H;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ame.KashihonTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Kashihon.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Kashihon";
+			};
+			name = Release;
+		};
+		128F7EBC2A5EDE4000FDF4CE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = CGD79LB65H;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ame.KashihonUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Kashihon;
+			};
+			name = Debug;
+		};
+		128F7EBD2A5EDE4000FDF4CE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = CGD79LB65H;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ame.KashihonUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Kashihon;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		128F7E8C2A5EDE3F00FDF4CE /* Build configuration list for PBXProject "Kashihon" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				128F7EB32A5EDE4000FDF4CE /* Debug */,
+				128F7EB42A5EDE4000FDF4CE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		128F7EB52A5EDE4000FDF4CE /* Build configuration list for PBXNativeTarget "Kashihon" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				128F7EB62A5EDE4000FDF4CE /* Debug */,
+				128F7EB72A5EDE4000FDF4CE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		128F7EB82A5EDE4000FDF4CE /* Build configuration list for PBXNativeTarget "KashihonTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				128F7EB92A5EDE4000FDF4CE /* Debug */,
+				128F7EBA2A5EDE4000FDF4CE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		128F7EBB2A5EDE4000FDF4CE /* Build configuration list for PBXNativeTarget "KashihonUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				128F7EBC2A5EDE4000FDF4CE /* Debug */,
+				128F7EBD2A5EDE4000FDF4CE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 128F7E892A5EDE3F00FDF4CE /* Project object */;
+}
