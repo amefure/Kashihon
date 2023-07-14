@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		0B14444ABBC28A82459BA4EB /* Pods_Kashihon_KashihonUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6A7652E57593BCAE77F27451 /* Pods_Kashihon_KashihonUITests.framework */; };
+		122EA76F2A5FAB4F008B24C9 /* GoogleBooksAPIRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 122EA76E2A5FAB4F008B24C9 /* GoogleBooksAPIRepository.swift */; };
+		124E0BC02A618D9B00F97414 /* Book.swift in Sources */ = {isa = PBXBuildFile; fileRef = 124E0BBF2A618D9B00F97414 /* Book.swift */; };
 		128F7E952A5EDE3F00FDF4CE /* KashihonApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 128F7E942A5EDE3F00FDF4CE /* KashihonApp.swift */; };
 		128F7E972A5EDE3F00FDF4CE /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 128F7E962A5EDE3F00FDF4CE /* ContentView.swift */; };
 		128F7E992A5EDE4000FDF4CE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 128F7E982A5EDE4000FDF4CE /* Assets.xcassets */; };
@@ -41,6 +43,8 @@
 
 /* Begin PBXFileReference section */
 		039588BC7898CCB8936903F0 /* Pods-KashihonTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KashihonTests.release.xcconfig"; path = "Target Support Files/Pods-KashihonTests/Pods-KashihonTests.release.xcconfig"; sourceTree = "<group>"; };
+		122EA76E2A5FAB4F008B24C9 /* GoogleBooksAPIRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleBooksAPIRepository.swift; sourceTree = "<group>"; };
+		124E0BBF2A618D9B00F97414 /* Book.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Book.swift; sourceTree = "<group>"; };
 		128F7E912A5EDE3F00FDF4CE /* Kashihon.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Kashihon.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		128F7E942A5EDE3F00FDF4CE /* KashihonApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KashihonApp.swift; sourceTree = "<group>"; };
 		128F7E962A5EDE3F00FDF4CE /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -93,6 +97,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		122EA76B2A5FAA15008B24C9 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				124E0BBF2A618D9B00F97414 /* Book.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		122EA76D2A5FAA91008B24C9 /* Repository */ = {
+			isa = PBXGroup;
+			children = (
+				122EA76E2A5FAB4F008B24C9 /* GoogleBooksAPIRepository.swift */,
+			);
+			path = Repository;
+			sourceTree = "<group>";
+		};
 		128F7E882A5EDE3F00FDF4CE = {
 			isa = PBXGroup;
 			children = (
@@ -121,6 +141,8 @@
 				128F7EC52A5EE2B900FDF4CE /* Info.plist */,
 				128F7E942A5EDE3F00FDF4CE /* KashihonApp.swift */,
 				128F7E962A5EDE3F00FDF4CE /* ContentView.swift */,
+				122EA76D2A5FAA91008B24C9 /* Repository */,
+				122EA76B2A5FAA15008B24C9 /* Models */,
 				128F7EC22A5EE1E600FDF4CE /* Views */,
 				128F7E982A5EDE4000FDF4CE /* Assets.xcassets */,
 				128F7EC02A5EE0DA00FDF4CE /* README.md */,
@@ -465,6 +487,8 @@
 			files = (
 				128F7EC42A5EE20A00FDF4CE /* AdMobView.swift in Sources */,
 				128F7E972A5EDE3F00FDF4CE /* ContentView.swift in Sources */,
+				122EA76F2A5FAB4F008B24C9 /* GoogleBooksAPIRepository.swift in Sources */,
+				124E0BC02A618D9B00F97414 /* Book.swift in Sources */,
 				128F7E952A5EDE3F00FDF4CE /* KashihonApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
