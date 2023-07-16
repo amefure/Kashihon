@@ -10,6 +10,14 @@
 		0B14444ABBC28A82459BA4EB /* Pods_Kashihon_KashihonUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6A7652E57593BCAE77F27451 /* Pods_Kashihon_KashihonUITests.framework */; };
 		122EA76F2A5FAB4F008B24C9 /* GoogleBooksAPIRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 122EA76E2A5FAB4F008B24C9 /* GoogleBooksAPIRepository.swift */; };
 		124E0BC02A618D9B00F97414 /* Book.swift in Sources */ = {isa = PBXBuildFile; fileRef = 124E0BBF2A618D9B00F97414 /* Book.swift */; };
+		124E0BC42A627DD000F97414 /* SearchBooksView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 124E0BC32A627DD000F97414 /* SearchBooksView.swift */; };
+		124E0BC72A6280E800F97414 /* ListBooksView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 124E0BC62A6280E800F97414 /* ListBooksView.swift */; };
+		124E0BC92A62814400F97414 /* RowBooksView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 124E0BC82A62814400F97414 /* RowBooksView.swift */; };
+		124E0BCD2A6284D800F97414 /* ValidationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 124E0BCC2A6284D800F97414 /* ValidationManager.swift */; };
+		124E0BCF2A62870500F97414 /* RelamLocalRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 124E0BCE2A62870500F97414 /* RelamLocalRepository.swift */; };
+		124E0BD22A638AEB00F97414 /* MyBookShelfView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 124E0BD12A638AEB00F97414 /* MyBookShelfView.swift */; };
+		124E0BD42A638CD000F97414 /* ExColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 124E0BD32A638CD000F97414 /* ExColor.swift */; };
+		124E0BD62A638DB100F97414 /* DeviceSizeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 124E0BD52A638DB100F97414 /* DeviceSizeViewModel.swift */; };
 		128F7E952A5EDE3F00FDF4CE /* KashihonApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 128F7E942A5EDE3F00FDF4CE /* KashihonApp.swift */; };
 		128F7E972A5EDE3F00FDF4CE /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 128F7E962A5EDE3F00FDF4CE /* ContentView.swift */; };
 		128F7E992A5EDE4000FDF4CE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 128F7E982A5EDE4000FDF4CE /* Assets.xcassets */; };
@@ -20,6 +28,10 @@
 		128F7EBF2A5EDFEC00FDF4CE /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 128F7EBE2A5EDFEC00FDF4CE /* GoogleService-Info.plist */; };
 		128F7EC12A5EE0DA00FDF4CE /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 128F7EC02A5EE0DA00FDF4CE /* README.md */; };
 		128F7EC42A5EE20A00FDF4CE /* AdMobView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 128F7EC32A5EE20A00FDF4CE /* AdMobView.swift */; };
+		12C7AE882A63983600696BF5 /* SettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12C7AE872A63983600696BF5 /* SettingView.swift */; };
+		12C7AE8B2A6398C700696BF5 /* ShareButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12C7AE8A2A6398C700696BF5 /* ShareButtonView.swift */; };
+		12C7AE8E2A63B6B000696BF5 /* DetailBookView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12C7AE8D2A63B6B000696BF5 /* DetailBookView.swift */; };
+		12C7AE902A63B99100696BF5 /* AvailableNavigationStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12C7AE8F2A63B99100696BF5 /* AvailableNavigationStack.swift */; };
 		6697F21FE95EB646D2B3582B /* Pods_Kashihon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2DC55E7D4E9E0A2161007E1D /* Pods_Kashihon.framework */; };
 		A1DF187CCE962CF77D35C8D6 /* Pods_KashihonTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A916253B4D4FD70C812DCCD1 /* Pods_KashihonTests.framework */; };
 /* End PBXBuildFile section */
@@ -45,6 +57,14 @@
 		039588BC7898CCB8936903F0 /* Pods-KashihonTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KashihonTests.release.xcconfig"; path = "Target Support Files/Pods-KashihonTests/Pods-KashihonTests.release.xcconfig"; sourceTree = "<group>"; };
 		122EA76E2A5FAB4F008B24C9 /* GoogleBooksAPIRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleBooksAPIRepository.swift; sourceTree = "<group>"; };
 		124E0BBF2A618D9B00F97414 /* Book.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Book.swift; sourceTree = "<group>"; };
+		124E0BC32A627DD000F97414 /* SearchBooksView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBooksView.swift; sourceTree = "<group>"; };
+		124E0BC62A6280E800F97414 /* ListBooksView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListBooksView.swift; sourceTree = "<group>"; };
+		124E0BC82A62814400F97414 /* RowBooksView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RowBooksView.swift; sourceTree = "<group>"; };
+		124E0BCC2A6284D800F97414 /* ValidationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidationManager.swift; sourceTree = "<group>"; };
+		124E0BCE2A62870500F97414 /* RelamLocalRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RelamLocalRepository.swift; sourceTree = "<group>"; };
+		124E0BD12A638AEB00F97414 /* MyBookShelfView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyBookShelfView.swift; sourceTree = "<group>"; };
+		124E0BD32A638CD000F97414 /* ExColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExColor.swift; sourceTree = "<group>"; };
+		124E0BD52A638DB100F97414 /* DeviceSizeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceSizeViewModel.swift; sourceTree = "<group>"; };
 		128F7E912A5EDE3F00FDF4CE /* Kashihon.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Kashihon.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		128F7E942A5EDE3F00FDF4CE /* KashihonApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KashihonApp.swift; sourceTree = "<group>"; };
 		128F7E962A5EDE3F00FDF4CE /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -59,6 +79,10 @@
 		128F7EC02A5EE0DA00FDF4CE /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = SOURCE_ROOT; };
 		128F7EC32A5EE20A00FDF4CE /* AdMobView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdMobView.swift; sourceTree = "<group>"; };
 		128F7EC52A5EE2B900FDF4CE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		12C7AE872A63983600696BF5 /* SettingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingView.swift; sourceTree = "<group>"; };
+		12C7AE8A2A6398C700696BF5 /* ShareButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareButtonView.swift; sourceTree = "<group>"; };
+		12C7AE8D2A63B6B000696BF5 /* DetailBookView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailBookView.swift; sourceTree = "<group>"; };
+		12C7AE8F2A63B99100696BF5 /* AvailableNavigationStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvailableNavigationStack.swift; sourceTree = "<group>"; };
 		2DC55E7D4E9E0A2161007E1D /* Pods_Kashihon.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Kashihon.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		36ADBDD3BE5BB5BFD151F736 /* Pods-Kashihon-KashihonUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Kashihon-KashihonUITests.release.xcconfig"; path = "Target Support Files/Pods-Kashihon-KashihonUITests/Pods-Kashihon-KashihonUITests.release.xcconfig"; sourceTree = "<group>"; };
 		6A7652E57593BCAE77F27451 /* Pods_Kashihon_KashihonUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Kashihon_KashihonUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -109,8 +133,61 @@
 			isa = PBXGroup;
 			children = (
 				122EA76E2A5FAB4F008B24C9 /* GoogleBooksAPIRepository.swift */,
+				124E0BCE2A62870500F97414 /* RelamLocalRepository.swift */,
 			);
 			path = Repository;
+			sourceTree = "<group>";
+		};
+		124E0BC12A627D9A00F97414 /* AdMob */ = {
+			isa = PBXGroup;
+			children = (
+				128F7EC32A5EE20A00FDF4CE /* AdMobView.swift */,
+			);
+			path = AdMob;
+			sourceTree = "<group>";
+		};
+		124E0BC22A627DAE00F97414 /* SearchBooksView */ = {
+			isa = PBXGroup;
+			children = (
+				124E0BC32A627DD000F97414 /* SearchBooksView.swift */,
+			);
+			path = SearchBooksView;
+			sourceTree = "<group>";
+		};
+		124E0BC52A6280CC00F97414 /* ViewComponent */ = {
+			isa = PBXGroup;
+			children = (
+				124E0BC62A6280E800F97414 /* ListBooksView.swift */,
+				124E0BC82A62814400F97414 /* RowBooksView.swift */,
+			);
+			path = ViewComponent;
+			sourceTree = "<group>";
+		};
+		124E0BCA2A62849000F97414 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		124E0BCB2A6284A700F97414 /* Utility&Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				124E0BCC2A6284D800F97414 /* ValidationManager.swift */,
+				124E0BD52A638DB100F97414 /* DeviceSizeViewModel.swift */,
+				124E0BD32A638CD000F97414 /* ExColor.swift */,
+				12C7AE8F2A63B99100696BF5 /* AvailableNavigationStack.swift */,
+			);
+			path = "Utility&Extensions";
+			sourceTree = "<group>";
+		};
+		124E0BD02A638AC900F97414 /* MyBookShelfView */ = {
+			isa = PBXGroup;
+			children = (
+				124E0BD12A638AEB00F97414 /* MyBookShelfView.swift */,
+				12C7AE8C2A63B67E00696BF5 /* DetailBookView */,
+			);
+			path = MyBookShelfView;
 			sourceTree = "<group>";
 		};
 		128F7E882A5EDE3F00FDF4CE = {
@@ -141,6 +218,8 @@
 				128F7EC52A5EE2B900FDF4CE /* Info.plist */,
 				128F7E942A5EDE3F00FDF4CE /* KashihonApp.swift */,
 				128F7E962A5EDE3F00FDF4CE /* ContentView.swift */,
+				124E0BCB2A6284A700F97414 /* Utility&Extensions */,
+				124E0BCA2A62849000F97414 /* ViewModels */,
 				122EA76D2A5FAA91008B24C9 /* Repository */,
 				122EA76B2A5FAA15008B24C9 /* Models */,
 				128F7EC22A5EE1E600FDF4CE /* Views */,
@@ -180,9 +259,30 @@
 		128F7EC22A5EE1E600FDF4CE /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				128F7EC32A5EE20A00FDF4CE /* AdMobView.swift */,
+				12C7AE892A6398B600696BF5 /* SettingView */,
+				124E0BD02A638AC900F97414 /* MyBookShelfView */,
+				124E0BC52A6280CC00F97414 /* ViewComponent */,
+				124E0BC22A627DAE00F97414 /* SearchBooksView */,
+				124E0BC12A627D9A00F97414 /* AdMob */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		12C7AE892A6398B600696BF5 /* SettingView */ = {
+			isa = PBXGroup;
+			children = (
+				12C7AE872A63983600696BF5 /* SettingView.swift */,
+				12C7AE8A2A6398C700696BF5 /* ShareButtonView.swift */,
+			);
+			path = SettingView;
+			sourceTree = "<group>";
+		};
+		12C7AE8C2A63B67E00696BF5 /* DetailBookView */ = {
+			isa = PBXGroup;
+			children = (
+				12C7AE8D2A63B6B000696BF5 /* DetailBookView.swift */,
+			);
+			path = DetailBookView;
 			sourceTree = "<group>";
 		};
 		9841E54E890C87A83647E3B6 /* Frameworks */ = {
@@ -485,10 +585,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				124E0BD42A638CD000F97414 /* ExColor.swift in Sources */,
+				124E0BC72A6280E800F97414 /* ListBooksView.swift in Sources */,
 				128F7EC42A5EE20A00FDF4CE /* AdMobView.swift in Sources */,
+				12C7AE8B2A6398C700696BF5 /* ShareButtonView.swift in Sources */,
+				12C7AE882A63983600696BF5 /* SettingView.swift in Sources */,
+				124E0BC42A627DD000F97414 /* SearchBooksView.swift in Sources */,
+				124E0BCF2A62870500F97414 /* RelamLocalRepository.swift in Sources */,
+				124E0BCD2A6284D800F97414 /* ValidationManager.swift in Sources */,
+				12C7AE8E2A63B6B000696BF5 /* DetailBookView.swift in Sources */,
 				128F7E972A5EDE3F00FDF4CE /* ContentView.swift in Sources */,
 				122EA76F2A5FAB4F008B24C9 /* GoogleBooksAPIRepository.swift in Sources */,
+				124E0BD22A638AEB00F97414 /* MyBookShelfView.swift in Sources */,
+				124E0BD62A638DB100F97414 /* DeviceSizeViewModel.swift in Sources */,
+				12C7AE902A63B99100696BF5 /* AvailableNavigationStack.swift in Sources */,
 				124E0BC02A618D9B00F97414 /* Book.swift in Sources */,
+				124E0BC92A62814400F97414 /* RowBooksView.swift in Sources */,
 				128F7E952A5EDE3F00FDF4CE /* KashihonApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -658,6 +770,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -689,6 +802,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
