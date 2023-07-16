@@ -9,22 +9,28 @@ import SwiftUI
 
 struct MyBookShelfView: View {
     private let relamLocalRepository = RelamLocalRepository()
+    private let deviceSizeViewModel = DeviceSizeViewModel()
+
+    private let imgVM = ImageFileManager()
 
     @State var books: [Book] = []
 
-    private let columns = Array(repeating: GridItem(.flexible(maximum: 130)), count: 3)
+    private let columns = Array(repeating: GridItem(.fixed(DeviceSizeViewModel().deviceWidth / 3 - 20)), count: 3)
 
     var body: some View {
         VStack {
             ScrollView {
                 LazyVGrid(columns: columns) {
                     ForEach(books) { book in
-                        if let url = book.secureThumbnailUrl {
-                            AsyncImage(url: url) { image in
-                                image.resizable()
-                            } placeholder: {
-                                ProgressView()
-                            }.shadow(color: .gray, radius: 3, x: 4, y: 4)
+                        if book.secureThumbnailUrl != nil {
+                            NavigationLink {
+                                DetailBookView(book: book)
+                            } label: {
+                                imgVM.loadImage(urlStr: book.secureThumbnailUrl!.absoluteString)
+                                    .resizable()
+                                    .shadow(color: .gray, radius: 3, x: 4, y: 4)
+                                    .frame(height: 165)
+                            }
                         } else {
                             NavigationLink {
                                 DetailBookView(book: book)
@@ -32,15 +38,16 @@ struct MyBookShelfView: View {
                                 VStack {
                                     Image("logo")
                                         .resizable()
-                                        .frame(maxHeight: 100)
+                                        .frame(width: 90, height: 90)
                                         .padding()
                                     Text("No Image...")
                                         .fontWeight(.bold)
                                         .foregroundColor(.gray)
                                 }
-
-                            }.background(.white)
-                                .shadow(color: .gray, radius: 3, x: 4, y: 4)
+                            }
+                            .background(.white)
+                            .shadow(color: .gray, radius: 3, x: 4, y: 4)
+                            .frame(height: 165)
                         }
                     }
                 }

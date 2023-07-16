@@ -41,4 +41,10 @@ class RelamLocalRepository {
 //            realm.add(book)
         }
     }
+
+    public func deleteAllBook() {
+        try! realm.write {
+            realm.deleteAll()
+        }
+    }
 }

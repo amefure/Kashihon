@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct RowBooksView: View {
+    private let imgVM = ImageFileManager()
     private let relamLocalRepository = RelamLocalRepository()
 
     public var book: Book
@@ -27,6 +28,9 @@ struct RowBooksView: View {
             Text(book.title)
             Text("\(book.pageCount)")
             Button {
+                if let url = book.secureThumbnailUrl {
+                    imgVM.savingImage(urlStr: book.secureThumbnailUrl!.absoluteString)
+                }
                 relamLocalRepository.createBook(book)
             } label: {
                 Image(systemName: "plus")

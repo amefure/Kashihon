@@ -8,10 +8,15 @@
 import SwiftUI
 
 struct SettingView: View {
+    
+    private let realm = RelamLocalRepository()
+    
     var body: some View {
         List {
             Section(header: Text("カシホン"), footer: Text("")) {
-                Button {} label: {
+                Button {
+                    realm.deleteAllBook()
+                } label: {
                     HStack {
                         Image(systemName: "hand.thumbsup")
                         Text("本棚をリセットする")

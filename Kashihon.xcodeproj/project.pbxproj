@@ -32,6 +32,7 @@
 		12C7AE8B2A6398C700696BF5 /* ShareButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12C7AE8A2A6398C700696BF5 /* ShareButtonView.swift */; };
 		12C7AE8E2A63B6B000696BF5 /* DetailBookView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12C7AE8D2A63B6B000696BF5 /* DetailBookView.swift */; };
 		12C7AE902A63B99100696BF5 /* AvailableNavigationStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12C7AE8F2A63B99100696BF5 /* AvailableNavigationStack.swift */; };
+		12C7AE922A641FF100696BF5 /* ImageFileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12C7AE912A641FF100696BF5 /* ImageFileManager.swift */; };
 		6697F21FE95EB646D2B3582B /* Pods_Kashihon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2DC55E7D4E9E0A2161007E1D /* Pods_Kashihon.framework */; };
 		A1DF187CCE962CF77D35C8D6 /* Pods_KashihonTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A916253B4D4FD70C812DCCD1 /* Pods_KashihonTests.framework */; };
 /* End PBXBuildFile section */
@@ -83,6 +84,7 @@
 		12C7AE8A2A6398C700696BF5 /* ShareButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareButtonView.swift; sourceTree = "<group>"; };
 		12C7AE8D2A63B6B000696BF5 /* DetailBookView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailBookView.swift; sourceTree = "<group>"; };
 		12C7AE8F2A63B99100696BF5 /* AvailableNavigationStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvailableNavigationStack.swift; sourceTree = "<group>"; };
+		12C7AE912A641FF100696BF5 /* ImageFileManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageFileManager.swift; sourceTree = "<group>"; };
 		2DC55E7D4E9E0A2161007E1D /* Pods_Kashihon.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Kashihon.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		36ADBDD3BE5BB5BFD151F736 /* Pods-Kashihon-KashihonUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Kashihon-KashihonUITests.release.xcconfig"; path = "Target Support Files/Pods-Kashihon-KashihonUITests/Pods-Kashihon-KashihonUITests.release.xcconfig"; sourceTree = "<group>"; };
 		6A7652E57593BCAE77F27451 /* Pods_Kashihon_KashihonUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Kashihon_KashihonUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -177,6 +179,7 @@
 				124E0BD52A638DB100F97414 /* DeviceSizeViewModel.swift */,
 				124E0BD32A638CD000F97414 /* ExColor.swift */,
 				12C7AE8F2A63B99100696BF5 /* AvailableNavigationStack.swift */,
+				12C7AE912A641FF100696BF5 /* ImageFileManager.swift */,
 			);
 			path = "Utility&Extensions";
 			sourceTree = "<group>";
@@ -592,6 +595,7 @@
 				12C7AE882A63983600696BF5 /* SettingView.swift in Sources */,
 				124E0BC42A627DD000F97414 /* SearchBooksView.swift in Sources */,
 				124E0BCF2A62870500F97414 /* RelamLocalRepository.swift in Sources */,
+				12C7AE922A641FF100696BF5 /* ImageFileManager.swift in Sources */,
 				124E0BCD2A6284D800F97414 /* ValidationManager.swift in Sources */,
 				12C7AE8E2A63B6B000696BF5 /* DetailBookView.swift in Sources */,
 				128F7E972A5EDE3F00FDF4CE /* ContentView.swift in Sources */,
