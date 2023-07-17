@@ -12,8 +12,16 @@ struct ListBooksView: View {
 
     var body: some View {
         VStack {
-            List(books) { book in
-                RowBooksView(book: book)
+            if #available(iOS 16.0, *) {
+                List(books) { book in
+                    RowBooksView(book: book)
+                }.listStyle(.grouped)
+                    .scrollContentBackground(.hidden)
+                    .background(.white)
+            } else {
+                List(books) { book in
+                    RowBooksView(book: book)
+                }.listStyle(.grouped)
             }
         }
     }

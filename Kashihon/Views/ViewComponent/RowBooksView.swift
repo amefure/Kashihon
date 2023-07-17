@@ -28,7 +28,7 @@ struct RowBooksView: View {
             Text(book.title)
             Text("\(book.pageCount)")
             Button {
-                if let url = book.secureThumbnailUrl {
+                if book.secureThumbnailUrl != nil {
                     imgVM.savingImage(urlStr: book.secureThumbnailUrl!.absoluteString)
                 }
                 relamLocalRepository.createBook(book)

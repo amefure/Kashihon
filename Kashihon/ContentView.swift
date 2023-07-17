@@ -10,6 +10,10 @@ import SwiftUI
 struct ContentView: View {
     @State var selectTag: Int = 1
 
+    init() {
+        UITableView.appearance().backgroundColor = .clear
+    }
+
     var body: some View {
         AvailableNavigationStack {
             VStack {

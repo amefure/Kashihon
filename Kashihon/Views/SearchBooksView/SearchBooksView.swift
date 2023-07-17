@@ -14,6 +14,12 @@ struct SearchBooksView: View {
     var body: some View {
         VStack {
             TextField("検索キーワードを入力してね", text: $keyword)
+                .font(.system(size: 20, weight: .bold))
+                .padding()
+                .background(Color.thema4)
+                .foregroundColor(.white)
+                .cornerRadius(20)
+
             Button {
                 if !keyword.isEmpty {
                     GoogleBooksAPIRepository().getAPI(keyword: keyword) { results in
@@ -22,10 +28,16 @@ struct SearchBooksView: View {
                 }
             } label: {
                 Text("検索")
+                    .fontWeight(.bold)
+                    .frame(width: 100)
+                    .padding()
+                    .background(Color.thema2)
+                    .foregroundColor(.white)
+                    .cornerRadius(20)
             }
 
             ListBooksView(books: books)
-        }
+        }.padding()
     }
 }
 

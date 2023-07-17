@@ -36,7 +36,7 @@ class ImageFileManager {
             guard let image = UIImage(data: data) else { return }
             guard let imageData = image.jpegData(compressionQuality: 1.0) else { return }
 
-            let name = urlStr.replacingOccurrences(of: "/", with: "=") // 変換
+            let name = urlStr.replacingOccurrences(of: "/", with: "!") // 変換
             try imageData.write(to: docURL("\(name).jpg")!)
             print("画像を保存できました")
         } catch {
@@ -46,8 +46,7 @@ class ImageFileManager {
     }
 
     public func loadImage(urlStr: String) -> Image {
-        print(urlStr)
-        let name = urlStr.replacingOccurrences(of: "/", with: "=") // 変換
+        let name = urlStr.replacingOccurrences(of: "/", with: "!") // 変換
         let path = docURL("\(name).jpg")!.path
         if FileManager.default.fileExists(atPath: path) {
             if let image = UIImage(contentsOfFile: path) {

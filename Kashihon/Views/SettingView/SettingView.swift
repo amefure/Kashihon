@@ -8,9 +8,8 @@
 import SwiftUI
 
 struct SettingView: View {
-    
     private let realm = RelamLocalRepository()
-    
+
     var body: some View {
         List {
             Section(header: Text("カシホン"), footer: Text("")) {

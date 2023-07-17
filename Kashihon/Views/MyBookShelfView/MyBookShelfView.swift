@@ -53,7 +53,6 @@ struct MyBookShelfView: View {
                 }
             }
         }
-//        ListBooksView(books: books)
         .onAppear {
             let result = relamLocalRepository.readAllBooks()
             books = Array(result)
