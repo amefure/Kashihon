@@ -1,26 +1,24 @@
 //
-//  MyBookShelfView.swift
+//  OnLoanListView.swift
 //  Kashihon
 //
-//  Created by t&a on 2023/07/16.
+//  Created by t&a on 2023/07/18.
 //
 
 import SwiftUI
 
-struct MyBookShelfView: View {
-    private let deviceSizeViewModel = DeviceSizeViewModel()
-
+struct OnLoanListView: View {
+    
     private let imgVM = ImageFileManager()
+    private let columns = Array(repeating: GridItem(.fixed(DeviceSizeViewModel().deviceWidth / 3 - 20)), count: 3)
 
     @ObservedObject var localRepositoryVM = LocalRepositoryViewModel.shared
-
-    private let columns = Array(repeating: GridItem(.fixed(DeviceSizeViewModel().deviceWidth / 3 - 20)), count: 3)
 
     var body: some View {
         VStack {
             ScrollView {
                 LazyVGrid(columns: columns) {
-                    ForEach(localRepositoryVM.books) { book in
+                    ForEach(localRepositoryVM.books.filter { $0.OnLoan == true }) { book in
                         if book.secureThumbnailUrl != nil {
                             NavigationLink {
                                 DetailBookView(book: book)
@@ -58,10 +56,9 @@ struct MyBookShelfView: View {
                     .resizable()
                     .frame(width: 40, height: 40)
                     .padding()
+            }.onAppear {
+                localRepositoryVM.readAllBooks()
             }
-        }
-        .onAppear {
-            localRepositoryVM.readAllBooks()
         }
     }
 }

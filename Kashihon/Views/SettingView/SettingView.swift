@@ -8,13 +8,14 @@
 import SwiftUI
 
 struct SettingView: View {
-    private let realm = RelamLocalRepository()
+    
+    @ObservedObject var localRepositoryVM = LocalRepositoryViewModel.shared
 
     var body: some View {
         List {
             Section(header: Text("カシホン"), footer: Text("")) {
                 Button {
-                    realm.deleteAllBook()
+                    localRepositoryVM.deleteAllBook()
                 } label: {
                     HStack {
                         Image(systemName: "hand.thumbsup")

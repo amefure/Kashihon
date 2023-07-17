@@ -9,10 +9,9 @@ import SwiftUI
 
 struct DetailBookView: View {
     public let book: Book
-    private let relamLocalRepository = RelamLocalRepository()
     private let imgVM = ImageFileManager()
     private let deviceSizeViewModel = DeviceSizeViewModel()
-
+    @ObservedObject var localRepositoryVM = LocalRepositoryViewModel.shared
     var body: some View {
         VStack {
             HStack {
@@ -40,7 +39,8 @@ struct DetailBookView: View {
                 Spacer()
                 VStack(spacing: 0) {
                     Button {
-                        relamLocalRepository.updateBookOnLoan(book)
+                        localRepositoryVM.updateBookOnLoan(book)
+                        localRepositoryVM.readAllBooks()
                     } label: {
                         HStack {
                             Text(book.OnLoan ? "貸出中" : "貸出する")

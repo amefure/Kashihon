@@ -27,33 +27,26 @@ struct ContentView: View {
                 Divider()
 
                 TabView(selection: $selectTag) {
-                    SearchBooksView().tag(1)
+                    OnLoanListView().tag(1)
 
-                    Text("LoanList").tag(2)
+                    MyBookShelfView().tag(2)
 
-                    MyBookShelfView().tag(3)
-
-                    SettingView().tag(4)
+                    SettingView().tag(3)
                 }.tabViewStyle(.page)
 
                 HStack {
                     Button {
                         selectTag = 1
                     } label: {
-                        Image(systemName: "magnifyingglass")
+                        Image(systemName: "book")
                     }
                     Button {
                         selectTag = 2
                     } label: {
-                        Image(systemName: "book")
-                    }
-                    Button {
-                        selectTag = 3
-                    } label: {
                         Image(systemName: "books.vertical")
                     }
                     Button {
-                        selectTag = 4
+                        selectTag = 3
                     } label: {
                         Image(systemName: "gearshape")
                     }

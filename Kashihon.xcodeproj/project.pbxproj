@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		0B14444ABBC28A82459BA4EB /* Pods_Kashihon_KashihonUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6A7652E57593BCAE77F27451 /* Pods_Kashihon_KashihonUITests.framework */; };
 		122EA76F2A5FAB4F008B24C9 /* GoogleBooksAPIRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 122EA76E2A5FAB4F008B24C9 /* GoogleBooksAPIRepository.swift */; };
+		12324B1C2A65F9E400155C5F /* OnLoanListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12324B1B2A65F9E400155C5F /* OnLoanListView.swift */; };
+		12324B1E2A65FC5100155C5F /* LocalRepositoryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12324B1D2A65FC5100155C5F /* LocalRepositoryViewModel.swift */; };
 		124E0BC02A618D9B00F97414 /* Book.swift in Sources */ = {isa = PBXBuildFile; fileRef = 124E0BBF2A618D9B00F97414 /* Book.swift */; };
 		124E0BC42A627DD000F97414 /* SearchBooksView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 124E0BC32A627DD000F97414 /* SearchBooksView.swift */; };
 		124E0BC72A6280E800F97414 /* ListBooksView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 124E0BC62A6280E800F97414 /* ListBooksView.swift */; };
@@ -57,6 +59,8 @@
 /* Begin PBXFileReference section */
 		039588BC7898CCB8936903F0 /* Pods-KashihonTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KashihonTests.release.xcconfig"; path = "Target Support Files/Pods-KashihonTests/Pods-KashihonTests.release.xcconfig"; sourceTree = "<group>"; };
 		122EA76E2A5FAB4F008B24C9 /* GoogleBooksAPIRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleBooksAPIRepository.swift; sourceTree = "<group>"; };
+		12324B1B2A65F9E400155C5F /* OnLoanListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnLoanListView.swift; sourceTree = "<group>"; };
+		12324B1D2A65FC5100155C5F /* LocalRepositoryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalRepositoryViewModel.swift; sourceTree = "<group>"; };
 		124E0BBF2A618D9B00F97414 /* Book.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Book.swift; sourceTree = "<group>"; };
 		124E0BC32A627DD000F97414 /* SearchBooksView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBooksView.swift; sourceTree = "<group>"; };
 		124E0BC62A6280E800F97414 /* ListBooksView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListBooksView.swift; sourceTree = "<group>"; };
@@ -140,6 +144,14 @@
 			path = Repository;
 			sourceTree = "<group>";
 		};
+		12324B1A2A65F9C500155C5F /* OnLoanListView */ = {
+			isa = PBXGroup;
+			children = (
+				12324B1B2A65F9E400155C5F /* OnLoanListView.swift */,
+			);
+			path = OnLoanListView;
+			sourceTree = "<group>";
+		};
 		124E0BC12A627D9A00F97414 /* AdMob */ = {
 			isa = PBXGroup;
 			children = (
@@ -168,6 +180,7 @@
 		124E0BCA2A62849000F97414 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				12324B1D2A65FC5100155C5F /* LocalRepositoryViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -262,10 +275,11 @@
 		128F7EC22A5EE1E600FDF4CE /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				12324B1A2A65F9C500155C5F /* OnLoanListView */,
 				12C7AE892A6398B600696BF5 /* SettingView */,
 				124E0BD02A638AC900F97414 /* MyBookShelfView */,
-				124E0BC52A6280CC00F97414 /* ViewComponent */,
 				124E0BC22A627DAE00F97414 /* SearchBooksView */,
+				124E0BC52A6280CC00F97414 /* ViewComponent */,
 				124E0BC12A627D9A00F97414 /* AdMob */,
 			);
 			path = Views;
@@ -604,6 +618,8 @@
 				124E0BD62A638DB100F97414 /* DeviceSizeViewModel.swift in Sources */,
 				12C7AE902A63B99100696BF5 /* AvailableNavigationStack.swift in Sources */,
 				124E0BC02A618D9B00F97414 /* Book.swift in Sources */,
+				12324B1E2A65FC5100155C5F /* LocalRepositoryViewModel.swift in Sources */,
+				12324B1C2A65F9E400155C5F /* OnLoanListView.swift in Sources */,
 				124E0BC92A62814400F97414 /* RowBooksView.swift in Sources */,
 				128F7E952A5EDE3F00FDF4CE /* KashihonApp.swift in Sources */,
 			);
