@@ -9,7 +9,7 @@ import SwiftUI
 
 struct DetailBookView: View {
     public let book: Book
-
+    private let relamLocalRepository = RelamLocalRepository()
     private let imgVM = ImageFileManager()
     private let deviceSizeViewModel = DeviceSizeViewModel()
 
@@ -39,6 +39,19 @@ struct DetailBookView: View {
                 }
                 Spacer()
                 VStack(spacing: 0) {
+                    Button {
+                        relamLocalRepository.updateBookOnLoan(book)
+                    } label: {
+                        HStack {
+                            Text(book.OnLoan ? "貸出中" : "貸出する")
+                                .fontWeight(.bold)
+                            Image(systemName: "hand.tap")
+                        }.padding()
+                            .frame(width: deviceSizeViewModel.deviceWidth / 2)
+                            .background(Color.thema1)
+                            .cornerRadius(20)
+                    }
+
                     Text(book.authors[0])
                         .padding()
                         .frame(width: deviceSizeViewModel.deviceWidth / 2)

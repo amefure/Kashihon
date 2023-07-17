@@ -27,7 +27,8 @@ class RelamLocalRepository {
 
     public func updateBookOnLoan(_ book: Book) {
         try! realm.write {
-            realm.add(book)
+            book.OnLoan.toggle()
+            realm.add(book, update: .modified)
         }
     }
 
