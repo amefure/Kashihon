@@ -58,13 +58,14 @@ extension LocalRepositoryViewModel {
 
     public func createLoanHistory(_ book: Book) {
         let history = LoanHistory()
-        history.id = book.id
         history.title = book.title
         history.loanName = book.loanName
         history.loanDate = book.loanDate
         history.returnDate = Date()
         history.loanMemo = book.loanMemo
-        history.localThumbnailPath = history.localThumbnailPath
+        if book.secureThumbnailUrl != nil {
+            history.localThumbnailPath = book.secureThumbnailUrl!.absoluteString
+        }
         relamLocalRepository.createLoanHistory(history)
     }
 

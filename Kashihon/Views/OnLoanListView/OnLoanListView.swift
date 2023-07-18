@@ -51,14 +51,14 @@ struct OnLoanListView: View {
                             }
                         }
                     }
-                }.swipeActions(edge: .trailing) {
-                    Button(role: .none) {
-                        localRepositoryVM.updateBookReturn(book: book)
+                }.swipeActions(edge: .trailing, allowsFullSwipe: false) {
+                    Button {
                         localRepositoryVM.createLoanHistory(book)
+                        localRepositoryVM.updateBookReturn(book: book)
                         localRepositoryVM.readAllBooks()
                     } label: {
                         Text("返却")
-                    }.background(Color.thema1)
+                    }.tint(Color.thema3)
                 }
             }
             NavigationLink {

@@ -27,7 +27,6 @@ class Book: Object, Identifiable {
     @Persisted var OnLoan: Bool = false // 貸出中フラグ
     @Persisted var loanMemo: String // 貸出した際のMemo
     @Persisted var bookMemo: String // 本自体のメモ
-    @Persisted var localThumbnailPath: String // ローカルに保存したサムネイルパス
 
     /// サムネイルURLをセキュアなURLに変換
     public var secureThumbnailUrl: URL? {

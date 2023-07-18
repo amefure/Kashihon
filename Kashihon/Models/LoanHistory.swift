@@ -9,7 +9,7 @@ import RealmSwift
 import UIKit
 
 class LoanHistory: Object, Identifiable {
-    @Persisted(primaryKey: true) var id: String // ID
+    @Persisted(primaryKey: true) var id: ObjectId // ID
     @Persisted var title: String // タイトル
     @Persisted var loanName: String // 貸出している人
     @Persisted var loanDate: Date // 貸出した日付

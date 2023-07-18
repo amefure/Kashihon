@@ -15,6 +15,8 @@ struct HistoryLoanBookView: View {
             ForEach(localRepositoryVM.historys) { history in
                 Text(history.title)
             }
+        }.onAppear {
+            localRepositoryVM.readAllLoanHistorys()
         }
     }
 }
