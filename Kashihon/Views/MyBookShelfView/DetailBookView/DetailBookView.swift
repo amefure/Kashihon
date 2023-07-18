@@ -25,18 +25,7 @@ struct DetailBookView: View {
                         .frame(width: 130, height: 165)
 
                 } else {
-                    VStack {
-                        Image("logo")
-                            .resizable()
-                            .frame(width: 90, height: 90)
-                            .padding()
-                        Text("No Image...")
-                            .fontWeight(.bold)
-                            .foregroundColor(.gray)
-                    }
-                    .background(.white)
-                    .shadow(color: .gray, radius: 3, x: 4, y: 4)
-                    .frame(width: 130, height: 165)
+                    NoImageView(logoSize: 90, thumbnailSize: 130)
                 }
                 Spacer()
                 VStack(spacing: 0) {

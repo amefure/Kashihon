@@ -34,21 +34,8 @@ struct MyBookShelfView: View {
                             NavigationLink {
                                 DetailBookView(book: book)
                             } label: {
-                                VStack(spacing: 0) {
-                                    Image("logo")
-                                        .resizable()
-                                        .frame(width: 60, height: 60)
-                                        .padding()
-                                    Text("No Image...")
-                                        .fontWeight(.bold)
-                                        .font(.caption)
-                                        .foregroundColor(.gray)
-                                        .padding(.bottom)
-                                }
-                            }.background(.white)
-                                .frame(height: 120)
-                                .clipped()
-                                .shadow(color: .gray, radius: 3, x: 4, y: 4)
+                                NoImageView(logoSize: 70, thumbnailSize: 110)
+                            }
                         }
                     }
                 }

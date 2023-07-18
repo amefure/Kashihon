@@ -8,13 +8,12 @@
 import SwiftUI
 
 struct RowRightBookInfoView: View {
-    
     private let deviceSizeViewModel = DeviceSizeViewModel()
     private let imgManager = ImageFileManager()
     @ObservedObject var localRepositoryVM = LocalRepositoryViewModel.shared
-    
+
     public var book: Book
-    
+
     var body: some View {
         VStack {
             Spacer()
