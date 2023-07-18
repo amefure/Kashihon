@@ -14,10 +14,10 @@ struct MyBookShelfView: View {
 
     @ObservedObject var localRepositoryVM = LocalRepositoryViewModel.shared
 
-    private let columns = Array(repeating: GridItem(.fixed(DeviceSizeViewModel().deviceWidth / 3 - 20)), count: 3)
+    private let columns = Array(repeating: GridItem(.fixed(DeviceSizeViewModel().deviceWidth / 4 - 20)), count: 4)
 
     var body: some View {
-        VStack {
+        VStack(spacing: 0) {
             ScrollView {
                 LazyVGrid(columns: columns) {
                     ForEach(localRepositoryVM.books) { book in
@@ -28,7 +28,7 @@ struct MyBookShelfView: View {
                                 imgVM.loadImage(urlStr: book.secureThumbnailUrl!.absoluteString)
                                     .resizable()
                                     .shadow(color: .gray, radius: 3, x: 4, y: 4)
-                                    .frame(height: 165)
+                                    .frame(height: 120)
                             }
                         } else {
                             NavigationLink {
@@ -37,7 +37,7 @@ struct MyBookShelfView: View {
                                 VStack {
                                     Image("logo")
                                         .resizable()
-                                        .frame(width: 90, height: 90)
+                                        .frame(width: 50, height: 50)
                                         .padding()
                                     Text("No Image...")
                                         .fontWeight(.bold)
@@ -46,20 +46,23 @@ struct MyBookShelfView: View {
                             }
                             .background(.white)
                             .shadow(color: .gray, radius: 3, x: 4, y: 4)
-                            .frame(height: 165)
+                            .frame(height: 120)
                         }
                     }
                 }
-            }
+            } // ScrollView
+
             NavigationLink {
                 SearchBooksView()
             } label: {
                 Image(systemName: "magnifyingglass")
                     .padding()
-                    .frame(width: 40, height: 40)
+                    .foregroundColor(.white)
+                    .frame(width: DeviceSizeViewModel().deviceWidth - 40)
                     .background(Color.thema4)
+                    .cornerRadius(20)
             }
-        }
+        } // VStack
         .onAppear {
             localRepositoryVM.readAllBooks()
         }

@@ -8,6 +8,14 @@
 import UIKit
 
 class ValidationManager {
+    public func validationText(_ text: String) -> Bool {
+        if text.isEmpty {
+            return false
+        } else {
+            return true
+        }
+    }
+
     public func validationUrl(_ urlStr: String) -> Bool {
         guard let encurl = urlStr.addingPercentEncoding(withAllowedCharacters: NSCharacterSet.urlQueryAllowed) else {
             return false

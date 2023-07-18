@@ -16,23 +16,26 @@ struct ContentView: View {
 
     var body: some View {
         AvailableNavigationStack {
-            VStack {
+            VStack(spacing: 0) {
                 HStack {
                     Spacer()
                     Image("logo-name")
                         .resizable()
                         .frame(width: 130, height: 40)
                     Spacer()
-                }
+                }.padding(.bottom, 10)
+
                 Divider()
+                    .padding(.bottom, 10)
 
-                TabView(selection: $selectTag) {
-                    OnLoanListView().tag(1)
+                if selectTag == 1 {
+                    OnLoanListView()
 
-                    MyBookShelfView().tag(2)
-
-                    SettingView().tag(3)
-                }.tabViewStyle(.page)
+                } else if selectTag == 2 {
+                    MyBookShelfView()
+                } else {
+                    SettingView()
+                }
 
                 HStack {
                     Button {

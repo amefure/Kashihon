@@ -13,7 +13,7 @@ struct SearchBooksView: View {
 
     var body: some View {
         VStack {
-            TextField("検索キーワードを入力してね(タイトル/著者/ISBN...)", text: $keyword)
+            TextField("タイトル/著者/ISBN...で検索", text: $keyword)
                 .font(.system(size: 20, weight: .bold))
                 .padding()
                 .background(Color.thema4)
@@ -36,7 +36,9 @@ struct SearchBooksView: View {
                     .cornerRadius(20)
             }
 
-            ListBooksView(books: books)
+            AvailableListStack(books: books) { book in
+                RowBooksView(book: book)
+            }
         }.padding()
     }
 }
