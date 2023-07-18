@@ -13,6 +13,7 @@ class LocalRepositoryViewModel: ObservableObject {
     private let relamLocalRepository = RelamLocalRepository()
 
     @Published var books: [Book] = []
+    @Published var historys: [LoanHistory] = []
 
     // MARK: - Create
 
@@ -33,6 +34,10 @@ class LocalRepositoryViewModel: ObservableObject {
         relamLocalRepository.updateBookOnLoan(name: name, memo: memo, date: date, book: book)
     }
 
+    public func updateBookReturn(book: Book) {
+        relamLocalRepository.updateBookOnLoan(name: "", memo: "", date: Date(), book: book)
+    }
+
     public func updateBookMemo(memo: String, book: Book) {
         relamLocalRepository.updateBookMemo(memo: memo, book: book)
     }
@@ -45,5 +50,26 @@ class LocalRepositoryViewModel: ObservableObject {
 
     public func deleteAllBook() {
         relamLocalRepository.deleteAllBook()
+    }
+}
+
+extension LocalRepositoryViewModel {
+    // MARK: - Create
+
+    public func createLoanHistory(_ book: Book) {
+        let history = LoanHistory()
+        history.id = book.id
+        history.title = book.title
+        history.loanName = book.loanName
+        history.loanDate = book.loanDate
+        history.returnDate = Date()
+        history.loanMemo = book.loanMemo
+        history.localThumbnailPath = history.localThumbnailPath
+        relamLocalRepository.createLoanHistory(history)
+    }
+
+    public func readAllLoanHistorys() {
+        let result = relamLocalRepository.readAllLoanHistorys()
+        historys = Array(result)
     }
 }

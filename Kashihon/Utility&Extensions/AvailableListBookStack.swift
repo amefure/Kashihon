@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct AvailableListStack<Content: View>: View {
+struct AvailableListBookStack<Content: View>: View {
     var content: (Book) -> Content
     var books: [Book]
 
@@ -20,15 +20,13 @@ struct AvailableListStack<Content: View>: View {
         if #available(iOS 16.0, *) {
             List(books) { book in
                 self.content(book)
-            }
-            .listStyle(.grouped)
-            .scrollContentBackground(.hidden)
-            .background(Color.white)
+            }.listStyle(.grouped)
+                .scrollContentBackground(.hidden)
+                .background(Color.white)
         } else {
             List(books) { book in
                 content(book)
-            }
-            .listStyle(.grouped)
+            }.listStyle(.grouped)
         }
     }
 }

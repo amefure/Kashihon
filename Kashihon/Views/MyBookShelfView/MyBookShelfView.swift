@@ -55,13 +55,14 @@ struct MyBookShelfView: View {
             NavigationLink {
                 SearchBooksView()
             } label: {
-                Image(systemName: "magnifyingglass")
+                Text("本を検索して本棚に追加する")
+                    .fontWeight(.bold)
                     .padding()
                     .foregroundColor(.white)
                     .frame(width: DeviceSizeViewModel().deviceWidth - 40)
                     .background(Color.thema4)
                     .cornerRadius(20)
-            }
+            }.shadow(color: .gray, radius: 3, x: 4, y: 4)
         } // VStack
         .onAppear {
             localRepositoryVM.readAllBooks()

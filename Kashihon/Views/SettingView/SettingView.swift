@@ -11,7 +11,7 @@ struct SettingView: View {
     @ObservedObject var localRepositoryVM = LocalRepositoryViewModel.shared
 
     var body: some View {
-        List {
+        AvailableListPlaneStack {
             Section(header: Text("カシホン"), footer: Text("")) {
                 Button {
                     localRepositoryVM.deleteAllBook()
@@ -45,8 +45,6 @@ struct SettingView: View {
                     }
                 })
             }
-        }
-        .listStyle(GroupedListStyle())
-        .foregroundColor(.gray)
+        }.foregroundColor(.gray)
     }
 }

@@ -13,8 +13,8 @@ struct OnLoanListView: View {
     @ObservedObject var localRepositoryVM = LocalRepositoryViewModel.shared
 
     var body: some View {
-        VStack {
-            AvailableListStack(books: localRepositoryVM.books.filter { $0.OnLoan == true }) { book in
+        VStack(spacing: 0) {
+            AvailableListBookStack(books: localRepositoryVM.books.filter { $0.OnLoan == true }) { book in
                 NavigationLink {
                     DetailBookView(book: book)
                 } label: {
@@ -23,7 +23,7 @@ struct OnLoanListView: View {
                             imgVM.loadImage(urlStr: book.secureThumbnailUrl!.absoluteString)
                                 .resizable()
                                 .shadow(color: .gray, radius: 3, x: 4, y: 4)
-                                .frame(width: 80, height: 60)
+                                .frame(width: 60, height: 80)
 
                         } else {
                             VStack {
@@ -36,7 +36,7 @@ struct OnLoanListView: View {
                                     .foregroundColor(.gray)
                             }.background(.white)
                                 .shadow(color: .gray, radius: 3, x: 4, y: 4)
-                                .frame(height: 80)
+                                .frame(width: 60, height: 80)
                         }
                         VStack {
                             HStack {
@@ -61,8 +61,29 @@ struct OnLoanListView: View {
                             }
                         }
                     }
+                }.swipeActions(edge: .trailing) {
+                    Button(role: .none) {
+                        localRepositoryVM.updateBookReturn(book: book)
+                        localRepositoryVM.createLoanHistory(book)
+                        localRepositoryVM.readAllBooks()
+                    } label: {
+                        Text("返却")
+                    }.background(Color.thema1)
                 }
-            }.listStyle(.grouped)
+            }
+            NavigationLink {
+                HistoryLoanBookView()
+            } label: {
+                Text("今までの貸出履歴")
+                    .fontWeight(.bold)
+                    .padding()
+                    .foregroundColor(.white)
+                    .frame(width: DeviceSizeViewModel().deviceWidth - 40)
+                    .background(Color.thema4)
+                    .cornerRadius(20)
+            }.shadow(color: .gray, radius: 3, x: 4, y: 4)
+        }.onAppear {
+            localRepositoryVM.readAllBooks()
         }
     }
 }

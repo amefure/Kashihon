@@ -83,3 +83,18 @@ class RelamLocalRepository {
         }
     }
 }
+
+extension RelamLocalRepository {
+    // MARK: - Create
+
+    public func createLoanHistory(_ loanHistory: LoanHistory) {
+        try! realm.write {
+            realm.add(loanHistory)
+        }
+    }
+
+    public func readAllLoanHistorys() -> Results<LoanHistory> {
+        let historys = realm.objects(LoanHistory.self)
+        return historys
+    }
+}

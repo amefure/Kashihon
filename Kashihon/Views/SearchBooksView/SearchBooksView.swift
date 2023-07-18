@@ -36,7 +36,7 @@ struct SearchBooksView: View {
                     .cornerRadius(20)
             }
 
-            AvailableListStack(books: books) { book in
+            AvailableListBookStack(books: books) { book in
                 RowBooksView(book: book)
             }
         }.padding()
