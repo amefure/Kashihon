@@ -14,6 +14,8 @@ struct RowRightBookInfoView: View {
 
     public var book: Book
 
+    @State var isClick: Bool = false
+
     var body: some View {
         VStack {
             Spacer()
@@ -42,18 +44,25 @@ struct RowRightBookInfoView: View {
                 Spacer()
 
                 Button {
+                    isClick = true
                     if book.secureThumbnailUrl != nil {
                         imgManager.savingImage(urlStr: book.secureThumbnailUrl!.absoluteString)
                     }
                     localRepositoryVM.createBook(book)
                 } label: {
-                    Text("追加")
+                    Text(isClick ? "済み" : "追加")
                         .fontWeight(.bold)
                         .padding(8)
-                        .foregroundColor(.white)
+                        .foregroundColor(isClick ? .white : Color.thema2)
                         .frame(width: 70)
-                        .background(Color.thema1)
+                        .background(isClick ? Color.thema2 : .clear)
                         .cornerRadius(20)
+                        .overlay {
+                            if !isClick {
+                                RoundedRectangle(cornerRadius: 20)
+                                    .stroke(Color.thema2, lineWidth: 3)
+                            }
+                        }.disabled(isClick)
                 }
 
                 Spacer()
