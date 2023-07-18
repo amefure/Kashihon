@@ -23,20 +23,23 @@ struct OnLoanListView: View {
                             imgVM.loadImage(urlStr: book.secureThumbnailUrl!.absoluteString)
                                 .resizable()
                                 .shadow(color: .gray, radius: 3, x: 4, y: 4)
-                                .frame(width: 60, height: 80)
+                                .frame(width: 80, height: 100)
 
                         } else {
                             VStack {
                                 Image("logo")
                                     .resizable()
-                                    .frame(width: 30, height: 30)
+                                    .frame(width: 60, height: 60)
                                     .padding()
                                 Text("No Image...")
                                     .fontWeight(.bold)
+                                    .font(.caption)
                                     .foregroundColor(.gray)
+                                    .padding(.bottom)
                             }.background(.white)
+                                .frame(width: 80, height: 100)
+                                .clipped()
                                 .shadow(color: .gray, radius: 3, x: 4, y: 4)
-                                .frame(width: 60, height: 80)
                         }
                         VStack {
                             HStack {

@@ -19,6 +19,8 @@
 		12324B2F2A66BDD600155C5F /* HistoryLoanBookView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12324B2E2A66BDD600155C5F /* HistoryLoanBookView.swift */; };
 		12324B322A66C12100155C5F /* TabIconBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12324B312A66C12100155C5F /* TabIconBarView.swift */; };
 		12324B342A66C1B400155C5F /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12324B332A66C1B400155C5F /* HeaderView.swift */; };
+		12324B362A66D43A00155C5F /* RowRightBookInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12324B352A66D43A00155C5F /* RowRightBookInfoView.swift */; };
+		12324B382A66D49B00155C5F /* RowLeftBookThumbnailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12324B372A66D49B00155C5F /* RowLeftBookThumbnailView.swift */; };
 		124E0BC02A618D9B00F97414 /* Book.swift in Sources */ = {isa = PBXBuildFile; fileRef = 124E0BBF2A618D9B00F97414 /* Book.swift */; };
 		124E0BC42A627DD000F97414 /* SearchBooksView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 124E0BC32A627DD000F97414 /* SearchBooksView.swift */; };
 		124E0BC92A62814400F97414 /* RowBooksView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 124E0BC82A62814400F97414 /* RowBooksView.swift */; };
@@ -76,6 +78,8 @@
 		12324B2E2A66BDD600155C5F /* HistoryLoanBookView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryLoanBookView.swift; sourceTree = "<group>"; };
 		12324B312A66C12100155C5F /* TabIconBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabIconBarView.swift; sourceTree = "<group>"; };
 		12324B332A66C1B400155C5F /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
+		12324B352A66D43A00155C5F /* RowRightBookInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RowRightBookInfoView.swift; sourceTree = "<group>"; };
+		12324B372A66D49B00155C5F /* RowLeftBookThumbnailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RowLeftBookThumbnailView.swift; sourceTree = "<group>"; };
 		124E0BBF2A618D9B00F97414 /* Book.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Book.swift; sourceTree = "<group>"; };
 		124E0BC32A627DD000F97414 /* SearchBooksView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBooksView.swift; sourceTree = "<group>"; };
 		124E0BC82A62814400F97414 /* RowBooksView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RowBooksView.swift; sourceTree = "<group>"; };
@@ -197,6 +201,9 @@
 			isa = PBXGroup;
 			children = (
 				124E0BC32A627DD000F97414 /* SearchBooksView.swift */,
+				124E0BC82A62814400F97414 /* RowBooksView.swift */,
+				12324B372A66D49B00155C5F /* RowLeftBookThumbnailView.swift */,
+				12324B352A66D43A00155C5F /* RowRightBookInfoView.swift */,
 			);
 			path = SearchBooksView;
 			sourceTree = "<group>";
@@ -204,7 +211,6 @@
 		124E0BC52A6280CC00F97414 /* ViewComponent */ = {
 			isa = PBXGroup;
 			children = (
-				124E0BC82A62814400F97414 /* RowBooksView.swift */,
 			);
 			path = ViewComponent;
 			sourceTree = "<group>";
@@ -648,6 +654,7 @@
 				124E0BC42A627DD000F97414 /* SearchBooksView.swift in Sources */,
 				124E0BCF2A62870500F97414 /* RelamLocalRepository.swift in Sources */,
 				12324B262A66181700155C5F /* DisplayDateManager.swift in Sources */,
+				12324B362A66D43A00155C5F /* RowRightBookInfoView.swift in Sources */,
 				12324B202A6600E400155C5F /* OnLoanInputView.swift in Sources */,
 				12C7AE922A641FF100696BF5 /* ImageFileManager.swift in Sources */,
 				12324B322A66C12100155C5F /* TabIconBarView.swift in Sources */,
@@ -656,6 +663,7 @@
 				128F7E972A5EDE3F00FDF4CE /* TopMainView.swift in Sources */,
 				12324B2A2A66B52600155C5F /* AvailableListBookStack.swift in Sources */,
 				122EA76F2A5FAB4F008B24C9 /* GoogleBooksAPIRepository.swift in Sources */,
+				12324B382A66D49B00155C5F /* RowLeftBookThumbnailView.swift in Sources */,
 				124E0BD22A638AEB00F97414 /* MyBookShelfView.swift in Sources */,
 				124E0BD62A638DB100F97414 /* DeviceSizeViewModel.swift in Sources */,
 				12324B342A66C1B400155C5F /* HeaderView.swift in Sources */,
