@@ -17,20 +17,10 @@ struct TopMainView: View {
     var body: some View {
         AvailableNavigationStack {
             VStack(spacing: 0) {
-                HStack {
-                    Spacer()
-                    Image("logo-name")
-                        .resizable()
-                        .frame(width: 130, height: 40)
-                    Spacer()
-                }.padding(.bottom, 10)
-
-                Divider()
-                    .padding(.bottom, 10)
+                HeaderView()
 
                 if selectTag == 1 {
                     OnLoanListView()
-
                 } else if selectTag == 2 {
                     MyBookShelfView()
                 } else {
