@@ -10,17 +10,51 @@ import SwiftUI
 struct SettingView: View {
     @ObservedObject var localRepositoryVM = LocalRepositoryViewModel.shared
 
+    @State var isPresented: Bool = false
+    @State var isPresented2: Bool = false
+
     var body: some View {
         AvailableListPlaneStack {
             Section(header: Text("カシホン"), footer: Text("")) {
                 Button {
-                    localRepositoryVM.deleteAllBook()
+                    isPresented = true
                 } label: {
                     HStack {
-                        Image(systemName: "hand.thumbsup")
+                        Image(systemName: "trash")
                         Text("本棚をリセットする")
                             .fontWeight(.bold)
                     }
+                }
+
+                Button {
+                    isPresented2 = true
+                } label: {
+                    HStack {
+                        Image(systemName: "trash")
+                        Text("貸し借り履歴をリセットする")
+                            .fontWeight(.bold)
+                    }
+                }
+
+                .alert("本棚をリセットしますか？", isPresented: $isPresented) {
+                    Button(role: .destructive) {
+                        localRepositoryVM.deleteAllBooks()
+                    } label: {
+                        Text("削除")
+                            .fontWeight(.bold)
+                    }
+                } message: {
+                    Text("")
+                }
+                .alert("貸し借り履歴をリセットしますか？", isPresented: $isPresented2) {
+                    Button(role: .destructive) {
+                        localRepositoryVM.deleteAllLoanHistorys()
+                    } label: {
+                        Text("削除")
+                            .fontWeight(.bold)
+                    }
+                } message: {
+                    Text("")
                 }
             }
 
@@ -45,6 +79,6 @@ struct SettingView: View {
                     }
                 })
             }
-        }.foregroundColor(.gray)
+        }.foregroundColor(Color.thema1)
     }
 }

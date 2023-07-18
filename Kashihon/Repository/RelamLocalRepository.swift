@@ -77,9 +77,10 @@ class RelamLocalRepository {
         }
     }
 
-    public func deleteAllBook() {
+    public func deleteAllBooks() {
         try! realm.write {
-            realm.deleteAll()
+            let bookTable = realm.objects(Book.self)
+            realm.delete(bookTable)
         }
     }
 }
@@ -96,5 +97,12 @@ extension RelamLocalRepository {
     public func readAllLoanHistorys() -> Results<LoanHistory> {
         let historys = realm.objects(LoanHistory.self)
         return historys
+    }
+
+    public func deleteAllLoanHistorys() {
+        try! realm.write {
+            let historyTable = realm.objects(LoanHistory.self)
+            realm.delete(historyTable)
+        }
     }
 }

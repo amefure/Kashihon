@@ -48,8 +48,8 @@ class LocalRepositoryViewModel: ObservableObject {
         relamLocalRepository.deleteBook(book: book)
     }
 
-    public func deleteAllBook() {
-        relamLocalRepository.deleteAllBook()
+    public func deleteAllBooks() {
+        relamLocalRepository.deleteAllBooks()
     }
 }
 
@@ -71,5 +71,9 @@ extension LocalRepositoryViewModel {
     public func readAllLoanHistorys() {
         let result = relamLocalRepository.readAllLoanHistorys()
         historys = Array(result)
+    }
+
+    public func deleteAllLoanHistorys() {
+        relamLocalRepository.deleteAllLoanHistorys()
     }
 }
