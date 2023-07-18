@@ -40,4 +40,17 @@ class Book: Object, Identifiable {
         }
         return nil
     }
+
+    /// サムネイルURLをセキュアなURLに変換
+    public var concatenationAuthors: String {
+        var connect = ""
+        for author in authors {
+            if authors[0] == author {
+                connect += author
+            } else {
+                connect += "/" + author
+            }
+        }
+        return connect
+    }
 }

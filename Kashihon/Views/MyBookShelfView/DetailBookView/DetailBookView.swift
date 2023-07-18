@@ -55,7 +55,7 @@ struct DetailBookView: View {
                         OnLoanInputView(book: book)
                     }
 
-                    Text(book.authors[0])
+                    Text(book.concatenationAuthors)
                         .padding()
                         .frame(width: deviceSizeViewModel.deviceWidth / 2)
                         .background(Color.thema2)

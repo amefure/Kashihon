@@ -31,7 +31,7 @@ struct RowRightBookInfoView: View {
             HStack {
                 Spacer()
 
-                Text(book.authors[0])
+                Text(book.concatenationAuthors)
                     .fontWeight(.bold)
                     .lineLimit(2)
                     .frame(width: 140)
