@@ -8,7 +8,6 @@
 import SwiftUI
 
 struct SettingView: View {
-    
     @ObservedObject var localRepositoryVM = LocalRepositoryViewModel.shared
 
     var body: some View {

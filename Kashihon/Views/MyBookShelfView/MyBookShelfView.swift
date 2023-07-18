@@ -55,9 +55,9 @@ struct MyBookShelfView: View {
                 SearchBooksView()
             } label: {
                 Image(systemName: "magnifyingglass")
-                    .resizable()
-                    .frame(width: 40, height: 40)
                     .padding()
+                    .frame(width: 40, height: 40)
+                    .background(Color.thema4)
             }
         }
         .onAppear {

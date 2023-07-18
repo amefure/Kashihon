@@ -13,7 +13,7 @@ struct SearchBooksView: View {
 
     var body: some View {
         VStack {
-            TextField("検索キーワードを入力してね", text: $keyword)
+            TextField("検索キーワードを入力してね(タイトル/著者/ISBN...)", text: $keyword)
                 .font(.system(size: 20, weight: .bold))
                 .padding()
                 .background(Color.thema4)

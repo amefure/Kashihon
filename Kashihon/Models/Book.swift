@@ -25,7 +25,8 @@ class Book: Object, Identifiable {
     @Persisted var loanName: String // 貸出している人
     @Persisted var loanDate: Date // 貸出した日付
     @Persisted var OnLoan: Bool = false // 貸出中フラグ
-    @Persisted var memo: String // 貸出した日付
+    @Persisted var loanMemo: String // 貸出した際のMemo
+    @Persisted var bookMemo: String // 本自体のメモ
     @Persisted var localThumbnailPath: String // ローカルに保存したサムネイルパス
 
     /// サムネイルURLをセキュアなURLに変換

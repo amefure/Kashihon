@@ -12,6 +12,8 @@ struct DetailBookView: View {
     private let imgVM = ImageFileManager()
     private let deviceSizeViewModel = DeviceSizeViewModel()
     @ObservedObject var localRepositoryVM = LocalRepositoryViewModel.shared
+
+    @State var isPresented: Bool = false
     var body: some View {
         VStack {
             HStack {
@@ -39,17 +41,29 @@ struct DetailBookView: View {
                 Spacer()
                 VStack(spacing: 0) {
                     Button {
-                        localRepositoryVM.updateBookOnLoan(book)
-                        localRepositoryVM.readAllBooks()
+                        if book.OnLoan == false {
+                            isPresented = true
+                        }
                     } label: {
                         HStack {
                             Text(book.OnLoan ? "貸出中" : "貸出する")
                                 .fontWeight(.bold)
-                            Image(systemName: "hand.tap")
+                            if book.OnLoan == false {
+                                Image(systemName: "hand.tap")
+                            }
                         }.padding()
                             .frame(width: deviceSizeViewModel.deviceWidth / 2)
-                            .background(Color.thema1)
+                            .background(book.OnLoan ? Color.thema1 : .clear)
+                            .foregroundColor(book.OnLoan ? .white : .thema1)
                             .cornerRadius(20)
+                            .overlay {
+                                RoundedRectangle(cornerRadius: 20)
+                                    .stroke(Color.thema1, lineWidth: 3)
+                                    .frame(width: deviceSizeViewModel.deviceWidth / 2 - 2)
+                            }
+                    }
+                    .sheet(isPresented: $isPresented) {
+                        OnLoanInputView(book: book)
                     }
 
                     Text(book.authors[0])
@@ -78,7 +92,7 @@ struct DetailBookView: View {
 
                 Divider()
                 Text("MEMO")
-                Text(book.memo)
+                Text(book.bookMemo)
 
                 Spacer()
             }.padding()
