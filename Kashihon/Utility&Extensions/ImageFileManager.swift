@@ -38,9 +38,7 @@ class ImageFileManager {
 
             let name = urlStr.replacingOccurrences(of: "/", with: "!") // 変換
             try imageData.write(to: docURL("\(name).jpg")!)
-            print("画像を保存できました")
         } catch {
-            print("savingImage")
             print("\(error)")
         }
     }

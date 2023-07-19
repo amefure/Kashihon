@@ -8,8 +8,16 @@
 import SwiftUI
 
 struct SearchBooksView: View {
+    @ObservedObject var localRepositoryVM = LocalRepositoryViewModel.shared
     @State var keyword: String = ""
     @State var books: [Book] = []
+
+    /// ローカルに既に保存しているものがあれば除去する
+    private func customFilter() -> [Book] {
+        let localRepositoryIds = localRepositoryVM.books.map(\.id)
+        let filtering = books.filter { !localRepositoryIds.contains($0.id) }
+        return filtering
+    }
 
     var body: some View {
         VStack {
@@ -36,7 +44,7 @@ struct SearchBooksView: View {
                     .cornerRadius(20)
             }
 
-            AvailableListBookStack(books: books) { book in
+            AvailableListBookStack(books: customFilter()) { book in
                 RowBooksView(book: book)
             }
         }.padding()
