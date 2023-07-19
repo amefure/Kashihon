@@ -50,6 +50,7 @@ struct MyBookShelfView: View {
                                         .font(.caption)
                                         .foregroundColor(.gray)
                                         .padding(5)
+                                        .frame(minWidth: DeviceSizeViewModel().deviceWidth / 4 - 20)
                                         .frame(height: 120)
                                         .frame(maxHeight: 120)
                                         .background(.white)
