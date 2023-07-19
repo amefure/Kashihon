@@ -45,7 +45,16 @@ struct MyBookShelfView: View {
                                 NavigationLink {
                                     DetailBookView(book: book)
                                 } label: {
-                                    NoImageView(logoSize: 70, thumbnailSize: 110)
+                                    Text(book.title)
+                                        .fontWeight(.bold)
+                                        .font(.caption)
+                                        .foregroundColor(.gray)
+                                        .padding(5)
+                                        .frame(height: 120)
+                                        .frame(maxHeight: 120)
+                                        .background(.white)
+                                        .clipped()
+                                        .shadow(color: .gray, radius: 3, x: 4, y: 4)
                                 }
                             }
                         }
