@@ -10,8 +10,8 @@ import SwiftyJSON
 import UIKit
 
 class GoogleBooksAPIRepository {
-    private let preKeyword: String = "?q="
     private let apiUrl: String = "https://www.googleapis.com/books/v1/volumes"
+    private let preKeyword: String = "?maxResults=30&q="
 
     /// 日本語をエンコーディング
     private func getEncodingUrl(url: String) -> String {
@@ -27,7 +27,13 @@ class GoogleBooksAPIRepository {
         AF.request(encUrl).response { response in
             do {
                 let json = try? JSON(data: response.data!)
-                completion(self.convertJsonToBook(json!))
+                if json != nil {
+                    if json!["totalItems"] != 0 {
+                        completion(self.convertJsonToBook(json!))
+                    } else {
+                        print("一致なし")
+                    }
+                }
             } catch {
                 print(error.localizedDescription)
             }
