@@ -14,7 +14,14 @@ struct MyBookShelfView: View {
 
     @ObservedObject var localRepositoryVM = LocalRepositoryViewModel.shared
 
-    private let columns = Array(repeating: GridItem(.fixed(DeviceSizeViewModel().deviceWidth / 4 - 20)), count: 4)
+    private var columns: [GridItem] {
+        let deviceSizeViewModel = DeviceSizeViewModel()
+        if deviceSizeViewModel.isiPadSize {
+            return Array(repeating: GridItem(.fixed(DeviceSizeViewModel().deviceWidth / 8 - 20)), count: 8)
+        } else {
+            return Array(repeating: GridItem(.fixed(DeviceSizeViewModel().deviceWidth / 4 - 20)), count: 4)
+        }
+    }
 
     var body: some View {
         VStack(spacing: 0) {
@@ -57,7 +64,7 @@ struct MyBookShelfView: View {
                                             .font(.caption)
                                             .foregroundColor(.gray)
                                             .padding(5)
-                                            .frame(minWidth: deviceSizeViewModel.deviceWidth / 4 - 20)
+                                            .frame(minWidth: deviceSizeViewModel.isiPadSize ? deviceSizeViewModel.deviceWidth / 8 - 20 : deviceSizeViewModel.deviceWidth / 4 - 20)
                                             .frame(height: deviceSizeViewModel.isSESize ? 90 : 120)
                                             .frame(maxHeight: deviceSizeViewModel.isSESize ?90 : 120)
                                             .background(.white)

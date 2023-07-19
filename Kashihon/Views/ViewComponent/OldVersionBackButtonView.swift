@@ -10,7 +10,8 @@ import SwiftUI
 struct OldVersionBackButtonView: View {
     @Environment(\.dismiss) var dismiss
     var body: some View {
-        if #available(iOS 15.0, *) {
+        if #available(iOS 16.0, *) {
+        } else {
             HStack {
                 Button {
                     dismiss()
