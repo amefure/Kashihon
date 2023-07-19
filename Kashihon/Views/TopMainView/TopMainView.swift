@@ -12,6 +12,7 @@ struct TopMainView: View {
 
     init() {
         UITableView.appearance().backgroundColor = .clear
+        UINavigationBar.appearance().tintColor = UIColor(Color.thema4)
     }
 
     var body: some View {

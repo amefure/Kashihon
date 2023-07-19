@@ -21,7 +21,7 @@ struct AvailableNavigationStack<Content: View>: View {
             }
         } else {
             NavigationView {
-                content
+                content.navigationBarHidden(true)
             }
         }
     }

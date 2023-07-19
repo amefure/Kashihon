@@ -23,6 +23,7 @@ struct SearchBooksView: View {
 
     var body: some View {
         VStack {
+            OldVersionBackButtonView()
             TextField("タイトル/著者/ISBN...で検索", text: $keyword)
                 .font(.system(size: 20, weight: .bold))
                 .padding()

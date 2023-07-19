@@ -19,6 +19,8 @@ struct DetailBookView: View {
 
     var body: some View {
         VStack {
+            OldVersionBackButtonView()
+
             HStack {
                 Spacer()
                 if book.secureThumbnailUrl != nil {
@@ -69,6 +71,7 @@ struct DetailBookView: View {
                         .frame(width: deviceSizeViewModel.deviceWidth / 2)
                         .background(Color.thema2)
                         .cornerRadius(20)
+                        .lineLimit(2)
 
                     Text(displayDateManager.getPublishedDateString(book.publishedDate))
                         .padding()
@@ -93,7 +96,7 @@ struct DetailBookView: View {
                     } else {
                         Text(book.desc)
                     }
-                }.frame(maxHeight: 150)
+                }.frame(maxHeight: deviceSizeViewModel.isSESize ? 80 : 150)
 
                 Divider()
 
