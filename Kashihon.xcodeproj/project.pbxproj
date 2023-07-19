@@ -25,6 +25,7 @@
 		12324B3C2A67F21000155C5F /* NoBookView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12324B3B2A67F21000155C5F /* NoBookView.swift */; };
 		12324B3E2A67FBE400155C5F /* InputMemoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12324B3D2A67FBE400155C5F /* InputMemoView.swift */; };
 		12324B402A6808C000155C5F /* OldVersionBackButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12324B3F2A6808C000155C5F /* OldVersionBackButtonView.swift */; };
+		12324B422A68259D00155C5F /* NetworkConnectStatusManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12324B412A68259D00155C5F /* NetworkConnectStatusManager.swift */; };
 		124E0BC02A618D9B00F97414 /* Book.swift in Sources */ = {isa = PBXBuildFile; fileRef = 124E0BBF2A618D9B00F97414 /* Book.swift */; };
 		124E0BC42A627DD000F97414 /* SearchBooksView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 124E0BC32A627DD000F97414 /* SearchBooksView.swift */; };
 		124E0BC92A62814400F97414 /* RowBooksView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 124E0BC82A62814400F97414 /* RowBooksView.swift */; };
@@ -88,6 +89,7 @@
 		12324B3B2A67F21000155C5F /* NoBookView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoBookView.swift; sourceTree = "<group>"; };
 		12324B3D2A67FBE400155C5F /* InputMemoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputMemoView.swift; sourceTree = "<group>"; };
 		12324B3F2A6808C000155C5F /* OldVersionBackButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OldVersionBackButtonView.swift; sourceTree = "<group>"; };
+		12324B412A68259D00155C5F /* NetworkConnectStatusManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkConnectStatusManager.swift; sourceTree = "<group>"; };
 		124E0BBF2A618D9B00F97414 /* Book.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Book.swift; sourceTree = "<group>"; };
 		124E0BC32A627DD000F97414 /* SearchBooksView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBooksView.swift; sourceTree = "<group>"; };
 		124E0BC82A62814400F97414 /* RowBooksView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RowBooksView.swift; sourceTree = "<group>"; };
@@ -238,6 +240,7 @@
 			isa = PBXGroup;
 			children = (
 				124E0BCC2A6284D800F97414 /* ValidationManager.swift */,
+				12324B412A68259D00155C5F /* NetworkConnectStatusManager.swift */,
 				124E0BD52A638DB100F97414 /* DeviceSizeViewModel.swift */,
 				124E0BD32A638CD000F97414 /* ExColor.swift */,
 				12C7AE8F2A63B99100696BF5 /* AvailableNavigationStack.swift */,
@@ -658,6 +661,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				12324B222A6605AD00155C5F /* LoanHistory.swift in Sources */,
+				12324B422A68259D00155C5F /* NetworkConnectStatusManager.swift in Sources */,
 				124E0BD42A638CD000F97414 /* ExColor.swift in Sources */,
 				128F7EC42A5EE20A00FDF4CE /* AdMobView.swift in Sources */,
 				12324B2C2A66BD8200155C5F /* AvailableListPlaneStack.swift in Sources */,
@@ -847,7 +851,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_ASSET_PATHS = "\"Kashihon/Preview Content\"";
 				DEVELOPMENT_TEAM = CGD79LB65H;
 				ENABLE_PREVIEWS = YES;
@@ -882,7 +886,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_ASSET_PATHS = "\"Kashihon/Preview Content\"";
 				DEVELOPMENT_TEAM = CGD79LB65H;
 				ENABLE_PREVIEWS = YES;

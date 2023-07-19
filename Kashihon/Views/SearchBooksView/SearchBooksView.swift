@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct SearchBooksView: View {
+    private let networkConnectStatusManager = NetworkConnectStatusManager()
     @ObservedObject var localRepositoryVM = LocalRepositoryViewModel.shared
     @State var keyword: String = ""
     @State var books: [Book] = []
@@ -52,14 +53,19 @@ struct SearchBooksView: View {
                     .cornerRadius(20)
             }
 
-            if isEmpty, books.isEmpty {
-                NoBookView(text: "検索に一致する書籍が見つかりませんでした。")
-
+            if !networkConnectStatusManager.getNetworkConnectStatus() {
+                NoBookView(text: "ネットワークに接続してください。")
             } else {
-                AvailableListBookStack(books: customFilter()) { book in
-                    RowBooksView(book: book)
+                if isEmpty, books.isEmpty {
+                    NoBookView(text: "検索に一致する書籍が見つかりませんでした。")
+
+                } else {
+                    AvailableListBookStack(books: customFilter()) { book in
+                        RowBooksView(book: book)
+                    }
                 }
             }
+
         }.padding()
     }
 }

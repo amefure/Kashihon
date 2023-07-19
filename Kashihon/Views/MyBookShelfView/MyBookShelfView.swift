@@ -72,6 +72,14 @@ struct MyBookShelfView: View {
                                             .shadow(color: .gray, radius: 3, x: 4, y: 4)
                                     }
                                 }
+                            }.contextMenu {
+                                Button {
+                                    localRepositoryVM.deleteBook(book: book)
+                                    localRepositoryVM.readAllBooks()
+                                } label: {
+                                    Text("削除する")
+                                        .foregroundColor(Color.thema2)
+                                }
                             }
                         }
                     }

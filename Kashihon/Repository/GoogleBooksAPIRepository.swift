@@ -26,13 +26,15 @@ class GoogleBooksAPIRepository {
         let encUrl = getEncodingUrl(url: urlStr)
         AF.request(encUrl).response { response in
             do {
-                let json = try? JSON(data: response.data!)
-                if json != nil {
-                    if json!["totalItems"] != 0 {
-                        completion(self.convertJsonToBook(json!))
-                    } else {
-                        print("一致なし")
-                        completion(nil)
+                if response.data != nil {
+                    let json = try? JSON(data: response.data!)
+                    if json != nil {
+                        if json!["totalItems"] != 0 {
+                            completion(self.convertJsonToBook(json!))
+                        } else {
+                            print("一致なし")
+                            completion(nil)
+                        }
                     }
                 }
             } catch {

@@ -13,6 +13,7 @@ target 'Kashihon' do
   pod 'SwiftyJSON'
   pod 'RxSwift'
   pod 'RxCocoa'
+  pod 'ReachabilitySwift'
   pod 'SwiftFormat/CLI', :configurations => ['Debug']
 
 
@@ -26,6 +27,7 @@ target 'Kashihon' do
     pod 'SwiftyJSON'
     pod 'RxSwift'
     pod 'RxCocoa'
+    pod 'ReachabilitySwift'
     pod 'SwiftFormat/CLI', :configurations => ['Debug']
 
   end
@@ -39,6 +41,7 @@ target 'Kashihon' do
     pod 'SwiftyJSON'
     pod 'RxSwift'
     pod 'RxCocoa'
+    pod 'ReachabilitySwift'
     pod 'SwiftFormat/CLI', :configurations => ['Debug']
 
   end
