@@ -21,7 +21,7 @@ class GoogleBooksAPIRepository {
         return ""
     }
 
-    public func getAPI(keyword: String, completion: @escaping ([Book]) -> Void) {
+    public func getAPI(keyword: String, completion: @escaping ([Book]?) -> Void) {
         let urlStr = apiUrl + preKeyword + keyword
         let encUrl = getEncodingUrl(url: urlStr)
         AF.request(encUrl).response { response in
@@ -32,6 +32,7 @@ class GoogleBooksAPIRepository {
                         completion(self.convertJsonToBook(json!))
                     } else {
                         print("一致なし")
+                        completion(nil)
                     }
                 }
             } catch {

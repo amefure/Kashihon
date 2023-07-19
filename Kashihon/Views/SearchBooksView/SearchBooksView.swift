@@ -12,6 +12,8 @@ struct SearchBooksView: View {
     @State var keyword: String = ""
     @State var books: [Book] = []
 
+    @State var isEmpty: Bool = false
+
     /// ローカルに既に保存しているものがあれば除去する
     private func customFilter() -> [Book] {
         let localRepositoryIds = localRepositoryVM.books.map(\.id)
@@ -31,7 +33,12 @@ struct SearchBooksView: View {
             Button {
                 if !keyword.isEmpty {
                     GoogleBooksAPIRepository().getAPI(keyword: keyword) { results in
-                        books = results
+                        if results != nil {
+                            books = results!
+                        } else {
+                            books = []
+                            isEmpty = true
+                        }
                     }
                 }
             } label: {
@@ -44,6 +51,15 @@ struct SearchBooksView: View {
                     .cornerRadius(20)
             }
 
+            if isEmpty, books.isEmpty {
+                Text("検索に一致する書籍が見つかりませんでした。")
+                    .padding()
+                    .foregroundColor(.gray)
+
+                Image("logo")
+                    .resizable()
+                    .frame(width: 200, height: 200)
+            }
             AvailableListBookStack(books: customFilter()) { book in
                 RowBooksView(book: book)
             }
