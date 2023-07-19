@@ -28,28 +28,38 @@ struct OnLoanListView: View {
                         } else {
                             NoImageView(logoSize: 60, thumbnailSize: 80)
                         }
-                        VStack {
+                        VStack(spacing: 0) {
                             HStack {
                                 Text("貸している人：")
-
+                                Spacer()
                                 Text(book.loanName)
                                     .fontWeight(.bold)
+
                                 Spacer()
-                            }
+                            }.padding(8)
+                                .background(Color.thema2)
+                                .cornerRadius(10)
+
                             HStack {
                                 Text("貸した日付：")
+                                Spacer()
                                 Text(DisplayDateManager().getJapanDateDisplayFormatString(book.loanDate))
                                     .fontWeight(.bold)
                                 Spacer()
-                            }
+                            }.padding(8)
+                                .background(Color.thema3)
+                                .cornerRadius(10)
+
                             HStack {
                                 Text("MEMO：")
                                 Text(book.bookMemo)
                                     .lineLimit(1)
                                     .foregroundColor(.gray)
                                 Spacer()
-                            }
-                        }
+                            }.padding(8)
+                                .background(Color.thema4)
+                                .cornerRadius(10)
+                        }.foregroundColor(.white)
                     }
                 }.swipeActions(edge: .trailing, allowsFullSwipe: false) {
                     Button {

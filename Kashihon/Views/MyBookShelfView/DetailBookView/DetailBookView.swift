@@ -36,10 +36,16 @@ struct DetailBookView: View {
                         }
                     } label: {
                         HStack {
-                            Text(book.OnLoan ? "貸出中" : "貸出する")
-                                .fontWeight(.bold)
                             if book.OnLoan == false {
+                                Text("貸出する")
+                                    .fontWeight(.bold)
                                 Image(systemName: "hand.tap")
+                            } else {
+                                Image(systemName: "hand.wave.fill")
+                                Text("貸出中")
+                                    .fontWeight(.bold)
+                                Image(systemName: "hand.wave.fill")
+                                    .rotation3DEffect(.degrees(180), axis: (x: 0, y: 1, z: 0))
                             }
                         }.padding()
                             .frame(width: deviceSizeViewModel.deviceWidth / 2)

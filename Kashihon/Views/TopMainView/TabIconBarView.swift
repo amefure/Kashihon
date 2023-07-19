@@ -15,7 +15,7 @@ struct TabIconBarView: View {
             Button {
                 selectTag = 1
             } label: {
-                Image(systemName: "book")
+                Image(systemName: "hand.wave.fill")
                     .font(.system(size: 20, weight: .bold))
             }.padding(.horizontal)
             Button {
