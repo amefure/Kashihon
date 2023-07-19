@@ -21,20 +21,32 @@ struct MyBookShelfView: View {
             ScrollView {
                 LazyVGrid(columns: columns) {
                     ForEach(localRepositoryVM.books) { book in
-                        if book.secureThumbnailUrl != nil {
-                            NavigationLink {
-                                DetailBookView(book: book)
-                            } label: {
-                                imgVM.loadImage(urlStr: book.secureThumbnailUrl!.absoluteString)
-                                    .resizable()
-                                    .shadow(color: .gray, radius: 3, x: 4, y: 4)
-                                    .frame(height: 120)
+
+                        ZStack {
+                            if book.OnLoan {
+                                Text("貸出中")
+                                    .padding(5)
+                                    .foregroundColor(.white)
+                                    .background(Color.thema4)
+                                    .zIndex(2)
+                                    .opacity(0.8)
                             }
-                        } else {
-                            NavigationLink {
-                                DetailBookView(book: book)
-                            } label: {
-                                NoImageView(logoSize: 70, thumbnailSize: 110)
+
+                            if book.secureThumbnailUrl != nil {
+                                NavigationLink {
+                                    DetailBookView(book: book)
+                                } label: {
+                                    imgVM.loadImage(urlStr: book.secureThumbnailUrl!.absoluteString)
+                                        .resizable()
+                                        .shadow(color: .gray, radius: 3, x: 4, y: 4)
+                                        .frame(height: 120)
+                                }
+                            } else {
+                                NavigationLink {
+                                    DetailBookView(book: book)
+                                } label: {
+                                    NoImageView(logoSize: 70, thumbnailSize: 110)
+                                }
                             }
                         }
                     }
