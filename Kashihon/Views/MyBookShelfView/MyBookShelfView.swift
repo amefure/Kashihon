@@ -27,7 +27,7 @@ struct MyBookShelfView: View {
                                 Text("貸出中")
                                     .padding(5)
                                     .foregroundColor(.white)
-                                    .background(Color.thema4)
+                                    .background(Color.thema2)
                                     .zIndex(2)
                                     .opacity(0.8)
                             }

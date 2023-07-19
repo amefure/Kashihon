@@ -9,6 +9,7 @@ import SwiftUI
 
 struct DetailBookView: View {
     public let book: Book
+    private let displayDateManager = DisplayDateManager()
     private let imgVM = ImageFileManager()
     private let deviceSizeViewModel = DeviceSizeViewModel()
     @ObservedObject var localRepositoryVM = LocalRepositoryViewModel.shared
@@ -60,7 +61,8 @@ struct DetailBookView: View {
                         .frame(width: deviceSizeViewModel.deviceWidth / 2)
                         .background(Color.thema2)
                         .cornerRadius(20)
-                    Text(book.publishedDate)
+
+                    Text(displayDateManager.getPublishedDateString(book.publishedDate))
                         .padding()
                         .frame(width: deviceSizeViewModel.deviceWidth / 2)
                         .background(Color.thema3)

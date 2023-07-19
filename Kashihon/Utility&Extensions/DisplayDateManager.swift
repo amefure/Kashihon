@@ -35,4 +35,26 @@ class DisplayDateManager {
         df.dateFormat = "yyyy-MM-dd"
         return df.date(from: date)!
     }
+
+    /// publishedDateを適切に変換する
+    public func getPublishedDateString(_ date: String) -> String {
+        let cnt = date.count
+        if cnt == 4 {
+            df.dateFormat = "yyyy"
+            let dateObj = df.date(from: date)!
+            df.dateFormat = "yyyy年"
+            return df.string(from: dateObj)
+        } else if cnt == 7 {
+            df.dateFormat = "yyyy-MM"
+            let dateObj = df.date(from: date)!
+            df.dateFormat = "yyyy年M月"
+            return df.string(from: dateObj)
+        } else if cnt == 10 {
+            df.dateFormat = "yyyy-MM-dd"
+            let dateObj = df.date(from: date)!
+            df.dateFormat = "yyyy年M月dd日"
+            return df.string(from: dateObj)
+        }
+        return "不明"
+    }
 }
