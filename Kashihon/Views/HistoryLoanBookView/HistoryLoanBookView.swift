@@ -39,7 +39,6 @@ struct HistoryLoanBookView: View {
                             Spacer()
                             Text(history.loanName)
                                 .fontWeight(.bold)
-                                .foregroundColor(.thema1)
                         }
 
                         HStack {
@@ -47,7 +46,6 @@ struct HistoryLoanBookView: View {
                             Spacer()
                             Text(DisplayDateManager().getJapanDateDisplayFormatString(history.loanDate))
                                 .fontWeight(.bold)
-                                .foregroundColor(.thema1)
                         }
 
                         HStack {
@@ -55,20 +53,18 @@ struct HistoryLoanBookView: View {
                             Spacer()
                             Text(DisplayDateManager().getJapanDateDisplayFormatString(history.returnDate))
                                 .fontWeight(.bold)
-                                .foregroundColor(.thema1)
                         }
 
                         HStack {
                             Text("MEMO：")
                             Text(history.loanMemo)
+                                .fontWeight(.bold)
                                 .lineLimit(1)
-                                .foregroundColor(.gray)
-                                .foregroundColor(.thema1)
                             Spacer()
                         }
-                    }.foregroundColor(.white)
+                    }.foregroundColor(.thema1)
                         .padding(8)
-                        .background(.gray)
+                        .background(Color(hexString: "#e7e7e7"))
                         .cornerRadius(10)
                 }
             }
