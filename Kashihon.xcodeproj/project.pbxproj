@@ -33,7 +33,7 @@
 		124E0BCF2A62870500F97414 /* RelamLocalRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 124E0BCE2A62870500F97414 /* RelamLocalRepository.swift */; };
 		124E0BD22A638AEB00F97414 /* MyBookShelfView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 124E0BD12A638AEB00F97414 /* MyBookShelfView.swift */; };
 		124E0BD42A638CD000F97414 /* ExColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 124E0BD32A638CD000F97414 /* ExColor.swift */; };
-		124E0BD62A638DB100F97414 /* DeviceSizeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 124E0BD52A638DB100F97414 /* DeviceSizeViewModel.swift */; };
+		124E0BD62A638DB100F97414 /* DeviceSizeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 124E0BD52A638DB100F97414 /* DeviceSizeManager.swift */; };
 		128F7E952A5EDE3F00FDF4CE /* KashihonApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 128F7E942A5EDE3F00FDF4CE /* KashihonApp.swift */; };
 		128F7E972A5EDE3F00FDF4CE /* TopMainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 128F7E962A5EDE3F00FDF4CE /* TopMainView.swift */; };
 		128F7E992A5EDE4000FDF4CE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 128F7E982A5EDE4000FDF4CE /* Assets.xcassets */; };
@@ -97,7 +97,7 @@
 		124E0BCE2A62870500F97414 /* RelamLocalRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RelamLocalRepository.swift; sourceTree = "<group>"; };
 		124E0BD12A638AEB00F97414 /* MyBookShelfView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyBookShelfView.swift; sourceTree = "<group>"; };
 		124E0BD32A638CD000F97414 /* ExColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExColor.swift; sourceTree = "<group>"; };
-		124E0BD52A638DB100F97414 /* DeviceSizeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceSizeViewModel.swift; sourceTree = "<group>"; };
+		124E0BD52A638DB100F97414 /* DeviceSizeManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceSizeManager.swift; sourceTree = "<group>"; };
 		128F7E912A5EDE3F00FDF4CE /* Kashihon.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Kashihon.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		128F7E942A5EDE3F00FDF4CE /* KashihonApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KashihonApp.swift; sourceTree = "<group>"; };
 		128F7E962A5EDE3F00FDF4CE /* TopMainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopMainView.swift; sourceTree = "<group>"; };
@@ -241,7 +241,7 @@
 			children = (
 				124E0BCC2A6284D800F97414 /* ValidationManager.swift */,
 				12324B412A68259D00155C5F /* NetworkConnectStatusManager.swift */,
-				124E0BD52A638DB100F97414 /* DeviceSizeViewModel.swift */,
+				124E0BD52A638DB100F97414 /* DeviceSizeManager.swift */,
 				124E0BD32A638CD000F97414 /* ExColor.swift */,
 				12C7AE8F2A63B99100696BF5 /* AvailableNavigationStack.swift */,
 				12324B2B2A66BD8200155C5F /* AvailableListPlaneStack.swift */,
@@ -684,7 +684,7 @@
 				122EA76F2A5FAB4F008B24C9 /* GoogleBooksAPIRepository.swift in Sources */,
 				12324B382A66D49B00155C5F /* RowLeftBookThumbnailView.swift in Sources */,
 				124E0BD22A638AEB00F97414 /* MyBookShelfView.swift in Sources */,
-				124E0BD62A638DB100F97414 /* DeviceSizeViewModel.swift in Sources */,
+				124E0BD62A638DB100F97414 /* DeviceSizeManager.swift in Sources */,
 				12324B342A66C1B400155C5F /* HeaderView.swift in Sources */,
 				12C7AE902A63B99100696BF5 /* AvailableNavigationStack.swift in Sources */,
 				124E0BC02A618D9B00F97414 /* Book.swift in Sources */,

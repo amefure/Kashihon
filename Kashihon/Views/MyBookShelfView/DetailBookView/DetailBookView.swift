@@ -10,8 +10,8 @@ import SwiftUI
 struct DetailBookView: View {
     public let book: Book
     private let displayDateManager = DisplayDateManager()
-    private let imgVM = ImageFileManager()
-    private let deviceSizeViewModel = DeviceSizeViewModel()
+    private let imageFileManager = ImageFileManager()
+    private let deviceSizeManager = DeviceSizeManager()
     @ObservedObject var localRepositoryVM = LocalRepositoryViewModel.shared
 
     @State var isPresented: Bool = false
@@ -24,7 +24,7 @@ struct DetailBookView: View {
             HStack {
                 Spacer()
                 if book.secureThumbnailUrl != nil {
-                    imgVM.loadImage(urlStr: book.secureThumbnailUrl!.absoluteString)
+                    imageFileManager.loadImage(urlStr: book.secureThumbnailUrl!.absoluteString)
                         .resizable()
                         .shadow(color: .gray, radius: 3, x: 4, y: 4)
                         .frame(width: 130, height: 165)
@@ -52,14 +52,14 @@ struct DetailBookView: View {
                                     .rotation3DEffect(.degrees(180), axis: (x: 0, y: 1, z: 0))
                             }
                         }.padding()
-                            .frame(width: deviceSizeViewModel.deviceWidth / 2)
+                            .frame(width: deviceSizeManager.deviceWidth / 2)
                             .background(book.OnLoan ? Color.thema1 : .clear)
                             .foregroundColor(book.OnLoan ? .white : .thema1)
                             .cornerRadius(20)
                             .overlay {
                                 RoundedRectangle(cornerRadius: 20)
                                     .stroke(Color.thema1, lineWidth: 3)
-                                    .frame(width: deviceSizeViewModel.deviceWidth / 2 - 2)
+                                    .frame(width: deviceSizeManager.deviceWidth / 2 - 2)
                             }
                     }
                     .sheet(isPresented: $isPresented) {
@@ -68,14 +68,14 @@ struct DetailBookView: View {
 
                     Text(book.concatenationAuthors)
                         .padding()
-                        .frame(width: deviceSizeViewModel.deviceWidth / 2)
+                        .frame(width: deviceSizeManager.deviceWidth / 2)
                         .background(Color.thema2)
                         .cornerRadius(20)
                         .lineLimit(2)
 
                     Text(displayDateManager.getPublishedDateString(book.publishedDate))
                         .padding()
-                        .frame(width: deviceSizeViewModel.deviceWidth / 2)
+                        .frame(width: deviceSizeManager.deviceWidth / 2)
                         .background(Color.thema3)
                         .cornerRadius(20)
 
@@ -96,7 +96,7 @@ struct DetailBookView: View {
                     } else {
                         Text(book.desc)
                     }
-                }.frame(maxHeight: deviceSizeViewModel.isSESize ? 80 : 150)
+                }.frame(maxHeight: deviceSizeManager.isSESize ? 80 : 150)
 
                 Divider()
 
@@ -125,7 +125,7 @@ struct DetailBookView: View {
                 .sheet(isPresented: $isPresented2) {
                     InputMemoView(book: book)
                 }
-            AdMobBannerView().frame(width: deviceSizeViewModel.deviceWidth, height: 60)
+            AdMobBannerView().frame(width: deviceSizeManager.deviceWidth, height: 60)
         }
     }
 }

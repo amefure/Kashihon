@@ -8,7 +8,9 @@
 import SwiftUI
 
 struct OnLoanListView: View {
-    private let imgVM = ImageFileManager()
+    private let deviceSizeManager = DeviceSizeManager()
+    private let displayDateManager = DisplayDateManager()
+    private let imageFileManager = ImageFileManager()
 
     @ObservedObject var localRepositoryVM = LocalRepositoryViewModel.shared
 
@@ -29,7 +31,7 @@ struct OnLoanListView: View {
                     } label: {
                         HStack {
                             if book.secureThumbnailUrl != nil {
-                                imgVM.loadImage(urlStr: book.secureThumbnailUrl!.absoluteString)
+                                imageFileManager.loadImage(urlStr: book.secureThumbnailUrl!.absoluteString)
                                     .resizable()
                                     .shadow(color: .gray, radius: 3, x: 4, y: 4)
                                     .frame(width: 80, height: 100)
@@ -55,7 +57,7 @@ struct OnLoanListView: View {
                                     Text("貸した日付：")
                                         .font(.caption)
                                     Spacer()
-                                    Text(DisplayDateManager().getJapanDateDisplayFormatString(book.loanDate))
+                                    Text(displayDateManager.getJapanDateDisplayFormatString(book.loanDate))
                                         .fontWeight(.bold)
                                     Spacer()
                                 }.padding(8)
@@ -92,7 +94,7 @@ struct OnLoanListView: View {
                     .fontWeight(.bold)
                     .padding()
                     .foregroundColor(.white)
-                    .frame(width: DeviceSizeViewModel().deviceWidth - 40)
+                    .frame(width: deviceSizeManager.deviceWidth - 40)
                     .background(Color.thema4)
                     .cornerRadius(20)
             }.shadow(color: .gray, radius: 3, x: 4, y: 4)

@@ -8,8 +8,8 @@
 import SwiftUI
 
 struct RowRightBookInfoView: View {
-    private let deviceSizeViewModel = DeviceSizeViewModel()
-    private let imgManager = ImageFileManager()
+    private let deviceSizeManager = DeviceSizeManager()
+    private let imageFileManager = ImageFileManager()
     @ObservedObject var localRepositoryVM = LocalRepositoryViewModel.shared
 
     public var book: Book
@@ -22,7 +22,7 @@ struct RowRightBookInfoView: View {
 
             Text(book.title)
                 .fontWeight(.bold)
-                .frame(width: deviceSizeViewModel.deviceWidth - 170)
+                .frame(width: deviceSizeManager.deviceWidth - 170)
                 .lineLimit(2)
                 .padding(5)
 
@@ -36,7 +36,7 @@ struct RowRightBookInfoView: View {
                 Text(book.concatenationAuthors)
                     .fontWeight(.bold)
                     .lineLimit(2)
-                    .frame(width: deviceSizeViewModel.isSESize ? 100 : 140)
+                    .frame(width: deviceSizeManager.isSESize ? 100 : 140)
                     .padding(5)
                     .foregroundColor(Color.thema1)
                     .cornerRadius(5)
@@ -46,7 +46,7 @@ struct RowRightBookInfoView: View {
                 Button {
                     isClick = true
                     if book.secureThumbnailUrl != nil {
-                        imgManager.savingImage(urlStr: book.secureThumbnailUrl!.absoluteString)
+                        imageFileManager.savingImage(urlStr: book.secureThumbnailUrl!.absoluteString)
                     }
                     localRepositoryVM.createBook(book)
                 } label: {

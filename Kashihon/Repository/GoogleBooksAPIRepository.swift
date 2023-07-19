@@ -32,7 +32,6 @@ class GoogleBooksAPIRepository {
                         if json!["totalItems"] != 0 {
                             completion(self.convertJsonToBook(json!))
                         } else {
-                            print("一致なし")
                             completion(nil)
                         }
                     }

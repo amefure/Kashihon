@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct TabIconBarView: View {
+    private let deviceSizeManager = DeviceSizeManager()
     @Binding var selectTag: Int
 
     var body: some View {
@@ -33,7 +34,7 @@ struct TabIconBarView: View {
 
         }.foregroundColor(.white)
             .padding()
-            .frame(width: DeviceSizeViewModel().deviceWidth - 40)
+            .frame(width: deviceSizeManager.deviceWidth - 40)
             .background(Color.thema1)
             .opacity(0.8)
             .cornerRadius(20)

@@ -8,7 +8,8 @@
 import SwiftUI
 
 struct HistoryLoanBookView: View {
-    private let imgVM = ImageFileManager()
+    private let displayDateManager = DisplayDateManager()
+    private let imageFileManager = ImageFileManager()
     @ObservedObject var localRepositoryVM = LocalRepositoryViewModel.shared
 
     var body: some View {
@@ -16,7 +17,7 @@ struct HistoryLoanBookView: View {
             ForEach(localRepositoryVM.historys) { history in
                 HStack {
                     if history.localThumbnailPath != "" {
-                        imgVM.loadImage(urlStr: history.localThumbnailPath)
+                        imageFileManager.loadImage(urlStr: history.localThumbnailPath)
                             .resizable()
                             .shadow(color: .gray, radius: 3, x: 4, y: 4)
                             .frame(width: 80, height: 100)
@@ -47,7 +48,7 @@ struct HistoryLoanBookView: View {
                             Text("貸した日付：")
                                 .font(.caption)
                             Spacer()
-                            Text(DisplayDateManager().getJapanDateDisplayFormatString(history.loanDate))
+                            Text(displayDateManager.getJapanDateDisplayFormatString(history.loanDate))
                                 .fontWeight(.bold)
                         }
 
@@ -55,7 +56,7 @@ struct HistoryLoanBookView: View {
                             Text("返却日：")
                                 .font(.caption)
                             Spacer()
-                            Text(DisplayDateManager().getJapanDateDisplayFormatString(history.returnDate))
+                            Text(displayDateManager.getJapanDateDisplayFormatString(history.returnDate))
                                 .fontWeight(.bold)
                         }
 

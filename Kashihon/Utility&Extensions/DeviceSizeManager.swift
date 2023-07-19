@@ -7,7 +7,7 @@
 
 import UIKit
 
-class DeviceSizeViewModel {
+class DeviceSizeManager {
     public let deviceWidth = UIScreen.main.bounds.width
     public let deviceHeight = UIScreen.main.bounds.height
     // 端末設定のカレンダー

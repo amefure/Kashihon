@@ -10,15 +10,15 @@ import SwiftUI
 struct SettingView: View {
     @ObservedObject var localRepositoryVM = LocalRepositoryViewModel.shared
 
-    @State var isPresented: Bool = false
-    @State var isPresented2: Bool = false
-    @State var isPresented3: Bool = false
+    @State var isBookDeleteAlert: Bool = false
+    @State var isHistoryDeleteAlert: Bool = false
+    @State var isDeleteConfirmAlert: Bool = false
 
     var body: some View {
         AvailableListPlaneStack {
             Section(header: Text("カシホン"), footer: Text("")) {
                 Button {
-                    isPresented = true
+                    isBookDeleteAlert = true
                 } label: {
                     HStack {
                         Image(systemName: "trash")
@@ -28,7 +28,7 @@ struct SettingView: View {
                 }
 
                 Button {
-                    isPresented2 = true
+                    isHistoryDeleteAlert = true
                 } label: {
                     HStack {
                         Image(systemName: "trash")
@@ -37,11 +37,11 @@ struct SettingView: View {
                     }
                 }
 
-                .alert("本棚をリセットしますか？", isPresented: $isPresented) {
+                .alert("本棚をリセットしますか？", isPresented: $isBookDeleteAlert) {
                     Button(role: .destructive) {
                         localRepositoryVM.deleteAllBooks()
                         localRepositoryVM.readAllBooks()
-                        isPresented3 = true
+                        isDeleteConfirmAlert = true
                     } label: {
                         Text("削除")
                             .fontWeight(.bold)
@@ -49,11 +49,11 @@ struct SettingView: View {
                 } message: {
                     Text("")
                 }
-                .alert("貸し借り履歴をリセットしますか？", isPresented: $isPresented2) {
+                .alert("貸し借り履歴をリセットしますか？", isPresented: $isHistoryDeleteAlert) {
                     Button(role: .destructive) {
                         localRepositoryVM.deleteAllLoanHistorys()
                         localRepositoryVM.readAllLoanHistorys()
-                        isPresented3 = true
+                        isDeleteConfirmAlert = true
                     } label: {
                         Text("削除")
                             .fontWeight(.bold)
@@ -61,7 +61,7 @@ struct SettingView: View {
                 } message: {
                     Text("")
                 }
-                .alert("削除しました。", isPresented: $isPresented3) {} message: {
+                .alert("削除しました。", isPresented: $isDeleteConfirmAlert) {} message: {
                     Text("")
                 }
             }

@@ -8,18 +8,18 @@
 import SwiftUI
 
 struct MyBookShelfView: View {
-    private let deviceSizeViewModel = DeviceSizeViewModel()
+    private let deviceSizeManager = DeviceSizeManager()
 
-    private let imgVM = ImageFileManager()
+    private let imageFileManager = ImageFileManager()
 
     @ObservedObject var localRepositoryVM = LocalRepositoryViewModel.shared
 
     private var columns: [GridItem] {
-        let deviceSizeViewModel = DeviceSizeViewModel()
-        if deviceSizeViewModel.isiPadSize {
-            return Array(repeating: GridItem(.fixed(DeviceSizeViewModel().deviceWidth / 8 - 20)), count: 8)
+        let deviceSizeManager = DeviceSizeManager()
+        if deviceSizeManager.isiPadSize {
+            return Array(repeating: GridItem(.fixed(deviceSizeManager.deviceWidth / 8 - 20)), count: 8)
         } else {
-            return Array(repeating: GridItem(.fixed(DeviceSizeViewModel().deviceWidth / 4 - 20)), count: 4)
+            return Array(repeating: GridItem(.fixed(deviceSizeManager.deviceWidth / 4 - 20)), count: 4)
         }
     }
 
@@ -50,10 +50,10 @@ struct MyBookShelfView: View {
                                     NavigationLink {
                                         DetailBookView(book: book)
                                     } label: {
-                                        imgVM.loadImage(urlStr: book.secureThumbnailUrl!.absoluteString)
+                                        imageFileManager.loadImage(urlStr: book.secureThumbnailUrl!.absoluteString)
                                             .resizable()
                                             .shadow(color: .gray, radius: 3, x: 4, y: 4)
-                                            .frame(height: deviceSizeViewModel.isSESize ? 90 : 120)
+                                            .frame(height: deviceSizeManager.isSESize ? 90 : 120)
                                     }
                                 } else {
                                     NavigationLink {
@@ -64,9 +64,9 @@ struct MyBookShelfView: View {
                                             .font(.caption)
                                             .foregroundColor(.gray)
                                             .padding(5)
-                                            .frame(minWidth: deviceSizeViewModel.isiPadSize ? deviceSizeViewModel.deviceWidth / 8 - 20 : deviceSizeViewModel.deviceWidth / 4 - 20)
-                                            .frame(height: deviceSizeViewModel.isSESize ? 90 : 120)
-                                            .frame(maxHeight: deviceSizeViewModel.isSESize ?90 : 120)
+                                            .frame(minWidth: deviceSizeManager.isiPadSize ? deviceSizeManager.deviceWidth / 8 - 20 : deviceSizeManager.deviceWidth / 4 - 20)
+                                            .frame(height: deviceSizeManager.isSESize ? 90 : 120)
+                                            .frame(maxHeight: deviceSizeManager.isSESize ?90 : 120)
                                             .background(.white)
                                             .clipped()
                                             .shadow(color: .gray, radius: 3, x: 4, y: 4)
@@ -93,7 +93,7 @@ struct MyBookShelfView: View {
                     .fontWeight(.bold)
                     .padding()
                     .foregroundColor(.white)
-                    .frame(width: DeviceSizeViewModel().deviceWidth - 40)
+                    .frame(width: deviceSizeManager.deviceWidth - 40)
                     .background(Color.thema4)
                     .cornerRadius(20)
             }.shadow(color: .gray, radius: 3, x: 4, y: 4)
