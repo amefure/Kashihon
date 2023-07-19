@@ -15,6 +15,8 @@ struct DetailBookView: View {
     @ObservedObject var localRepositoryVM = LocalRepositoryViewModel.shared
 
     @State var isPresented: Bool = false
+    @State var isPresented2: Bool = false
+
     var body: some View {
         VStack {
             HStack {
@@ -85,10 +87,29 @@ struct DetailBookView: View {
 
                 Divider()
 
-                Text(book.desc)
+                ScrollView {
+                    if book.desc.isEmpty {
+                        Text("この本の説明はありません。")
+                    } else {
+                        Text(book.desc)
+                    }
+                }.frame(maxHeight: 150)
 
                 Divider()
-                Text("MEMO")
+
+                HStack {
+                    Text("MEMO")
+                        .fontWeight(.bold)
+                        .opacity(0.8)
+                    Spacer()
+                    Button {
+                        isPresented2 = true
+                    } label: {
+                        Image(systemName: "square.and.pencil")
+                            .font(.system(size: 20, weight: .bold))
+                    }
+                }.padding(8)
+
                 Text(book.bookMemo)
 
                 Spacer()
@@ -97,6 +118,9 @@ struct DetailBookView: View {
                 .cornerRadius(20)
                 .foregroundColor(.white)
                 .offset(y: 40)
+                .sheet(isPresented: $isPresented2) {
+                    InputMemoView(book: book)
+                }
         }
     }
 }
