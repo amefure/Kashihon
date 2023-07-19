@@ -116,6 +116,7 @@ struct DetailBookView: View {
                 Text(book.bookMemo)
 
                 Spacer()
+
             }.padding()
                 .background(Color.thema4)
                 .cornerRadius(20)
@@ -124,6 +125,7 @@ struct DetailBookView: View {
                 .sheet(isPresented: $isPresented2) {
                     InputMemoView(book: book)
                 }
+            AdMobBannerView().frame(width: deviceSizeViewModel.deviceWidth, height: 60)
         }
     }
 }

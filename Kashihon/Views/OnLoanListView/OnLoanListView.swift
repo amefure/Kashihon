@@ -65,7 +65,7 @@ struct OnLoanListView: View {
                                 HStack {
                                     Text("MEMO：")
                                         .font(.caption)
-                                    Text(book.bookMemo)
+                                    Text(book.loanMemo)
                                         .lineLimit(1)
 
                                     Spacer()

@@ -29,6 +29,8 @@ struct TopMainView: View {
                 }
 
                 TabIconBarView(selectTag: $selectTag)
+
+                AdMobBannerView().frame(height: 60)
             }
         }.tint(Color.thema4)
     }

@@ -38,6 +38,5 @@ struct TabIconBarView: View {
             .opacity(0.8)
             .cornerRadius(20)
             .shadow(color: .gray, radius: 3, x: 4, y: 4)
-            .padding(.bottom, 30)
     }
 }
