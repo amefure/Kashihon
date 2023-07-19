@@ -18,50 +18,58 @@ struct MyBookShelfView: View {
 
     var body: some View {
         VStack(spacing: 0) {
-            ScrollView {
-                LazyVGrid(columns: columns) {
-                    ForEach(localRepositoryVM.books) { book in
+            Text("本棚")
+                .fontWeight(.bold)
+                .font(.headline)
+                .foregroundColor(.gray)
+            if localRepositoryVM.books.isEmpty {
+                NoBookView(text: "登録されている書籍はありません。")
+            } else {
+                ScrollView {
+                    LazyVGrid(columns: columns) {
+                        ForEach(localRepositoryVM.books) { book in
 
-                        ZStack {
-                            if book.OnLoan {
-                                Text("貸出中")
-                                    .padding(5)
-                                    .foregroundColor(.white)
-                                    .background(Color.thema2)
-                                    .zIndex(2)
-                                    .opacity(0.8)
-                            }
-
-                            if book.secureThumbnailUrl != nil {
-                                NavigationLink {
-                                    DetailBookView(book: book)
-                                } label: {
-                                    imgVM.loadImage(urlStr: book.secureThumbnailUrl!.absoluteString)
-                                        .resizable()
-                                        .shadow(color: .gray, radius: 3, x: 4, y: 4)
-                                        .frame(height: 120)
-                                }
-                            } else {
-                                NavigationLink {
-                                    DetailBookView(book: book)
-                                } label: {
-                                    Text(book.title)
-                                        .fontWeight(.bold)
-                                        .font(.caption)
-                                        .foregroundColor(.gray)
+                            ZStack {
+                                if book.OnLoan {
+                                    Text("貸出中")
                                         .padding(5)
-                                        .frame(minWidth: DeviceSizeViewModel().deviceWidth / 4 - 20)
-                                        .frame(height: 120)
-                                        .frame(maxHeight: 120)
-                                        .background(.white)
-                                        .clipped()
-                                        .shadow(color: .gray, radius: 3, x: 4, y: 4)
+                                        .foregroundColor(.white)
+                                        .background(Color.thema2)
+                                        .zIndex(2)
+                                        .opacity(0.8)
+                                }
+
+                                if book.secureThumbnailUrl != nil {
+                                    NavigationLink {
+                                        DetailBookView(book: book)
+                                    } label: {
+                                        imgVM.loadImage(urlStr: book.secureThumbnailUrl!.absoluteString)
+                                            .resizable()
+                                            .shadow(color: .gray, radius: 3, x: 4, y: 4)
+                                            .frame(height: 120)
+                                    }
+                                } else {
+                                    NavigationLink {
+                                        DetailBookView(book: book)
+                                    } label: {
+                                        Text(book.title)
+                                            .fontWeight(.bold)
+                                            .font(.caption)
+                                            .foregroundColor(.gray)
+                                            .padding(5)
+                                            .frame(minWidth: DeviceSizeViewModel().deviceWidth / 4 - 20)
+                                            .frame(height: 120)
+                                            .frame(maxHeight: 120)
+                                            .background(.white)
+                                            .clipped()
+                                            .shadow(color: .gray, radius: 3, x: 4, y: 4)
+                                    }
                                 }
                             }
                         }
                     }
-                }
-            } // ScrollView
+                } // ScrollView
+            }
 
             NavigationLink {
                 SearchBooksView()

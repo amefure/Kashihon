@@ -52,16 +52,12 @@ struct SearchBooksView: View {
             }
 
             if isEmpty, books.isEmpty {
-                Text("検索に一致する書籍が見つかりませんでした。")
-                    .padding()
-                    .foregroundColor(.gray)
+                NoBookView(text: "検索に一致する書籍が見つかりませんでした。")
 
-                Image("logo")
-                    .resizable()
-                    .frame(width: 200, height: 200)
-            }
-            AvailableListBookStack(books: customFilter()) { book in
-                RowBooksView(book: book)
+            } else {
+                AvailableListBookStack(books: customFilter()) { book in
+                    RowBooksView(book: book)
+                }
             }
         }.padding()
     }

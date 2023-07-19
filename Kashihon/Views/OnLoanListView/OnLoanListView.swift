@@ -18,61 +18,67 @@ struct OnLoanListView: View {
                 .fontWeight(.bold)
                 .font(.headline)
                 .foregroundColor(.gray)
-            AvailableListBookStack(books: localRepositoryVM.books.filter { $0.OnLoan == true }) { book in
-                NavigationLink {
-                    DetailBookView(book: book)
-                } label: {
-                    HStack {
-                        if book.secureThumbnailUrl != nil {
-                            imgVM.loadImage(urlStr: book.secureThumbnailUrl!.absoluteString)
-                                .resizable()
-                                .shadow(color: .gray, radius: 3, x: 4, y: 4)
-                                .frame(width: 80, height: 100)
 
-                        } else {
-                            NoImageView(logoSize: 60, thumbnailSize: 80)
-                        }
-                        VStack(spacing: 0) {
-                            HStack {
-                                Text("貸している人：")
-                                Spacer()
-                                Text(book.loanName)
-                                    .fontWeight(.bold)
+            if localRepositoryVM.books.filter { $0.OnLoan == true }.isEmpty {
+                NoBookView(text: "貸し出ししている書籍はありません。")
 
-                                Spacer()
-                            }.padding(8)
-                                .background(Color.thema2)
-                                .cornerRadius(10)
-
-                            HStack {
-                                Text("貸した日付：")
-                                Spacer()
-                                Text(DisplayDateManager().getJapanDateDisplayFormatString(book.loanDate))
-                                    .fontWeight(.bold)
-                                Spacer()
-                            }.padding(8)
-                                .background(Color.thema3)
-                                .cornerRadius(10)
-
-                            HStack {
-                                Text("MEMO：")
-                                Text(book.bookMemo)
-                                    .lineLimit(1)
-                                    .foregroundColor(.gray)
-                                Spacer()
-                            }.padding(8)
-                                .background(Color.thema4)
-                                .cornerRadius(10)
-                        }.foregroundColor(.white)
-                    }
-                }.swipeActions(edge: .trailing, allowsFullSwipe: false) {
-                    Button {
-                        localRepositoryVM.createLoanHistory(book)
-                        localRepositoryVM.updateBookReturn(book: book)
-                        localRepositoryVM.readAllBooks()
+            } else {
+                AvailableListBookStack(books: localRepositoryVM.books.filter { $0.OnLoan == true }) { book in
+                    NavigationLink {
+                        DetailBookView(book: book)
                     } label: {
-                        Text("返却")
-                    }.tint(Color.thema3)
+                        HStack {
+                            if book.secureThumbnailUrl != nil {
+                                imgVM.loadImage(urlStr: book.secureThumbnailUrl!.absoluteString)
+                                    .resizable()
+                                    .shadow(color: .gray, radius: 3, x: 4, y: 4)
+                                    .frame(width: 80, height: 100)
+
+                            } else {
+                                NoImageView(logoSize: 60, thumbnailSize: 80)
+                            }
+                            VStack(spacing: 0) {
+                                HStack {
+                                    Text("貸している人：")
+                                    Spacer()
+                                    Text(book.loanName)
+                                        .fontWeight(.bold)
+
+                                    Spacer()
+                                }.padding(8)
+                                    .background(Color.thema2)
+                                    .cornerRadius(10)
+
+                                HStack {
+                                    Text("貸した日付：")
+                                    Spacer()
+                                    Text(DisplayDateManager().getJapanDateDisplayFormatString(book.loanDate))
+                                        .fontWeight(.bold)
+                                    Spacer()
+                                }.padding(8)
+                                    .background(Color.thema3)
+                                    .cornerRadius(10)
+
+                                HStack {
+                                    Text("MEMO：")
+                                    Text(book.bookMemo)
+                                        .lineLimit(1)
+                                        .foregroundColor(.gray)
+                                    Spacer()
+                                }.padding(8)
+                                    .background(Color.thema4)
+                                    .cornerRadius(10)
+                            }.foregroundColor(.white)
+                        }
+                    }.swipeActions(edge: .trailing, allowsFullSwipe: false) {
+                        Button {
+                            localRepositoryVM.createLoanHistory(book)
+                            localRepositoryVM.updateBookReturn(book: book)
+                            localRepositoryVM.readAllBooks()
+                        } label: {
+                            Text("返却")
+                        }.tint(Color.thema3)
+                    }
                 }
             }
             NavigationLink {
