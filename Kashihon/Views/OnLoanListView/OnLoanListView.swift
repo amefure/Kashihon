@@ -14,6 +14,10 @@ struct OnLoanListView: View {
 
     var body: some View {
         VStack(spacing: 0) {
+            Text("貸し出しリスト")
+                .fontWeight(.bold)
+                .font(.headline)
+                .foregroundColor(.gray)
             AvailableListBookStack(books: localRepositoryVM.books.filter { $0.OnLoan == true }) { book in
                 NavigationLink {
                     DetailBookView(book: book)

@@ -74,6 +74,13 @@ struct HistoryLoanBookView: View {
             }
         }.onAppear {
             localRepositoryVM.readAllLoanHistorys()
+        }.toolbar {
+            ToolbarItem(placement: .principal) {
+                Text("貸し出し履歴")
+                    .fontWeight(.bold)
+                    .foregroundColor(.gray)
+                    .font(.headline)
+            }
         }
     }
 }

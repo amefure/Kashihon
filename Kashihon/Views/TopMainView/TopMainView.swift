@@ -29,7 +29,7 @@ struct TopMainView: View {
 
                 TabIconBarView(selectTag: $selectTag)
             }
-        }
+        }.tint(Color.thema4)
     }
 }
 
