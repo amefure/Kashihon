@@ -12,6 +12,7 @@ struct SettingView: View {
 
     @State var isPresented: Bool = false
     @State var isPresented2: Bool = false
+    @State var isPresented3: Bool = false
 
     var body: some View {
         AvailableListPlaneStack {
@@ -39,6 +40,8 @@ struct SettingView: View {
                 .alert("本棚をリセットしますか？", isPresented: $isPresented) {
                     Button(role: .destructive) {
                         localRepositoryVM.deleteAllBooks()
+                        localRepositoryVM.readAllBooks()
+                        isPresented3 = true
                     } label: {
                         Text("削除")
                             .fontWeight(.bold)
@@ -49,11 +52,16 @@ struct SettingView: View {
                 .alert("貸し借り履歴をリセットしますか？", isPresented: $isPresented2) {
                     Button(role: .destructive) {
                         localRepositoryVM.deleteAllLoanHistorys()
+                        localRepositoryVM.readAllLoanHistorys()
+                        isPresented3 = true
                     } label: {
                         Text("削除")
                             .fontWeight(.bold)
                     }
                 } message: {
+                    Text("")
+                }
+                .alert("削除しました。", isPresented: $isPresented3) {} message: {
                     Text("")
                 }
             }
