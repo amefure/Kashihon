@@ -36,7 +36,7 @@ struct RowRightBookInfoView: View {
                 Text(book.concatenationAuthors)
                     .fontWeight(.bold)
                     .lineLimit(2)
-                    .frame(width: 140)
+                    .frame(width: deviceSizeViewModel.isSESize ? 100 : 140)
                     .padding(5)
                     .foregroundColor(Color.thema1)
                     .cornerRadius(5)
@@ -63,7 +63,7 @@ struct RowRightBookInfoView: View {
                                     .stroke(Color.thema2, lineWidth: 3)
                             }
                         }.disabled(isClick)
-                }
+                }.buttonStyle(.borderless)
 
                 Spacer()
             }

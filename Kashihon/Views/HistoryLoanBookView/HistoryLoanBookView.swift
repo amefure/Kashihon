@@ -36,13 +36,16 @@ struct HistoryLoanBookView: View {
                     VStack(spacing: 0) {
                         HStack {
                             Text("貸している人：")
+                                .font(.caption)
                             Spacer()
                             Text(history.loanName)
                                 .fontWeight(.bold)
+                                .lineLimit(1)
                         }
 
                         HStack {
                             Text("貸した日付：")
+                                .font(.caption)
                             Spacer()
                             Text(DisplayDateManager().getJapanDateDisplayFormatString(history.loanDate))
                                 .fontWeight(.bold)
@@ -50,6 +53,7 @@ struct HistoryLoanBookView: View {
 
                         HStack {
                             Text("返却日：")
+                                .font(.caption)
                             Spacer()
                             Text(DisplayDateManager().getJapanDateDisplayFormatString(history.returnDate))
                                 .fontWeight(.bold)
@@ -57,6 +61,7 @@ struct HistoryLoanBookView: View {
 
                         HStack {
                             Text("MEMO：")
+                                .font(.caption)
                             Text(history.loanMemo)
                                 .fontWeight(.bold)
                                 .lineLimit(1)

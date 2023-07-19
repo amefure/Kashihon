@@ -46,7 +46,7 @@ struct MyBookShelfView: View {
                                         imgVM.loadImage(urlStr: book.secureThumbnailUrl!.absoluteString)
                                             .resizable()
                                             .shadow(color: .gray, radius: 3, x: 4, y: 4)
-                                            .frame(height: 120)
+                                            .frame(height: deviceSizeViewModel.isSESize ? 90 : 120)
                                     }
                                 } else {
                                     NavigationLink {
@@ -57,9 +57,9 @@ struct MyBookShelfView: View {
                                             .font(.caption)
                                             .foregroundColor(.gray)
                                             .padding(5)
-                                            .frame(minWidth: DeviceSizeViewModel().deviceWidth / 4 - 20)
-                                            .frame(height: 120)
-                                            .frame(maxHeight: 120)
+                                            .frame(minWidth: deviceSizeViewModel.deviceWidth / 4 - 20)
+                                            .frame(height: deviceSizeViewModel.isSESize ? 90 : 120)
+                                            .frame(maxHeight: deviceSizeViewModel.isSESize ?90 : 120)
                                             .background(.white)
                                             .clipped()
                                             .shadow(color: .gray, radius: 3, x: 4, y: 4)

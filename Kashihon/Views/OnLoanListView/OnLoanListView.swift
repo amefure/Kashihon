@@ -40,9 +40,11 @@ struct OnLoanListView: View {
                             VStack(spacing: 0) {
                                 HStack {
                                     Text("貸している人：")
+                                        .font(.caption)
                                     Spacer()
                                     Text(book.loanName)
                                         .fontWeight(.bold)
+                                        .lineLimit(1)
 
                                     Spacer()
                                 }.padding(8)
@@ -51,6 +53,7 @@ struct OnLoanListView: View {
 
                                 HStack {
                                     Text("貸した日付：")
+                                        .font(.caption)
                                     Spacer()
                                     Text(DisplayDateManager().getJapanDateDisplayFormatString(book.loanDate))
                                         .fontWeight(.bold)
@@ -61,9 +64,10 @@ struct OnLoanListView: View {
 
                                 HStack {
                                     Text("MEMO：")
+                                        .font(.caption)
                                     Text(book.bookMemo)
                                         .lineLimit(1)
-                                        .foregroundColor(.gray)
+
                                     Spacer()
                                 }.padding(8)
                                     .background(Color.thema4)
