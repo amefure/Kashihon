@@ -221,6 +221,9 @@
 		124E0BC52A6280CC00F97414 /* ViewComponent */ = {
 			isa = PBXGroup;
 			children = (
+				12C7AE8F2A63B99100696BF5 /* AvailableNavigationStack.swift */,
+				12324B292A66B52600155C5F /* AvailableListBookStack.swift */,
+				12324B2B2A66BD8200155C5F /* AvailableListPlaneStack.swift */,
 				12324B392A66D53100155C5F /* NoImageView.swift */,
 				12324B3B2A67F21000155C5F /* NoBookView.swift */,
 				12324B3F2A6808C000155C5F /* OldVersionBackButtonView.swift */,
@@ -239,13 +242,10 @@
 		124E0BCB2A6284A700F97414 /* Utility&Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				124E0BD32A638CD000F97414 /* ExColor.swift */,
 				124E0BCC2A6284D800F97414 /* ValidationManager.swift */,
 				12324B412A68259D00155C5F /* NetworkConnectStatusManager.swift */,
 				124E0BD52A638DB100F97414 /* DeviceSizeManager.swift */,
-				124E0BD32A638CD000F97414 /* ExColor.swift */,
-				12C7AE8F2A63B99100696BF5 /* AvailableNavigationStack.swift */,
-				12324B2B2A66BD8200155C5F /* AvailableListPlaneStack.swift */,
-				12324B292A66B52600155C5F /* AvailableListBookStack.swift */,
 				12C7AE912A641FF100696BF5 /* ImageFileManager.swift */,
 				12324B252A66181700155C5F /* DisplayDateManager.swift */,
 			);
