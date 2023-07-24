@@ -9,6 +9,7 @@ import SwiftUI
 
 struct SearchBooksView: View {
     private let networkConnectStatusManager = NetworkConnectStatusManager()
+    private let publicRepositoryVM = PublicRepositoryViewModel()
     @ObservedObject var localRepositoryVM = LocalRepositoryViewModel.shared
     @State var keyword: String = ""
     @State var books: [Book] = []
@@ -34,7 +35,7 @@ struct SearchBooksView: View {
 
             Button {
                 if !keyword.isEmpty {
-                    GoogleBooksAPIRepository().getAPI(keyword: keyword) { results in
+                    publicRepositoryVM.getAPI(keyword: keyword) { results in
                         if results != nil {
                             books = results!
                         } else {
