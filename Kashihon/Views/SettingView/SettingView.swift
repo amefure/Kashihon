@@ -68,15 +68,15 @@ struct SettingView: View {
 
             Section(header: Text("Link"), footer: Text("")) {
                 // 1:レビューページ
-//                Link(destination: URL(string: "https://apps.apple.com/jp/app/%E3%81%BF%E3%82%93%E3%81%AA%E3%81%AE%E8%AA%95%E7%94%9F%E6%97%A5/id1673431227?action=write-review")!, label: {
-//                    HStack {
-//                        Image(systemName: "hand.thumbsup")
-//                        Text("アプリをレビューする")
-//                    }
-//                })
+                Link(destination: URL(string: "https://apps.apple.com/jp/app/%E3%82%AB%E3%82%B7%E3%83%9B%E3%83%B3/id6451445308?action=write-review")!, label: {
+                    HStack {
+                        Image(systemName: "hand.thumbsup")
+                        Text("アプリをレビューする")
+                    }
+                })
 
                 // 2:シェアボタン
-//                ShareButtonView()
+                ShareButtonView()
 
                 // 3:利用規約とプライバシーポリシー
                 Link(destination: URL(string: "https://tech.amefure.com/app-terms-of-service")!, label: {
