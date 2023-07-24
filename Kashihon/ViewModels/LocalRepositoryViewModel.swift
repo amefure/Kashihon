@@ -7,25 +7,7 @@
 
 import SwiftUI
 
-protocol LocalRepositoryProtocol {
-    var books: [Book] { get set }
-    var historys: [LoanHistory] { get set }
-
-    // Book
-    func createBook(_ book: Book)
-    func readAllBooks()
-    func updateBookOnLoan(name: String, memo: String, date: Date, book: Book)
-    func updateBookReturn(book: Book)
-    func updateBookMemo(memo: String, book: Book)
-    func deleteBook(book: Book)
-    func deleteAllBooks()
-    // History
-    func createLoanHistory(_ book: Book)
-    func readAllLoanHistorys()
-    func deleteAllLoanHistorys()
-}
-
-class LocalRepositoryViewModel: ObservableObject, LocalRepositoryProtocol {
+class LocalRepositoryViewModel: ObservableObject {
     static let shared = LocalRepositoryViewModel()
 
     private let relamLocalRepository = RelamLocalRepository()
@@ -42,8 +24,7 @@ class LocalRepositoryViewModel: ObservableObject, LocalRepositoryProtocol {
     // MARK: - Read
 
     public func readAllBooks() {
-        let result = relamLocalRepository.readAllBooks()
-        books = Array(result)
+        books = relamLocalRepository.readAllBooks()
     }
 
     // MARK: - Update
@@ -86,8 +67,7 @@ class LocalRepositoryViewModel: ObservableObject, LocalRepositoryProtocol {
     }
 
     public func readAllLoanHistorys() {
-        let result = relamLocalRepository.readAllLoanHistorys()
-        historys = Array(result)
+        historys = relamLocalRepository.readAllLoanHistorys()
     }
 
     public func deleteAllLoanHistorys() {

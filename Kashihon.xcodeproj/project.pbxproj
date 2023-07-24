@@ -27,6 +27,10 @@
 		12324B402A6808C000155C5F /* OldVersionBackButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12324B3F2A6808C000155C5F /* OldVersionBackButtonView.swift */; };
 		12324B422A68259D00155C5F /* NetworkConnectStatusManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12324B412A68259D00155C5F /* NetworkConnectStatusManager.swift */; };
 		12324B442A6DF43700155C5F /* PublicRepositoryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12324B432A6DF43700155C5F /* PublicRepositoryViewModel.swift */; };
+		12324B472A6DF88D00155C5F /* PublicTestRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12324B462A6DF88D00155C5F /* PublicTestRepository.swift */; };
+		12324B492A6DF8A200155C5F /* LocalTestRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12324B482A6DF8A200155C5F /* LocalTestRepository.swift */; };
+		12324B4B2A6DF90700155C5F /* PublicRepositoryProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12324B4A2A6DF90700155C5F /* PublicRepositoryProtocol.swift */; };
+		12324B4D2A6DF92800155C5F /* LocalRepositoryProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12324B4C2A6DF92800155C5F /* LocalRepositoryProtocol.swift */; };
 		124E0BC02A618D9B00F97414 /* Book.swift in Sources */ = {isa = PBXBuildFile; fileRef = 124E0BBF2A618D9B00F97414 /* Book.swift */; };
 		124E0BC42A627DD000F97414 /* SearchBooksView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 124E0BC32A627DD000F97414 /* SearchBooksView.swift */; };
 		124E0BC92A62814400F97414 /* RowBooksView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 124E0BC82A62814400F97414 /* RowBooksView.swift */; };
@@ -92,6 +96,10 @@
 		12324B3F2A6808C000155C5F /* OldVersionBackButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OldVersionBackButtonView.swift; sourceTree = "<group>"; };
 		12324B412A68259D00155C5F /* NetworkConnectStatusManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkConnectStatusManager.swift; sourceTree = "<group>"; };
 		12324B432A6DF43700155C5F /* PublicRepositoryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PublicRepositoryViewModel.swift; sourceTree = "<group>"; };
+		12324B462A6DF88D00155C5F /* PublicTestRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PublicTestRepository.swift; sourceTree = "<group>"; };
+		12324B482A6DF8A200155C5F /* LocalTestRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalTestRepository.swift; sourceTree = "<group>"; };
+		12324B4A2A6DF90700155C5F /* PublicRepositoryProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PublicRepositoryProtocol.swift; sourceTree = "<group>"; };
+		12324B4C2A6DF92800155C5F /* LocalRepositoryProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalRepositoryProtocol.swift; sourceTree = "<group>"; };
 		124E0BBF2A618D9B00F97414 /* Book.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Book.swift; sourceTree = "<group>"; };
 		124E0BC32A627DD000F97414 /* SearchBooksView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBooksView.swift; sourceTree = "<group>"; };
 		124E0BC82A62814400F97414 /* RowBooksView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RowBooksView.swift; sourceTree = "<group>"; };
@@ -171,6 +179,8 @@
 			children = (
 				122EA76E2A5FAB4F008B24C9 /* GoogleBooksAPIRepository.swift */,
 				124E0BCE2A62870500F97414 /* RelamLocalRepository.swift */,
+				12324B4A2A6DF90700155C5F /* PublicRepositoryProtocol.swift */,
+				12324B4C2A6DF92800155C5F /* LocalRepositoryProtocol.swift */,
 			);
 			path = Repository;
 			sourceTree = "<group>";
@@ -199,6 +209,15 @@
 				12324B312A66C12100155C5F /* TabIconBarView.swift */,
 			);
 			path = TopMainView;
+			sourceTree = "<group>";
+		};
+		12324B452A6DF84600155C5F /* TestRepository */ = {
+			isa = PBXGroup;
+			children = (
+				12324B462A6DF88D00155C5F /* PublicTestRepository.swift */,
+				12324B482A6DF8A200155C5F /* LocalTestRepository.swift */,
+			);
+			path = TestRepository;
 			sourceTree = "<group>";
 		};
 		124E0BC12A627D9A00F97414 /* AdMob */ = {
@@ -293,6 +312,7 @@
 				128F7E942A5EDE3F00FDF4CE /* KashihonApp.swift */,
 				124E0BCB2A6284A700F97414 /* Utility&Extensions */,
 				124E0BCA2A62849000F97414 /* ViewModels */,
+				12324B452A6DF84600155C5F /* TestRepository */,
 				122EA76D2A5FAA91008B24C9 /* Repository */,
 				122EA76B2A5FAA15008B24C9 /* Models */,
 				128F7EC22A5EE1E600FDF4CE /* Views */,
@@ -673,6 +693,7 @@
 				12324B442A6DF43700155C5F /* PublicRepositoryViewModel.swift in Sources */,
 				124E0BC42A627DD000F97414 /* SearchBooksView.swift in Sources */,
 				12324B3E2A67FBE400155C5F /* InputMemoView.swift in Sources */,
+				12324B492A6DF8A200155C5F /* LocalTestRepository.swift in Sources */,
 				124E0BCF2A62870500F97414 /* RelamLocalRepository.swift in Sources */,
 				12324B262A66181700155C5F /* DisplayDateManager.swift in Sources */,
 				12324B402A6808C000155C5F /* OldVersionBackButtonView.swift in Sources */,
@@ -691,10 +712,13 @@
 				124E0BD62A638DB100F97414 /* DeviceSizeManager.swift in Sources */,
 				12324B342A66C1B400155C5F /* HeaderView.swift in Sources */,
 				12C7AE902A63B99100696BF5 /* AvailableNavigationStack.swift in Sources */,
+				12324B4D2A6DF92800155C5F /* LocalRepositoryProtocol.swift in Sources */,
 				124E0BC02A618D9B00F97414 /* Book.swift in Sources */,
+				12324B4B2A6DF90700155C5F /* PublicRepositoryProtocol.swift in Sources */,
 				12324B3C2A67F21000155C5F /* NoBookView.swift in Sources */,
 				12324B1E2A65FC5100155C5F /* LocalRepositoryViewModel.swift in Sources */,
 				12324B2F2A66BDD600155C5F /* HistoryLoanBookView.swift in Sources */,
+				12324B472A6DF88D00155C5F /* PublicTestRepository.swift in Sources */,
 				12324B1C2A65F9E400155C5F /* OnLoanListView.swift in Sources */,
 				124E0BC92A62814400F97414 /* RowBooksView.swift in Sources */,
 				128F7E952A5EDE3F00FDF4CE /* KashihonApp.swift in Sources */,

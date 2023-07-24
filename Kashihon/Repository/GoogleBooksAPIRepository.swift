@@ -9,7 +9,7 @@ import Alamofire
 import SwiftyJSON
 import UIKit
 
-class GoogleBooksAPIRepository {
+class GoogleBooksAPIRepository: PublicRepositoryProtocol {
     private let apiUrl: String = "https://www.googleapis.com/books/v1/volumes"
     private let preKeyword: String = "?maxResults=30&q="
 

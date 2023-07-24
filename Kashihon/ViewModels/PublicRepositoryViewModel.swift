@@ -7,11 +7,7 @@
 
 import UIKit
 
-protocol PublicRepositoryProtocol {
-    func getAPI(keyword: String, completion: @escaping ([Book]?) -> Void)
-}
-
-class PublicRepositoryViewModel: PublicRepositoryProtocol {
+class PublicRepositoryViewModel {
     private let googleBooksAPIRepository = GoogleBooksAPIRepository()
 
     public func getAPI(keyword: String, completion: @escaping ([Book]?) -> Void) {

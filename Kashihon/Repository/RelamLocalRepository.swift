@@ -8,7 +8,7 @@
 import RealmSwift
 import UIKit
 
-class RelamLocalRepository {
+class RelamLocalRepository: LocalRepositoryProtocol {
     private var realm: Realm
 
     init() {
@@ -37,9 +37,9 @@ class RelamLocalRepository {
         }
     }
 
-    public func readAllBooks() -> Results<Book> {
+    public func readAllBooks() -> [Book] {
         let books = realm.objects(Book.self)
-        return books
+        return Array(books)
     }
 
     // MARK: - Update
@@ -83,9 +83,7 @@ class RelamLocalRepository {
             realm.delete(bookTable)
         }
     }
-}
 
-extension RelamLocalRepository {
     // MARK: - Create
 
     public func createLoanHistory(_ loanHistory: LoanHistory) {
@@ -94,9 +92,9 @@ extension RelamLocalRepository {
         }
     }
 
-    public func readAllLoanHistorys() -> Results<LoanHistory> {
+    public func readAllLoanHistorys() -> [LoanHistory] {
         let historys = realm.objects(LoanHistory.self)
-        return historys
+        return Array(historys)
     }
 
     public func deleteAllLoanHistorys() {
