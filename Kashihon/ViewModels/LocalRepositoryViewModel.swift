@@ -14,6 +14,9 @@ class LocalRepositoryViewModel: ObservableObject {
 
     @Published var books: [Book] = []
     @Published var currentBook: Book?
+
+    @Published var isFiltering: FilteringMode = .none
+
     @Published var historys: [LoanHistory] = []
 
     private var orderNum = 1
@@ -29,6 +32,7 @@ class LocalRepositoryViewModel: ObservableObject {
     // MARK: - Read
 
     public func readAllBooks() {
+        isFiltering = .none
         books = relamLocalRepository.readAllBooks().sorted(by: { $0.order < $1.order })
         if books.count != 0 {
             orderNum = books.count + 1
@@ -100,15 +104,18 @@ class LocalRepositoryViewModel: ObservableObject {
 extension LocalRepositoryViewModel {
     // フィルタリング機能の追加
     public func filteringOnLoan() {
-        books = relamLocalRepository.readAllBooks().filter { $0.OnLoan == true }
+        isFiltering = .onLoan
+        books = relamLocalRepository.readAllBooks().filter { $0.OnLoan == true }.sorted(by: { $0.order < $1.order })
     }
 
     public func filteringOffLoan() {
-        books = relamLocalRepository.readAllBooks().filter { $0.OnLoan == false }
+        isFiltering = .offLoan
+        books = relamLocalRepository.readAllBooks().filter { $0.OnLoan == false }.sorted(by: { $0.order < $1.order })
     }
 
     public func filteringSearchText(_ text: String) {
-        books = relamLocalRepository.readAllBooks().filter(text.isEmpty ? { $0.title != "" } : { $0.title.contains(text) })
+        isFiltering = .search
+        books = relamLocalRepository.readAllBooks().filter(text.isEmpty ? { $0.title != "" } : { $0.title.contains(text) }).sorted(by: { $0.order < $1.order })
     }
 
     // 並び替え機能

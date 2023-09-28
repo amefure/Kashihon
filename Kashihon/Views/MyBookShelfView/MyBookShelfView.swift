@@ -8,24 +8,11 @@
 import SwiftUI
 
 struct MyBookShelfView: View {
-    private let deviceSizeManager = DeviceSizeManager()
-    private let userDefaultsManager = UserDefaultsManager()
-    private let imageFileManager = ImageFileManager()
-
-    @ObservedObject var viewModel = MyBookShelfViewModel()
+    private let viewModel = MyBookShelfViewModel()
     @ObservedObject var localRepositoryVM = LocalRepositoryViewModel.shared
 
     @State var isSearch = false
     @State var searchText = ""
-
-    private var columns: [GridItem] {
-        let deviceSizeManager = DeviceSizeManager()
-        if deviceSizeManager.isiPadSize {
-            return Array(repeating: GridItem(.fixed(deviceSizeManager.deviceWidth / 8 - 20)), count: 8)
-        } else {
-            return Array(repeating: GridItem(.fixed(deviceSizeManager.deviceWidth / 4 - 20)), count: 4)
-        }
-    }
 
     var body: some View {
         VStack(spacing: 0) {
@@ -44,8 +31,45 @@ struct MyBookShelfView: View {
                     .font(.headline)
                     .foregroundColor(.gray)
                 Spacer()
-                Button {} label: {
-                    Image(systemName: "iphone")
+                Menu {
+                    Button {
+                        localRepositoryVM.filteringOnLoan()
+                    } label: {
+                        if localRepositoryVM.isFiltering == .onLoan {
+                            Image(systemName: "checkmark")
+                        }
+                        Text("貸出中のみ")
+                    }
+
+                    Button {
+                        localRepositoryVM.filteringOffLoan()
+                    } label: {
+                        if localRepositoryVM.isFiltering == .offLoan {
+                            Image(systemName: "checkmark")
+                        }
+                        Text("未貸出のみ")
+                    }
+
+                    Button {
+                        withAnimation {
+                            isSearch.toggle()
+                        }
+                    } label: {
+                        if localRepositoryVM.isFiltering == .search {
+                            Image(systemName: "checkmark")
+                        }
+                        Text("検索")
+                    }
+                    Button {
+                        localRepositoryVM.readAllBooks()
+                    } label: {
+                        if localRepositoryVM.isFiltering == .none {
+                            Image(systemName: "checkmark")
+                        }
+                        Text("解除")
+                    }
+                } label: {
+                    Image(systemName: "list.bullet")
                 }.padding(.trailing, 20)
             }.padding([.horizontal, .bottom])
 
@@ -74,7 +98,7 @@ struct MyBookShelfView: View {
                 NoBookView(text: searchText.isEmpty ? "登録されている書籍はありません。" : "\(searchText)にヒットする書籍はありませんでした。")
             } else {
                 ScrollView {
-                    LazyVGrid(columns: columns) {
+                    LazyVGrid(columns: viewModel.columns) {
                         ForEach(localRepositoryVM.books) { book in
                             ZStack {
                                 if book.OnLoan {
@@ -95,10 +119,10 @@ struct MyBookShelfView: View {
                                     NavigationLink {
                                         DetailBookView(book: book)
                                     } label: {
-                                        imageFileManager.loadImage(urlStr: book.secureThumbnailUrl!.absoluteString)
+                                        viewModel.getThumbnailImage(book)
                                             .resizable()
                                             .shadow(color: .gray, radius: 3, x: 4, y: 4)
-                                            .frame(height: deviceSizeManager.isSESize ? 90 : 120)
+                                            .frame(height: viewModel.isSESize ? 90 : 120)
                                     }
                                 } else {
                                     NavigationLink {
@@ -109,9 +133,9 @@ struct MyBookShelfView: View {
                                             .font(.caption)
                                             .foregroundColor(.gray)
                                             .padding(5)
-                                            .frame(minWidth: deviceSizeManager.isiPadSize ? deviceSizeManager.deviceWidth / 8 - 20 : deviceSizeManager.deviceWidth / 4 - 20)
-                                            .frame(height: deviceSizeManager.isSESize ? 90 : 120)
-                                            .frame(maxHeight: deviceSizeManager.isSESize ?90 : 120)
+                                            .frame(minWidth: viewModel.isiPadSize ? viewModel.deviceWidth / 8 - 20 : viewModel.deviceWidth / 4 - 20)
+                                            .frame(height: viewModel.isSESize ? 90 : 120)
+                                            .frame(maxHeight: viewModel.isSESize ? 90 : 120)
                                             .background(.white)
                                             .clipped()
                                             .shadow(color: .gray, radius: 3, x: 4, y: 4)
@@ -126,12 +150,17 @@ struct MyBookShelfView: View {
                                         .foregroundColor(Color.thema2)
                                 }
                             }.onDrag {
+                                // 並び替え操作実行時は検索フィルターをリセット
+                                withAnimation {
+                                    isSearch = false
+                                }
+                                localRepositoryVM.readAllBooks()
                                 localRepositoryVM.currentBook = book
                                 return NSItemProvider(contentsOf: URL(string: "\(book.id)")!)!
                             }.onDrop(of: [.url], delegate:
                                 DropViewDelegate(item: book,
                                                  viewModel: localRepositoryVM))
-                        }.environment(\.editMode, .constant(viewModel.editSortMode))
+                        }
                     }
                 } // ScrollView
             }
@@ -143,50 +172,14 @@ struct MyBookShelfView: View {
                     .fontWeight(.bold)
                     .padding()
                     .foregroundColor(.white)
-                    .frame(width: deviceSizeManager.deviceWidth - 40)
+                    .frame(width: viewModel.deviceWidth - 40)
                     .background(Color.thema4)
                     .cornerRadius(20)
             }.shadow(color: .gray, radius: 3, x: 4, y: 4)
         } // VStack
         .onAppear {
             localRepositoryVM.readAllBooks()
-            if userDefaultsManager.getMigration() == MigrationInfo.PRE_MIGRATION_VERSION {
-                localRepositoryVM.migrationSetOrder()
-                userDefaultsManager.setMigration()
-                print("マイグレーション実行")
-            }
-            viewModel.onSortMode()
+            viewModel.migration()
         }
-    }
-}
-
-struct DropViewDelegate: DropDelegate {
-    var item: Book
-    var viewModel: LocalRepositoryViewModel
-
-    func performDrop(info _: DropInfo) -> Bool {
-        true
-    }
-
-    func dropEntered(info _: DropInfo) {
-        // from
-        let fromIndex = viewModel.books.firstIndex { item -> Bool in
-            item.id == viewModel.currentBook?.id
-        } ?? 0
-
-        // to
-        let toIndex = viewModel.books.firstIndex { item -> Bool in
-            item.id == self.item.id
-        } ?? 0
-
-        if fromIndex != toIndex {
-            withAnimation(.default) {
-                viewModel.changeOrder(viewModel.currentBook, source: fromIndex, destination: toIndex)
-            }
-        }
-    }
-
-    func dropUpdated(info _: DropInfo) -> DropProposal? {
-        DropProposal(operation: .move)
     }
 }
