@@ -15,7 +15,7 @@ class RelamLocalRepository: LocalRepositoryProtocol {
         do {
             // ver：理由
             // 1  ：orderプロパティの追加
-            let config = Realm.Configuration(schemaVersion: 1)
+            let config = Realm.Configuration(schemaVersion: UInt64(MigrationInfo.MIGRATION_VERSION))
             Realm.Configuration.defaultConfiguration = config
             realm = try! Realm()
         } catch {
@@ -42,7 +42,7 @@ class RelamLocalRepository: LocalRepositoryProtocol {
     }
 
     public func readAllBooks() -> [Book] {
-        let books = realm.objects(Book.self)
+        let books = realm.objects(Book.self).freeze()
         return Array(books)
     }
 
@@ -67,6 +67,16 @@ class RelamLocalRepository: LocalRepositoryProtocol {
         try! realm.write {
             if let bk = readFindOneBooks(id: book.id) {
                 bk.bookMemo = memo
+            }
+        }
+    }
+
+    /// Book並び替えの更新
+    public func updateOrderStock(id: String, order: Int) {
+        try! realm.write {
+            let books = realm.objects(Book.self)
+            if let book = books.where({ $0.id == id }).first {
+                book.order = order
             }
         }
     }

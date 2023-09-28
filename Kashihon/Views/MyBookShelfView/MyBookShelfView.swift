@@ -9,7 +9,7 @@ import SwiftUI
 
 struct MyBookShelfView: View {
     private let deviceSizeManager = DeviceSizeManager()
-
+    private let userDefaultsManager = UserDefaultsManager()
     private let imageFileManager = ImageFileManager()
 
     @ObservedObject var localRepositoryVM = LocalRepositoryViewModel.shared
@@ -86,6 +86,11 @@ struct MyBookShelfView: View {
                                         .opacity(0.8)
                                 }
 
+                                Text("\(book.order)")
+                                    .padding()
+                                    .background(Color.thema2)
+                                    .zIndex(6)
+
                                 if book.secureThumbnailUrl != nil {
                                     NavigationLink {
                                         DetailBookView(book: book)
@@ -140,6 +145,11 @@ struct MyBookShelfView: View {
         } // VStack
         .onAppear {
             localRepositoryVM.readAllBooks()
+            if userDefaultsManager.getMigration() == MigrationInfo.PRE_MIGRATION_VERSION {
+                localRepositoryVM.migrationSetOrder()
+                userDefaultsManager.setMigration()
+                print("マイグレーション実行")
+            }
         }
     }
 }

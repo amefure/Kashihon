@@ -15,16 +15,23 @@ class LocalRepositoryViewModel: ObservableObject {
     @Published var books: [Book] = []
     @Published var historys: [LoanHistory] = []
 
+    private var orderNum = 1
+
     // MARK: - Create
 
     public func createBook(_ book: Book) {
+        book.order = orderNum
+        orderNum += 1
         relamLocalRepository.createBook(book)
     }
 
     // MARK: - Read
 
     public func readAllBooks() {
-        books = relamLocalRepository.readAllBooks()
+        books = relamLocalRepository.readAllBooks().sorted(by: { $0.order < $1.order })
+        if books.count != 0 {
+            orderNum = books.count
+        }
     }
 
     // MARK: - Update
@@ -44,7 +51,18 @@ class LocalRepositoryViewModel: ObservableObject {
     // MARK: - Delete
 
     public func deleteBook(book: Book) {
+        let items = books.sorted(by: { $0.order < $1.order })
+        // 削除する行のIDを取得
+        let deleteId = book.id
+        // 削除する行の行番号を取得
+        let deleteOrder = book.order
+
+        // 削除する行の行番号より大きい行番号を全て -1 する
+        for i in deleteOrder ..< items.count {
+            relamLocalRepository.updateOrderStock(id: items[i].id, order: items[i].order - 1)
+        }
         relamLocalRepository.deleteBook(book: book)
+        readAllBooks()
     }
 
     public func deleteAllBooks() {
@@ -87,5 +105,40 @@ extension LocalRepositoryViewModel {
 
     public func filteringSearchText(_ text: String) {
         books = relamLocalRepository.readAllBooks().filter(text.isEmpty ? { $0.title != "" } : { $0.title.contains(text) })
+    }
+
+    // 並び替え機能
+    public func changeOrder(list: [Book], sourceSet: IndexSet, destination: Int) {
+        guard let source = sourceSet.first else { return }
+
+        let items = list.sorted(by: { $0.order < $1.order })
+
+        let moveId = items[source].id
+
+        // 上から下に移動する
+        if source < destination {
+            for i in (source + 1) ... (destination - 1) {
+                relamLocalRepository.updateOrderStock(id: items[i].id, order: items[i].order - 1)
+            }
+            relamLocalRepository.updateOrderStock(id: moveId, order: destination - 1)
+
+            // 下から上に移動する
+        } else if destination < source {
+            for i in (destination ... (source - 1)).reversed() {
+                relamLocalRepository.updateOrderStock(id: items[i].id, order: items[i].order + 1)
+            }
+            relamLocalRepository.updateOrderStock(id: moveId, order: destination)
+        }
+        readAllBooks()
+    }
+
+    // 並び替え機能
+    public func migrationSetOrder() {
+        var order = 1
+        for item in books {
+            relamLocalRepository.updateOrderStock(id: item.id, order: order)
+            order += 1
+        }
+        readAllBooks()
     }
 }

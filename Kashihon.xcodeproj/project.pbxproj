@@ -39,6 +39,8 @@
 		124E0BD22A638AEB00F97414 /* MyBookShelfView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 124E0BD12A638AEB00F97414 /* MyBookShelfView.swift */; };
 		124E0BD42A638CD000F97414 /* ExColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 124E0BD32A638CD000F97414 /* ExColor.swift */; };
 		124E0BD62A638DB100F97414 /* DeviceSizeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 124E0BD52A638DB100F97414 /* DeviceSizeManager.swift */; };
+		1278C1D32AC5845D004E97BD /* UserDefaultsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1278C1D22AC5845D004E97BD /* UserDefaultsManager.swift */; };
+		1278C1D52AC584C3004E97BD /* MigrationInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1278C1D42AC584C3004E97BD /* MigrationInfo.swift */; };
 		128F7E952A5EDE3F00FDF4CE /* KashihonApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 128F7E942A5EDE3F00FDF4CE /* KashihonApp.swift */; };
 		128F7E972A5EDE3F00FDF4CE /* TopMainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 128F7E962A5EDE3F00FDF4CE /* TopMainView.swift */; };
 		128F7E992A5EDE4000FDF4CE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 128F7E982A5EDE4000FDF4CE /* Assets.xcassets */; };
@@ -108,6 +110,8 @@
 		124E0BD12A638AEB00F97414 /* MyBookShelfView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyBookShelfView.swift; sourceTree = "<group>"; };
 		124E0BD32A638CD000F97414 /* ExColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExColor.swift; sourceTree = "<group>"; };
 		124E0BD52A638DB100F97414 /* DeviceSizeManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceSizeManager.swift; sourceTree = "<group>"; };
+		1278C1D22AC5845D004E97BD /* UserDefaultsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsManager.swift; sourceTree = "<group>"; };
+		1278C1D42AC584C3004E97BD /* MigrationInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MigrationInfo.swift; sourceTree = "<group>"; };
 		128F7E912A5EDE3F00FDF4CE /* Kashihon.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Kashihon.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		128F7E942A5EDE3F00FDF4CE /* KashihonApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KashihonApp.swift; sourceTree = "<group>"; };
 		128F7E962A5EDE3F00FDF4CE /* TopMainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopMainView.swift; sourceTree = "<group>"; };
@@ -169,6 +173,7 @@
 			isa = PBXGroup;
 			children = (
 				124E0BBF2A618D9B00F97414 /* Book.swift */,
+				1278C1D42AC584C3004E97BD /* MigrationInfo.swift */,
 				12324B212A6605AD00155C5F /* LoanHistory.swift */,
 			);
 			path = Models;
@@ -273,6 +278,7 @@
 			isa = PBXGroup;
 			children = (
 				124E0BD32A638CD000F97414 /* ExColor.swift */,
+				1278C1D22AC5845D004E97BD /* UserDefaultsManager.swift */,
 				124E0BCC2A6284D800F97414 /* ValidationManager.swift */,
 				12324B412A68259D00155C5F /* NetworkConnectStatusManager.swift */,
 				124E0BD52A638DB100F97414 /* DeviceSizeManager.swift */,
@@ -317,13 +323,12 @@
 			isa = PBXGroup;
 			children = (
 				128F7EC52A5EE2B900FDF4CE /* Info.plist */,
-				128F7E942A5EDE3F00FDF4CE /* KashihonApp.swift */,
-				124E0BCB2A6284A700F97414 /* Utility&Extensions */,
-				124E0BCA2A62849000F97414 /* ViewModels */,
-				12324B452A6DF84600155C5F /* TestRepository */,
-				122EA76D2A5FAA91008B24C9 /* Repository */,
-				122EA76B2A5FAA15008B24C9 /* Models */,
 				128F7EC22A5EE1E600FDF4CE /* Views */,
+				122EA76B2A5FAA15008B24C9 /* Models */,
+				124E0BCA2A62849000F97414 /* ViewModels */,
+				122EA76D2A5FAA91008B24C9 /* Repository */,
+				124E0BCB2A6284A700F97414 /* Utility&Extensions */,
+				12324B452A6DF84600155C5F /* TestRepository */,
 				128F7E982A5EDE4000FDF4CE /* Assets.xcassets */,
 				128F7EC02A5EE0DA00FDF4CE /* README.md */,
 				128F7EBE2A5EDFEC00FDF4CE /* GoogleService-Info.plist */,
@@ -360,6 +365,7 @@
 		128F7EC22A5EE1E600FDF4CE /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				128F7E942A5EDE3F00FDF4CE /* KashihonApp.swift */,
 				12324B302A66C10100155C5F /* TopMainView */,
 				12324B2D2A66BDCD00155C5F /* HistoryLoanBookView */,
 				12324B1A2A65F9C500155C5F /* OnLoanListView */,
@@ -697,6 +703,7 @@
 				128F7EC42A5EE20A00FDF4CE /* AdMobView.swift in Sources */,
 				12324B2C2A66BD8200155C5F /* AvailableListPlaneStack.swift in Sources */,
 				12C7AE8B2A6398C700696BF5 /* ShareButtonView.swift in Sources */,
+				1278C1D32AC5845D004E97BD /* UserDefaultsManager.swift in Sources */,
 				12C7AE882A63983600696BF5 /* SettingView.swift in Sources */,
 				12324B442A6DF43700155C5F /* PublicRepositoryViewModel.swift in Sources */,
 				124E0BC42A627DD000F97414 /* SearchBooksView.swift in Sources */,
@@ -730,6 +737,7 @@
 				12324B1C2A65F9E400155C5F /* OnLoanListView.swift in Sources */,
 				124E0BC92A62814400F97414 /* RowBooksView.swift in Sources */,
 				128F7E952A5EDE3F00FDF4CE /* KashihonApp.swift in Sources */,
+				1278C1D52AC584C3004E97BD /* MigrationInfo.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

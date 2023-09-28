@@ -9,7 +9,7 @@ import RealmSwift
 import UIKit
 
 class Book: Object, Identifiable {
-    @Persisted(primaryKey: true) var id: String // ID
+    @Persisted(primaryKey: true) var id: String // 書籍ID
     @Persisted var title: String // タイトル
     @Persisted var authors = RealmSwift.List<String>() // 著書の配列
     @Persisted var desc: String // 説明
