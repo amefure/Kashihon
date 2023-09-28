@@ -62,8 +62,9 @@ struct RowRightBookInfoView: View {
                                 RoundedRectangle(cornerRadius: 20)
                                     .stroke(Color.thema2, lineWidth: 3)
                             }
-                        }.disabled(isClick)
+                        }
                 }.buttonStyle(.borderless)
+                    .disabled(isClick)
 
                 Spacer()
             }

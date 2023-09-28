@@ -15,6 +15,7 @@ struct SearchBooksView: View {
     @State var books: [Book] = []
 
     @State var isEmpty: Bool = false
+    @State var isLoading: Bool = false
 
     /// ローカルに既に保存しているものがあれば除去する
     private func customFilter() -> [Book] {
@@ -34,8 +35,10 @@ struct SearchBooksView: View {
                 .cornerRadius(20)
 
             Button {
+                isLoading = true
                 if !keyword.isEmpty {
                     publicRepositoryVM.getAPI(keyword: keyword) { results in
+                        isLoading = false
                         if results != nil {
                             books = results!
                         } else {
@@ -57,6 +60,9 @@ struct SearchBooksView: View {
             if !networkConnectStatusManager.getNetworkConnectStatus() {
                 NoBookView(text: "ネットワークに接続してください。")
             } else {
+                if isLoading {
+                    ProgressView()
+                }
                 if isEmpty, books.isEmpty {
                     NoBookView(text: "検索に一致する書籍が見つかりませんでした。")
 

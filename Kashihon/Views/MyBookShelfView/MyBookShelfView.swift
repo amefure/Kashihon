@@ -71,7 +71,7 @@ struct MyBookShelfView: View {
                 } label: {
                     Image(systemName: "list.bullet")
                 }.padding(.trailing, 20)
-            }.padding([.horizontal, .bottom])
+            }.padding([.horizontal])
 
             if isSearch {
                 HStack {
