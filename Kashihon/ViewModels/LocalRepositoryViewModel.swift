@@ -13,6 +13,7 @@ class LocalRepositoryViewModel: ObservableObject {
     private let relamLocalRepository = RelamLocalRepository()
 
     @Published var books: [Book] = []
+    @Published var currentBook: Book?
     @Published var historys: [LoanHistory] = []
 
     private var orderNum = 1
@@ -30,7 +31,10 @@ class LocalRepositoryViewModel: ObservableObject {
     public func readAllBooks() {
         books = relamLocalRepository.readAllBooks().sorted(by: { $0.order < $1.order })
         if books.count != 0 {
-            orderNum = books.count
+            orderNum = books.count + 1
+        } else {
+            // 削除されたとき場合もあるため明示的にリセット
+            orderNum = 1
         }
     }
 
@@ -108,26 +112,29 @@ extension LocalRepositoryViewModel {
     }
 
     // 並び替え機能
-    public func changeOrder(list: [Book], sourceSet: IndexSet, destination: Int) {
-        guard let source = sourceSet.first else { return }
+    public func changeOrder(_ book: Book?, source: Int, destination: Int) {
+        guard let bk = book else {
+            return
+        }
+        let items = books
 
-        let items = list.sorted(by: { $0.order < $1.order })
-
-        let moveId = items[source].id
-
+        let moveId = bk.id
         // 上から下に移動する
         if source < destination {
-            for i in (source + 1) ... (destination - 1) {
+            // 移動元番号から移動先番号の間のアイテムの番号を下げる
+            // 0 → 5
+            // 1 ~ 5 → 0 ~ 4
+            for i in (source + 1) ... destination {
                 relamLocalRepository.updateOrderStock(id: items[i].id, order: items[i].order - 1)
             }
-            relamLocalRepository.updateOrderStock(id: moveId, order: destination - 1)
+            relamLocalRepository.updateOrderStock(id: moveId, order: destination + 1)
 
             // 下から上に移動する
-        } else if destination < source {
-            for i in (destination ... (source - 1)).reversed() {
+        } else if destination < source + 1 {
+            for i in (destination ... source).reversed() {
                 relamLocalRepository.updateOrderStock(id: items[i].id, order: items[i].order + 1)
             }
-            relamLocalRepository.updateOrderStock(id: moveId, order: destination)
+            relamLocalRepository.updateOrderStock(id: moveId, order: destination + 1)
         }
         readAllBooks()
     }

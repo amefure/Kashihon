@@ -12,6 +12,7 @@ struct MyBookShelfView: View {
     private let userDefaultsManager = UserDefaultsManager()
     private let imageFileManager = ImageFileManager()
 
+    @ObservedObject var viewModel = MyBookShelfViewModel()
     @ObservedObject var localRepositoryVM = LocalRepositoryViewModel.shared
 
     @State var isSearch = false
@@ -75,7 +76,6 @@ struct MyBookShelfView: View {
                 ScrollView {
                     LazyVGrid(columns: columns) {
                         ForEach(localRepositoryVM.books) { book in
-
                             ZStack {
                                 if book.OnLoan {
                                     Text("貸出中")
@@ -125,8 +125,13 @@ struct MyBookShelfView: View {
                                     Text("削除する")
                                         .foregroundColor(Color.thema2)
                                 }
-                            }
-                        }
+                            }.onDrag {
+                                localRepositoryVM.currentBook = book
+                                return NSItemProvider(contentsOf: URL(string: "\(book.id)")!)!
+                            }.onDrop(of: [.url], delegate:
+                                DropViewDelegate(item: book,
+                                                 viewModel: localRepositoryVM))
+                        }.environment(\.editMode, .constant(viewModel.editSortMode))
                     }
                 } // ScrollView
             }
@@ -150,6 +155,38 @@ struct MyBookShelfView: View {
                 userDefaultsManager.setMigration()
                 print("マイグレーション実行")
             }
+            viewModel.onSortMode()
         }
+    }
+}
+
+struct DropViewDelegate: DropDelegate {
+    var item: Book
+    var viewModel: LocalRepositoryViewModel
+
+    func performDrop(info _: DropInfo) -> Bool {
+        true
+    }
+
+    func dropEntered(info _: DropInfo) {
+        // from
+        let fromIndex = viewModel.books.firstIndex { item -> Bool in
+            item.id == viewModel.currentBook?.id
+        } ?? 0
+
+        // to
+        let toIndex = viewModel.books.firstIndex { item -> Bool in
+            item.id == self.item.id
+        } ?? 0
+
+        if fromIndex != toIndex {
+            withAnimation(.default) {
+                viewModel.changeOrder(viewModel.currentBook, source: fromIndex, destination: toIndex)
+            }
+        }
+    }
+
+    func dropUpdated(info _: DropInfo) -> DropProposal? {
+        DropProposal(operation: .move)
     }
 }

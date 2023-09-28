@@ -41,6 +41,7 @@
 		124E0BD62A638DB100F97414 /* DeviceSizeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 124E0BD52A638DB100F97414 /* DeviceSizeManager.swift */; };
 		1278C1D32AC5845D004E97BD /* UserDefaultsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1278C1D22AC5845D004E97BD /* UserDefaultsManager.swift */; };
 		1278C1D52AC584C3004E97BD /* MigrationInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1278C1D42AC584C3004E97BD /* MigrationInfo.swift */; };
+		1278C1D72AC59D61004E97BD /* MyBookShelfViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1278C1D62AC59D61004E97BD /* MyBookShelfViewModel.swift */; };
 		128F7E952A5EDE3F00FDF4CE /* KashihonApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 128F7E942A5EDE3F00FDF4CE /* KashihonApp.swift */; };
 		128F7E972A5EDE3F00FDF4CE /* TopMainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 128F7E962A5EDE3F00FDF4CE /* TopMainView.swift */; };
 		128F7E992A5EDE4000FDF4CE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 128F7E982A5EDE4000FDF4CE /* Assets.xcassets */; };
@@ -112,6 +113,7 @@
 		124E0BD52A638DB100F97414 /* DeviceSizeManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceSizeManager.swift; sourceTree = "<group>"; };
 		1278C1D22AC5845D004E97BD /* UserDefaultsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsManager.swift; sourceTree = "<group>"; };
 		1278C1D42AC584C3004E97BD /* MigrationInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MigrationInfo.swift; sourceTree = "<group>"; };
+		1278C1D62AC59D61004E97BD /* MyBookShelfViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyBookShelfViewModel.swift; sourceTree = "<group>"; };
 		128F7E912A5EDE3F00FDF4CE /* Kashihon.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Kashihon.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		128F7E942A5EDE3F00FDF4CE /* KashihonApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KashihonApp.swift; sourceTree = "<group>"; };
 		128F7E962A5EDE3F00FDF4CE /* TopMainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopMainView.swift; sourceTree = "<group>"; };
@@ -269,6 +271,7 @@
 			isa = PBXGroup;
 			children = (
 				12324B432A6DF43700155C5F /* PublicRepositoryViewModel.swift */,
+				1278C1D62AC59D61004E97BD /* MyBookShelfViewModel.swift */,
 				12324B1D2A65FC5100155C5F /* LocalRepositoryViewModel.swift */,
 			);
 			path = ViewModels;
@@ -709,6 +712,7 @@
 				124E0BC42A627DD000F97414 /* SearchBooksView.swift in Sources */,
 				12324B3E2A67FBE400155C5F /* InputMemoView.swift in Sources */,
 				12324B492A6DF8A200155C5F /* LocalTestRepository.swift in Sources */,
+				1278C1D72AC59D61004E97BD /* MyBookShelfViewModel.swift in Sources */,
 				124E0BCF2A62870500F97414 /* RelamLocalRepository.swift in Sources */,
 				12324B262A66181700155C5F /* DisplayDateManager.swift in Sources */,
 				12324B402A6808C000155C5F /* OldVersionBackButtonView.swift in Sources */,
