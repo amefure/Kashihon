@@ -13,6 +13,10 @@ class RelamLocalRepository: LocalRepositoryProtocol {
 
     init() {
         do {
+            // ver：理由
+            // 1  ：orderプロパティの追加
+            let config = Realm.Configuration(schemaVersion: 1)
+            Realm.Configuration.defaultConfiguration = config
             realm = try! Realm()
         } catch {
             print("インスタンス化エラー")

@@ -74,3 +74,18 @@ class LocalRepositoryViewModel: ObservableObject {
         relamLocalRepository.deleteAllLoanHistorys()
     }
 }
+
+extension LocalRepositoryViewModel {
+    // フィルタリング機能の追加
+    public func filteringOnLoan() {
+        books = relamLocalRepository.readAllBooks().filter { $0.OnLoan == true }
+    }
+
+    public func filteringOffLoan() {
+        books = relamLocalRepository.readAllBooks().filter { $0.OnLoan == false }
+    }
+
+    public func filteringSearchText(_ text: String) {
+        books = relamLocalRepository.readAllBooks().filter(text.isEmpty ? { $0.title != "" } : { $0.title.contains(text) })
+    }
+}
