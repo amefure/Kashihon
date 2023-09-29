@@ -34,10 +34,13 @@ struct OnLoanListView: View {
                                 imageFileManager.loadImage(urlStr: book.secureThumbnailUrl!.absoluteString)
                                     .resizable()
                                     .shadow(color: .gray, radius: 3, x: 4, y: 4)
-                                    .frame(width: 80, height: 100)
+                                    .frame(width: 80, height: 90)
 
                             } else {
-                                NoImageView(logoSize: 60, thumbnailSize: 80)
+                                Image("No_Image")
+                                    .resizable()
+                                    .frame(width: 60, height: 90)
+                                    .shadow(color: .gray, radius: 3, x: 4, y: 4)
                             }
                             VStack(spacing: 0) {
                                 HStack {
@@ -92,11 +95,11 @@ struct OnLoanListView: View {
             } label: {
                 Text("今までの貸出履歴")
                     .fontWeight(.bold)
-                    .padding()
+                    .padding(10)
                     .foregroundColor(.white)
                     .frame(width: deviceSizeManager.deviceWidth - 40)
                     .background(Color.thema4)
-                    .cornerRadius(20)
+                    .cornerRadius(15)
             }.shadow(color: .gray, radius: 3, x: 4, y: 4)
         }.onAppear {
             localRepositoryVM.readAllBooks()

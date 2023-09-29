@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct TopMainView: View {
-    @State var selectTag: Int = 1
+    @State var selectTag: Int = 2
 
     init() {
         UITableView.appearance().backgroundColor = .clear

@@ -13,7 +13,7 @@ struct HeaderView: View {
             Spacer()
             Image("logo-name")
                 .resizable()
-                .frame(width: 130, height: 40)
+                .frame(width: 110, height: 30)
             Spacer()
         }.padding(.bottom, 10)
 

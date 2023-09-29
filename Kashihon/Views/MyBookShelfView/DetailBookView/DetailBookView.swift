@@ -30,7 +30,10 @@ struct DetailBookView: View {
                         .frame(width: 130, height: 165)
 
                 } else {
-                    NoImageView(logoSize: 90, thumbnailSize: 130)
+                    Image("No_Image")
+                        .resizable()
+                        .shadow(color: .gray, radius: 3, x: 4, y: 4)
+                        .frame(width: 130, height: 165)
                 }
                 Spacer()
                 VStack(spacing: 0) {

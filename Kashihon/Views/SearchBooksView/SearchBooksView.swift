@@ -26,43 +26,31 @@ struct SearchBooksView: View {
     }
 
     var body: some View {
-        VStack {
+        VStack(spacing: 0) {
             OldVersionBackButtonView()
-            TextField("タイトル/著者/ISBN...で検索", text: $keyword)
-                .font(.system(size: 20, weight: .bold))
-                .padding()
-                .background(Color.thema4)
-                .foregroundColor(.white)
-                .cornerRadius(20)
-
-            Button {
-                isLoading = true
-                if !keyword.isEmpty {
-                    publicRepositoryVM.getAPI(keyword: keyword) { results in
-                        isLoading = false
-                        if results != nil {
-                            books = results!
-                        } else {
-                            books = []
-                            isEmpty = true
-                        }
-                    }
-                }
-            } label: {
-                Text("検索")
-                    .fontWeight(.bold)
-                    .frame(width: 100)
-                    .padding()
-                    .background(Color.thema2)
-                    .foregroundColor(.white)
-                    .cornerRadius(20)
-            }
+            SearchTextFieldView(placeholder: "タイトル/著者/ISBN...で検索",
+                                searchText: $keyword,
+                                searchAction: {
+                                    isLoading = true
+                                    if !keyword.isEmpty {
+                                        publicRepositoryVM.getAPI(keyword: keyword) { results in
+                                            isLoading = false
+                                            if results != nil {
+                                                books = results!
+                                            } else {
+                                                books = []
+                                                isEmpty = true
+                                            }
+                                        }
+                                    }
+                                })
 
             if !viewModel.isNetwork {
                 NoBookView(text: "ネットワークに接続してください。")
             } else {
                 if isLoading {
                     ProgressView()
+                        .offset(y: -10)
                 }
                 if isEmpty, books.isEmpty {
                     NoBookView(text: "検索に一致する書籍が見つかりませんでした。")
@@ -70,11 +58,10 @@ struct SearchBooksView: View {
                 } else {
                     AvailableListBookStack(books: customFilter()) { book in
                         RowBooksView(book: book)
-                    }
+                    }.offset(y: -10)
                 }
             }
-
-        }.padding()
+        }
     }
 }
 

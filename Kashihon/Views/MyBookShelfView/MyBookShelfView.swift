@@ -76,24 +76,11 @@ struct MyBookShelfView: View {
             }.padding([.horizontal])
 
             if isSearch {
-                HStack {
-                    TextField("タイトル/著者名...で検索", text: $searchText)
-                        .font(.system(size: 20, weight: .bold))
-                        .padding(10)
-                        .background(Color.thema4)
-                        .foregroundColor(.white)
-                        .cornerRadius(20)
-                    Button {
-                        localRepositoryVM.filteringSearchText(searchText)
-                    } label: {
-                        Image(systemName: "magnifyingglass")
-                            .foregroundColor(.white)
-                            .padding(10)
-                            .background(Color.thema1)
-                            .cornerRadius(20)
-                    }
-                }.transition(.scale)
-                    .padding()
+                SearchTextFieldView(placeholder: "タイトル/著者名...で検索",
+                                    searchText: $searchText,
+                                    searchAction: {
+                                        localRepositoryVM.filteringSearchText(searchText)
+                                    })
             }
 
             if localRepositoryVM.books.isEmpty {
@@ -126,7 +113,7 @@ struct MyBookShelfView: View {
                                         viewModel.getThumbnailImage(book)
                                             .resizable()
                                             .shadow(color: .gray, radius: 3, x: 4, y: 4)
-                                            .frame(height: viewModel.isSESize ? 90 : 120)
+                                            .frame(height: viewModel.isSESize ? 100 : 120)
                                     } else {
                                         Text(book.title)
                                             .fontWeight(.bold)
@@ -134,8 +121,8 @@ struct MyBookShelfView: View {
                                             .foregroundColor(.gray)
                                             .padding(5)
                                             .frame(minWidth: viewModel.isiPadSize ? viewModel.deviceWidth / 8 - 20 : viewModel.deviceWidth / 4 - 20)
-                                            .frame(height: viewModel.isSESize ? 90 : 120)
-                                            .frame(maxHeight: viewModel.isSESize ? 90 : 120)
+                                            .frame(height: viewModel.isSESize ? 100 : 120)
+                                            .frame(maxHeight: viewModel.isSESize ? 100 : 120)
                                             .background(.white)
                                             .clipped()
                                             .shadow(color: .gray, radius: 3, x: 4, y: 4)
@@ -179,11 +166,11 @@ struct MyBookShelfView: View {
             } label: {
                 Text("本を検索して本棚に追加する")
                     .fontWeight(.bold)
-                    .padding()
+                    .padding(10)
                     .foregroundColor(.white)
                     .frame(width: viewModel.deviceWidth - 40)
                     .background(Color.thema4)
-                    .cornerRadius(20)
+                    .cornerRadius(15)
             }.shadow(color: .gray, radius: 3, x: 4, y: 4)
         } // VStack
         .onAppear {

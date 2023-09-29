@@ -14,11 +14,12 @@ class LocalRepositoryViewModel: ObservableObject {
 
     @Published var books: [Book] = []
     @Published var currentBook: Book?
-
-    @Published var isFiltering: FilteringMode = .none
-
     @Published var historys: [LoanHistory] = []
 
+    // フィルタリングモード
+    @Published var isFiltering: FilteringMode = .none
+
+    // 新規書籍登録用Order番号
     private var orderNum = 1
 
     // MARK: - Create
@@ -59,9 +60,7 @@ class LocalRepositoryViewModel: ObservableObject {
     // MARK: - Delete
 
     public func deleteBook(book: Book) {
-        let items = books.sorted(by: { $0.order < $1.order })
-        // 削除する行のIDを取得
-        let deleteId = book.id
+        let items = books
         // 削除する行の行番号を取得
         let deleteOrder = book.order
 
@@ -105,17 +104,26 @@ extension LocalRepositoryViewModel {
     // フィルタリング機能の追加
     public func filteringOnLoan() {
         isFiltering = .onLoan
-        books = relamLocalRepository.readAllBooks().filter { $0.OnLoan == true }.sorted(by: { $0.order < $1.order })
+        books = relamLocalRepository
+            .readAllBooks()
+            .filter { $0.OnLoan == true }
+            .sorted(by: { $0.order < $1.order })
     }
 
     public func filteringOffLoan() {
         isFiltering = .offLoan
-        books = relamLocalRepository.readAllBooks().filter { $0.OnLoan == false }.sorted(by: { $0.order < $1.order })
+        books = relamLocalRepository
+            .readAllBooks()
+            .filter { $0.OnLoan == false }
+            .sorted(by: { $0.order < $1.order })
     }
 
     public func filteringSearchText(_ text: String) {
         isFiltering = .search
-        books = relamLocalRepository.readAllBooks().filter(text.isEmpty ? { $0.title != "" } : { $0.title.contains(text) || $0.authors.contains(where: { $0.contains(text) }) }).sorted(by: { $0.order < $1.order })
+        books = relamLocalRepository
+            .readAllBooks()
+            .filter(text.isEmpty ? { $0.title != "" } : { $0.title.contains(text) || $0.authors.contains(where: { $0.contains(text) }) })
+            .sorted(by: { $0.order < $1.order })
     }
 
     // 並び替え機能
