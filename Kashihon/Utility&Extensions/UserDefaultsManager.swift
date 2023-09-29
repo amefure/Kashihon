@@ -19,4 +19,13 @@ class UserDefaultsManager {
     public func getMigration() -> Int {
         userDefaults.integer(forKey: "migration_version")
     }
+
+    // インタースティシャル表示用カウント
+    public func setCountInterstitial(_ count: Int) {
+        userDefaults.set(count, forKey: "CountInterstitial")
+    }
+
+    public func getCountInterstitial() -> Int {
+        userDefaults.integer(forKey: "CountInterstitial")
+    }
 }

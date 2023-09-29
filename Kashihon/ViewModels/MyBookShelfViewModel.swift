@@ -7,11 +7,14 @@
 
 import SwiftUI
 
-class MyBookShelfViewModel {
+class MyBookShelfViewModel: ObservableObject {
     private let deviceSizeManager = DeviceSizeManager()
     private let userDefaultsManager = UserDefaultsManager()
     private let imageFileManager = ImageFileManager()
     private let localRepositoryVM = LocalRepositoryViewModel.shared
+
+    // 広告表示カウント
+    @Published var countInterstitial: Int = 0 // 初期値
 
     public var isSESize: Bool {
         deviceSizeManager.isSESize
@@ -43,6 +46,15 @@ class MyBookShelfViewModel {
 
     public func getThumbnailImage(_ book: Book) -> Image {
         imageFileManager.loadImage(urlStr: book.secureThumbnailUrl!.absoluteString)
+    }
+
+    public func addCountInterstitial() {
+        countInterstitial += 1
+        userDefaultsManager.setCountInterstitial(countInterstitial)
+    }
+
+    public func getCountInterstitial() {
+        countInterstitial = userDefaultsManager.getCountInterstitial()
     }
 }
 

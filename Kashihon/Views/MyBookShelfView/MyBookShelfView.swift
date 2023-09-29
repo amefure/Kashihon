@@ -8,11 +8,13 @@
 import SwiftUI
 
 struct MyBookShelfView: View {
-    private let viewModel = MyBookShelfViewModel()
+    @ObservedObject var viewModel = MyBookShelfViewModel()
     @ObservedObject var localRepositoryVM = LocalRepositoryViewModel.shared
+    @ObservedObject private var interstitial = AdmobInterstitialView()
 
     @State var isSearch = false
     @State var searchText = ""
+    @State var isPresented = false
 
     var body: some View {
         VStack(spacing: 0) {
@@ -110,24 +112,22 @@ struct MyBookShelfView: View {
                                         .opacity(0.8)
                                 }
 
-                                Text("\(book.order)")
-                                    .padding()
-                                    .background(Color.thema2)
-                                    .zIndex(6)
+                                #if DEBUG
+                                    Text("\(book.order)")
+                                        .padding()
+                                        .background(Color.thema2)
+                                        .zIndex(6)
+                                #endif
 
-                                if book.secureThumbnailUrl != nil {
-                                    NavigationLink {
-                                        DetailBookView(book: book)
-                                    } label: {
+                                NavigationLink {
+                                    DetailBookView(book: book)
+                                } label: {
+                                    if book.secureThumbnailUrl != nil {
                                         viewModel.getThumbnailImage(book)
                                             .resizable()
                                             .shadow(color: .gray, radius: 3, x: 4, y: 4)
                                             .frame(height: viewModel.isSESize ? 90 : 120)
-                                    }
-                                } else {
-                                    NavigationLink {
-                                        DetailBookView(book: book)
-                                    } label: {
+                                    } else {
                                         Text(book.title)
                                             .fontWeight(.bold)
                                             .font(.caption)
@@ -140,7 +140,16 @@ struct MyBookShelfView: View {
                                             .clipped()
                                             .shadow(color: .gray, radius: 3, x: 4, y: 4)
                                     }
-                                }
+                                }.simultaneousGesture(TapGesture().onEnded {
+                                    // 5回遷移したら広告を表示させる
+                                    isPresented = true
+                                    viewModel.addCountInterstitial()
+                                    if viewModel.countInterstitial == 5 {
+                                        viewModel.countInterstitial = 0
+                                        interstitial.presentInterstitial()
+                                    }
+                                })
+
                             }.contextMenu {
                                 Button {
                                     localRepositoryVM.deleteBook(book: book)
@@ -179,6 +188,7 @@ struct MyBookShelfView: View {
         } // VStack
         .onAppear {
             localRepositoryVM.readAllBooks()
+            interstitial.loadInterstitial()
             viewModel.migration()
         }
     }

@@ -8,9 +8,10 @@
 import SwiftUI
 
 struct SearchBooksView: View {
-    private let networkConnectStatusManager = NetworkConnectStatusManager()
+    private let viewModel = SearchBooksViewModel()
     private let publicRepositoryVM = PublicRepositoryViewModel()
     @ObservedObject var localRepositoryVM = LocalRepositoryViewModel.shared
+
     @State var keyword: String = ""
     @State var books: [Book] = []
 
@@ -57,7 +58,7 @@ struct SearchBooksView: View {
                     .cornerRadius(20)
             }
 
-            if !networkConnectStatusManager.getNetworkConnectStatus() {
+            if !viewModel.isNetwork {
                 NoBookView(text: "ネットワークに接続してください。")
             } else {
                 if isLoading {

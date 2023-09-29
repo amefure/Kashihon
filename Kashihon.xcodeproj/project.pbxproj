@@ -43,6 +43,7 @@
 		1278C1D52AC584C3004E97BD /* MigrationInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1278C1D42AC584C3004E97BD /* MigrationInfo.swift */; };
 		1278C1D72AC59D61004E97BD /* MyBookShelfViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1278C1D62AC59D61004E97BD /* MyBookShelfViewModel.swift */; };
 		1278C1D92AC5C4F4004E97BD /* FilteringMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1278C1D82AC5C4F4004E97BD /* FilteringMode.swift */; };
+		1278C1DB2AC6423D004E97BD /* SearchBooksViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1278C1DA2AC6423D004E97BD /* SearchBooksViewModel.swift */; };
 		128F7E952A5EDE3F00FDF4CE /* KashihonApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 128F7E942A5EDE3F00FDF4CE /* KashihonApp.swift */; };
 		128F7E972A5EDE3F00FDF4CE /* TopMainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 128F7E962A5EDE3F00FDF4CE /* TopMainView.swift */; };
 		128F7E992A5EDE4000FDF4CE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 128F7E982A5EDE4000FDF4CE /* Assets.xcassets */; };
@@ -116,6 +117,7 @@
 		1278C1D42AC584C3004E97BD /* MigrationInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MigrationInfo.swift; sourceTree = "<group>"; };
 		1278C1D62AC59D61004E97BD /* MyBookShelfViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyBookShelfViewModel.swift; sourceTree = "<group>"; };
 		1278C1D82AC5C4F4004E97BD /* FilteringMode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilteringMode.swift; sourceTree = "<group>"; };
+		1278C1DA2AC6423D004E97BD /* SearchBooksViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBooksViewModel.swift; sourceTree = "<group>"; };
 		128F7E912A5EDE3F00FDF4CE /* Kashihon.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Kashihon.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		128F7E942A5EDE3F00FDF4CE /* KashihonApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KashihonApp.swift; sourceTree = "<group>"; };
 		128F7E962A5EDE3F00FDF4CE /* TopMainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopMainView.swift; sourceTree = "<group>"; };
@@ -275,6 +277,7 @@
 			children = (
 				12324B432A6DF43700155C5F /* PublicRepositoryViewModel.swift */,
 				1278C1D62AC59D61004E97BD /* MyBookShelfViewModel.swift */,
+				1278C1DA2AC6423D004E97BD /* SearchBooksViewModel.swift */,
 				12324B1D2A65FC5100155C5F /* LocalRepositoryViewModel.swift */,
 			);
 			path = ViewModels;
@@ -736,6 +739,7 @@
 				12324B342A66C1B400155C5F /* HeaderView.swift in Sources */,
 				12C7AE902A63B99100696BF5 /* AvailableNavigationStack.swift in Sources */,
 				12324B4D2A6DF92800155C5F /* LocalRepositoryProtocol.swift in Sources */,
+				1278C1DB2AC6423D004E97BD /* SearchBooksViewModel.swift in Sources */,
 				124E0BC02A618D9B00F97414 /* Book.swift in Sources */,
 				12324B4B2A6DF90700155C5F /* PublicRepositoryProtocol.swift in Sources */,
 				12324B3C2A67F21000155C5F /* NoBookView.swift in Sources */,
