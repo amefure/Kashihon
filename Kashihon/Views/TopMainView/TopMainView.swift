@@ -33,6 +33,7 @@ struct TopMainView: View {
                 AdMobBannerView().frame(height: 60)
             }
         }.tint(Color.thema4)
+            .ignoresSafeArea(.keyboard)
     }
 }
 
