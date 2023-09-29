@@ -77,7 +77,7 @@ struct MyBookShelfView: View {
 
             if isSearch {
                 HStack {
-                    TextField("タイトル/著者/ISBN...で検索", text: $searchText)
+                    TextField("タイトル/著者名...で検索", text: $searchText)
                         .font(.system(size: 20, weight: .bold))
                         .padding(10)
                         .background(Color.thema4)

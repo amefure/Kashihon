@@ -115,7 +115,7 @@ extension LocalRepositoryViewModel {
 
     public func filteringSearchText(_ text: String) {
         isFiltering = .search
-        books = relamLocalRepository.readAllBooks().filter(text.isEmpty ? { $0.title != "" } : { $0.title.contains(text) }).sorted(by: { $0.order < $1.order })
+        books = relamLocalRepository.readAllBooks().filter(text.isEmpty ? { $0.title != "" } : { $0.title.contains(text) || $0.authors.contains(where: { $0.contains(text)}) }).sorted(by: { $0.order < $1.order })
     }
 
     // 並び替え機能
