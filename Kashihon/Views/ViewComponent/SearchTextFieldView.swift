@@ -20,6 +20,7 @@ struct SearchTextFieldView: View {
                 .background(Color.thema4)
                 .foregroundColor(.white)
                 .cornerRadius(20)
+                .shadow(color: .gray, radius: 3, x: 4, y: 4)
             Button {
                 searchAction()
             } label: {
@@ -28,7 +29,7 @@ struct SearchTextFieldView: View {
                     .padding(10)
                     .background(Color.thema1)
                     .cornerRadius(20)
-            }
+            }.shadow(color: .gray, radius: 3, x: 4, y: 4)
         }.transition(.scale)
             .padding()
     }

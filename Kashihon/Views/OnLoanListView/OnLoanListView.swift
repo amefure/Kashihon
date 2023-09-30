@@ -14,14 +14,46 @@ struct OnLoanListView: View {
 
     @ObservedObject var localRepositoryVM = LocalRepositoryViewModel.shared
 
+    @State var isBookInfo: Bool = false
+
     var body: some View {
         VStack(spacing: 0) {
-            Text("貸し出しリスト")
-                .fontWeight(.bold)
-                .font(.headline)
-                .foregroundColor(.gray)
+            HStack {
+                Button {
+                    isBookInfo.toggle()
+                } label: {
+                    Text(isBookInfo ? "書籍情報" : "貸出情報")
+                        .fontWeight(.bold)
+                        .padding(5)
+                        .foregroundColor(.white)
+                        .background(isBookInfo ? Color.thema3 : Color.thema4)
+                        .cornerRadius(10)
+                }.shadow(color: .gray, radius: 3, x: 4, y: 4)
+                    .padding(.leading, 15)
 
-            if localRepositoryVM.books.filter { $0.OnLoan == true }.isEmpty {
+                Spacer()
+
+                Text("貸し出しリスト")
+                    .fontWeight(.bold)
+                    .font(.headline)
+                    .foregroundColor(.gray)
+
+                Spacer()
+
+                NavigationLink {
+                    HistoryLoanBookView()
+                } label: {
+                    Text("貸出履歴")
+                        .fontWeight(.bold)
+                        .padding(5)
+                        .foregroundColor(.white)
+                        .background(Color.thema4)
+                        .cornerRadius(10)
+                }.shadow(color: .gray, radius: 3, x: 4, y: 4)
+                    .padding(.trailing, 15)
+            }.padding(.bottom, 10)
+
+            if localRepositoryVM.books.filter({ $0.OnLoan == true }).isEmpty {
                 NoBookView(text: "貸し出ししている書籍はありません。")
 
             } else {
@@ -33,51 +65,48 @@ struct OnLoanListView: View {
                             if book.secureThumbnailUrl != nil {
                                 imageFileManager.loadImage(urlStr: book.secureThumbnailUrl!.absoluteString)
                                     .resizable()
+                                    .frame(width: 80, height: 100)
                                     .shadow(color: .gray, radius: 3, x: 4, y: 4)
-                                    .frame(width: 80, height: 90)
 
                             } else {
-                                Image("No_Image")
-                                    .resizable()
-                                    .frame(width: 60, height: 90)
+                                Text(book.title)
+                                    .fontWeight(.bold)
+                                    .font(.caption)
+                                    .foregroundColor(.gray)
+                                    .padding(5)
+                                    .frame(width: 80, height: 100)
+                                    .background(.white)
+                                    .clipped()
                                     .shadow(color: .gray, radius: 3, x: 4, y: 4)
                             }
-                            VStack(spacing: 0) {
+                            VStack(alignment: .leading, spacing: 4) {
                                 HStack {
-                                    Text("貸している人：")
+                                    Text(isBookInfo ? "タイトル：" : "貸している人：")
                                         .font(.caption)
                                     Spacer()
-                                    Text(book.loanName)
+                                    Text(isBookInfo ? book.title : book.loanName)
                                         .fontWeight(.bold)
                                         .lineLimit(1)
 
-                                    Spacer()
-                                }.padding(8)
-                                    .background(Color.thema2)
-                                    .cornerRadius(10)
+                                }.padding(.horizontal, 8)
 
                                 HStack {
-                                    Text("貸した日付：")
+                                    Text(isBookInfo ? "著書：" : "貸した日付：")
                                         .font(.caption)
                                     Spacer()
-                                    Text(displayDateManager.getJapanDateDisplayFormatString(book.loanDate))
+                                    Text(isBookInfo ? book.concatenationAuthors : displayDateManager.getJapanDateDisplayFormatString(book.loanDate))
                                         .fontWeight(.bold)
-                                    Spacer()
-                                }.padding(8)
-                                    .background(Color.thema3)
-                                    .cornerRadius(10)
+                                }.padding(.horizontal, 8)
 
                                 HStack {
-                                    Text("MEMO：")
+                                    Text(isBookInfo ? "書籍\nMEMO：" : "貸し出し\nMEMO：")
                                         .font(.caption)
-                                    Text(book.loanMemo)
+                                    Text(isBookInfo ? book.bookMemo : book.loanMemo)
                                         .lineLimit(1)
 
                                     Spacer()
-                                }.padding(8)
-                                    .background(Color.thema4)
-                                    .cornerRadius(10)
-                            }.foregroundColor(.white)
+                                }.padding(.horizontal, 8)
+                            }.foregroundColor(Color(hexString: "#555555"))
                         }
                     }.swipeActions(edge: .trailing, allowsFullSwipe: false) {
                         Button {
@@ -90,17 +119,7 @@ struct OnLoanListView: View {
                     }
                 }
             }
-            NavigationLink {
-                HistoryLoanBookView()
-            } label: {
-                Text("今までの貸出履歴")
-                    .fontWeight(.bold)
-                    .padding(10)
-                    .foregroundColor(.white)
-                    .frame(width: deviceSizeManager.deviceWidth - 40)
-                    .background(Color.thema4)
-                    .cornerRadius(15)
-            }.shadow(color: .gray, radius: 3, x: 4, y: 4)
+
         }.onAppear {
             localRepositoryVM.readAllBooks()
         }

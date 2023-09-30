@@ -40,14 +40,14 @@ struct RowBooksView: View {
                     .fontWeight(.bold)
                     .lineLimit(2)
                     .padding(5)
-                    .foregroundColor(Color.thema1)
+                    .foregroundColor(Color(hexString: "#555555", alpha: 1))
 
                 Text(book.concatenationAuthors)
                     .font(.system(size: 10))
                     .fontWeight(.bold)
                     .lineLimit(1)
                     .padding(5)
-                    .foregroundColor(Color.thema1)
+                    .foregroundColor(Color(hexString: "#555555", alpha: 0.8))
 
                 Spacer()
 
@@ -82,9 +82,8 @@ struct RowBooksView: View {
         .padding(10)
         .overlay {
             RoundedRectangle(cornerRadius: 5)
-                .stroke(Color(hexString: "#555555"), lineWidth: 3)
+                .stroke(Color(hexString: "#555555", alpha: 0.4), lineWidth: 3)
                 .frame(width: deviceSizeManager.deviceWidth - 10)
-                .opacity(0.4)
         }
         .listRowSeparator(.hidden)
         .listRowInsets(EdgeInsets(top: 0, leading: 5, bottom: 5, trailing: 5))

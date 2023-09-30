@@ -17,23 +17,23 @@ struct TabIconBarView: View {
                 selectTag = 1
             } label: {
                 Image(systemName: "hand.wave.fill")
-                    .font(.system(size: 18, weight: .bold))
+                    .font(.system(size: 20, weight: .bold))
             }.padding(.horizontal)
             Button {
                 selectTag = 2
             } label: {
                 Image(systemName: "books.vertical")
-                    .font(.system(size: 18, weight: .bold))
+                    .font(.system(size: 20, weight: .bold))
             }.padding(.horizontal)
             Button {
                 selectTag = 3
             } label: {
                 Image(systemName: "gearshape")
-                    .font(.system(size: 18, weight: .bold))
+                    .font(.system(size: 20, weight: .bold))
             }.padding(.horizontal)
 
         }.foregroundColor(.white)
-            .padding(10)
+            .padding()
             .frame(width: deviceSizeManager.deviceWidth - 40)
             .background(Color.thema1)
             .opacity(0.8)

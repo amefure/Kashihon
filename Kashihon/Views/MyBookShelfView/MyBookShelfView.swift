@@ -19,20 +19,6 @@ struct MyBookShelfView: View {
     var body: some View {
         VStack(spacing: 0) {
             HStack {
-                Button {
-                    withAnimation {
-                        isSearch.toggle()
-                    }
-                } label: {
-                    Image(systemName: "magnifyingglass")
-                        .foregroundColor(searchText.isEmpty ? .thema4 : .thema1)
-                }.padding(.leading, 20)
-                Spacer()
-                Text("本棚")
-                    .fontWeight(.bold)
-                    .font(.headline)
-                    .foregroundColor(.gray)
-                Spacer()
                 Menu {
                     Button {
                         localRepositoryVM.filteringOnLoan()
@@ -68,12 +54,37 @@ struct MyBookShelfView: View {
                         if localRepositoryVM.isFiltering == .none {
                             Image(systemName: "checkmark")
                         }
-                        Text("解除")
+                        Text("ノーマル")
                     }
                 } label: {
                     Image(systemName: "list.bullet")
-                }.padding(.trailing, 20)
-            }.padding([.horizontal])
+                        .frame(width: 30, height: 30)
+                        .foregroundColor(.white)
+                        .background(Color.thema4)
+                        .cornerRadius(10)
+                        .shadow(color: .gray, radius: 3, x: 4, y: 4)
+                }.padding(.leading, 15)
+
+                Spacer()
+                Text("本棚")
+                    .fontWeight(.bold)
+                    .font(.headline)
+                    .foregroundColor(.gray)
+                Spacer()
+
+                NavigationLink {
+                    SearchBooksView()
+                } label: {
+                    Image(systemName: "plus")
+                        .frame(width: 30, height: 30)
+                        .foregroundColor(.white)
+                        .background(Color.thema4)
+                        .cornerRadius(10)
+                        .shadow(color: .gray, radius: 3, x: 4, y: 4)
+                }.padding(.trailing, 15)
+
+            }.padding(.horizontal, 10)
+                .padding(.bottom, 11)
 
             if isSearch {
                 SearchTextFieldView(placeholder: "タイトル/著者名...で検索",
@@ -160,18 +171,6 @@ struct MyBookShelfView: View {
                     }
                 } // ScrollView
             }
-
-            NavigationLink {
-                SearchBooksView()
-            } label: {
-                Text("本を検索して本棚に追加する")
-                    .fontWeight(.bold)
-                    .padding(10)
-                    .foregroundColor(.white)
-                    .frame(width: viewModel.deviceWidth - 40)
-                    .background(Color.thema4)
-                    .cornerRadius(15)
-            }.shadow(color: .gray, radius: 3, x: 4, y: 4)
         } // VStack
         .onAppear {
             localRepositoryVM.readAllBooks()

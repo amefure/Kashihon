@@ -12,6 +12,8 @@ struct HistoryLoanBookView: View {
     private let imageFileManager = ImageFileManager()
     @ObservedObject var localRepositoryVM = LocalRepositoryViewModel.shared
 
+    @State var isBookInfo: Bool = false
+
     var body: some View {
         AvailableListPlaneStack {
             ForEach(localRepositoryVM.historys) { history in
@@ -36,10 +38,10 @@ struct HistoryLoanBookView: View {
 
                     VStack(spacing: 0) {
                         HStack {
-                            Text("貸している人：")
+                            Text(isBookInfo ? "タイトル：" : "貸していた人：")
                                 .font(.caption)
                             Spacer()
-                            Text(history.loanName)
+                            Text(isBookInfo ? history.title : history.loanName)
                                 .fontWeight(.bold)
                                 .lineLimit(1)
                         }
@@ -68,10 +70,8 @@ struct HistoryLoanBookView: View {
                                 .lineLimit(1)
                             Spacer()
                         }
-                    }.foregroundColor(.thema1)
+                    }.foregroundColor(Color(hexString: "#555555"))
                         .padding(8)
-                        .background(Color(hexString: "#e7e7e7"))
-                        .cornerRadius(10)
                 }
             }
         }.onAppear {
@@ -82,6 +82,19 @@ struct HistoryLoanBookView: View {
                     .fontWeight(.bold)
                     .foregroundColor(.gray)
                     .font(.headline)
+            }
+            ToolbarItem(placement: .navigationBarTrailing) {
+                Button {
+                    isBookInfo.toggle()
+                } label: {
+                    Text(isBookInfo ? "書籍情報" : "貸出情報")
+                        .fontWeight(.bold)
+                        .padding(5)
+                        .foregroundColor(.white)
+                        .background(isBookInfo ? Color.thema3 : Color.thema4)
+                        .cornerRadius(10)
+                }.shadow(color: .gray, radius: 3, x: 4, y: 4)
+                    .padding(.leading, 15)
             }
         }
     }

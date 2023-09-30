@@ -41,7 +41,7 @@ class Book: Object, Identifiable {
         return nil
     }
 
-    /// サムネイルURLをセキュアなURLに変換
+    /// 著者情報を繋げた文字列
     public var concatenationAuthors: String {
         var connect = ""
         for author in authors {
